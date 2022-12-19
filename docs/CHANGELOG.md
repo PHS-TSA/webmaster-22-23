@@ -1,20 +1,31 @@
 # Plan-of-Work log
 
-A changelog that tracks our work.
+A changelog that tracks our work. All notable changes to this project will be documented in this file.
 
-## 12/08/22
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project **_DOES NOT_** adhere to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-| Initials | Task                                  | Time involved | Comments | Sponsor Initials |
-| -------- | ------------------------------------- | ------------- | -------- | ---------------- |
-| NB, SP   | Added basic TODO list in Google Docs. | 1 hour        | N/A      |
+## 2022-12-20
 
-## 12/15/22
+| Initials | Task                | Time involved | Comments | Sponsor Initials |
+| -------- | ------------------- | ------------- | -------- | ---------------- |
+| ED       | Added CITATION.cff. | 10 minutes    | N/A      |
+| ED       | Reformat changelog. | 10 minutes    | N/A      |
 
-| Initials | Task         | Time involved | Comments |
-| -------- | ------------ | ------------- | -------- |
-| ED       | Joined Team. | 1 hour        | N/A      |
+## 2022-12-18
 
-## 12/16/22
+| Initials | Task                    | Time involved | Comments | Sponsor Initials |
+| -------- | ----------------------- | ------------- | -------- | ---------------- |
+| ED       | Added plan-of-work-log. | 1 hour        | N/A      |
+| ED       | Added all-contributors. | 10 minutes    | N/A      |
+
+## 2022-12-17
+
+| Initials | Task                                                  | Time involved | Comments | Sponsor Initials |
+| -------- | ----------------------------------------------------- | ------------- | -------- | ---------------- |
+| ED       | Added basic documentation and community health files. | 45 minutes    | N/A      |
+
+## 2022-12-16
 
 | Initials | Task                                                                 | Time involved | Comments | Sponsor Initials |
 | -------- | -------------------------------------------------------------------- | ------------- | -------- | ---------------- |
@@ -23,21 +34,14 @@ A changelog that tracks our work.
 | ED       | Moved todo list to GitHub issues/projects.                           | 10 minutes    | N/A      |
 | ED       | Added scaffolded HTML as placeholder until SP uploaded actual files. | 15 minutes    | N/A      |
 
-## 12/17/22
+## 2022-12-15
 
-| Initials | Task                                                  | Time involved | Comments | Sponsor Initials |
-| -------- | ----------------------------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Added basic documentation and community health files. | 45 minutes    | N/A      |
+| Initials | Task         | Time involved | Comments |
+| -------- | ------------ | ------------- | -------- |
+| ED       | Joined Team. | 1 hour        | N/A      |
 
-## 12/18/22
+## 2022-12-08
 
-| Initials | Task                    | Time involved | Comments | Sponsor Initials |
-| -------- | ----------------------- | ------------- | -------- | ---------------- |
-| ED       | Added plan-of-work-log. | 1 hour        | N/A      |
-| ED       | Added all-contributors. | 10 minutes    | N/A      |
-
-## 12/19/22
-
-| Initials | Task                | Time involved | Comments | Sponsor Initials |
-| -------- | ------------------- | ------------- | -------- | ---------------- |
-| ED       | Added CITATION.cff. | 1 hour        | N/A      |
+| Initials | Task                                  | Time involved | Comments | Sponsor Initials |
+| -------- | ------------------------------------- | ------------- | -------- | ---------------- |
+| NB, SP   | Added basic TODO list in Google Docs. | 1 hour        | N/A      |
