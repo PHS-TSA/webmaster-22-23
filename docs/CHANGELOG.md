@@ -11,6 +11,7 @@ and this project **_DOES NOT_** adhere to [Semantic Versioning](https://semver.o
 | -------- | ------------------- | ------------- | -------- | ---------------- |
 | ED       | Added CITATION.cff. | 10 minutes    | N/A      |
 | ED       | Reformat changelog. | 10 minutes    | N/A      |
+| ED       | Add CODEOWNERS.     | 5  minutes    | N/A      |
 
 ## 2022-12-18
 
