@@ -1,4 +1,4 @@
-# Contributors
+# Contributors list
 
 A list a contributors adhering to the [all-contributors](https://allcontributors.org/docs/en/specification) spec.
 
