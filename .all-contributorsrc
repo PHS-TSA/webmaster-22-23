@@ -23,7 +23,12 @@
       "profile": "http://lishaduck.github.io",
       "contributions": [
         "code",
-        "doc"
+        "doc",
+        "infra",
+        "mentoring",
+        "projectManagement",
+        "ideas",
+        "maintenance"
       ]
     }
   ],
