@@ -1,0 +1,26 @@
+# This CITATION.cff file was generated with cffinit, and extended with GitHub.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: webmaster-22-23
+message: >-
+  If you use this software, please cite it using the
+  metadata from this file.
+type: software
+authors:
+  - given-names: Elisha
+    family-names: Dukes
+    email: 88557639+lishaduck@users.noreply.github.com
+    affiliation: Pattonville High School
+  - given-names: Nolan
+    family-names: Ballard
+    email: ballardn@student.psdr3.org
+    affiliation: Pattonville High School
+  - given-names: Shaurya
+    family-names: Pandey
+    email: pandeys01@student.psdr3.org
+    affiliation: Pattonville High School
+version: 1.0.0
+doi: 10.5281/zenodo.1234
+date-released: 2022-12-19
+url: "https://github.com/PHS-TSA/webmaster-22-23"
