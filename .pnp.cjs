@@ -33,7 +33,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["elm-pages", "npm:3.0.0-beta.13"],\
             ["elm-review", "npm:2.9.0"],\
             ["elm-tooling", "npm:1.10.0"],\
-            ["prettier", "npm:2.8.1"]\
+            ["prettier", "npm:2.8.1"],\
+            ["vite", "virtual:afbcdba491805b95379770ebb786c1a72caa435c60136bd6f1ea6c3e2be3c75d52dc712724efae6c15b5ea518864173ff8a18553aa113b2c304baa057219d15c#npm:4.0.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
@@ -3946,6 +3947,14 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"]\
           ],\
           "linkType": "HARD"\
+        }],\
+        ["npm:3.7.5", {\
+          "packageLocation": "./.yarn/cache/rollup-npm-3.7.5-68387c4dac-772f85e9f1.zip/node_modules/rollup/",\
+          "packageDependencies": [\
+            ["rollup", "npm:3.7.5"],\
+            ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"]\
+          ],\
+          "linkType": "HARD"\
         }]\
       ]],\
       ["run-parallel", [\
@@ -4589,6 +4598,13 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           ],\
           "linkType": "SOFT"\
         }],\
+        ["npm:4.0.2", {\
+          "packageLocation": "./.yarn/cache/vite-npm-4.0.2-9368552cde-b259782d83.zip/node_modules/vite/",\
+          "packageDependencies": [\
+            ["vite", "npm:4.0.2"]\
+          ],\
+          "linkType": "SOFT"\
+        }],\
         ["virtual:68d60c1c090efb19ef8291d760ff9ed0755f5b6a93dc2cced91eeb773063dfde4a355a6e841df2664b61bdd4698797ffc113f39ce8d7fb8b97150df58b60e325#npm:3.2.5", {\
           "packageLocation": "./.yarn/__virtual__/vite-virtual-6c9605efc2/0/cache/vite-npm-3.2.5-f23b9ecb5b-ad35b7008c.zip/node_modules/vite/",\
           "packageDependencies": [\
@@ -4609,6 +4625,42 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["stylus", null],\
             ["sugarss", null],\
             ["terser", "npm:5.16.1"]\
+          ],\
+          "packagePeers": [\
+            "@types/less",\
+            "@types/node",\
+            "@types/sass",\
+            "@types/stylus",\
+            "@types/sugarss",\
+            "@types/terser",\
+            "less",\
+            "sass",\
+            "stylus",\
+            "sugarss",\
+            "terser"\
+          ],\
+          "linkType": "HARD"\
+        }],\
+        ["virtual:afbcdba491805b95379770ebb786c1a72caa435c60136bd6f1ea6c3e2be3c75d52dc712724efae6c15b5ea518864173ff8a18553aa113b2c304baa057219d15c#npm:4.0.2", {\
+          "packageLocation": "./.yarn/__virtual__/vite-virtual-7959860b8e/0/cache/vite-npm-4.0.2-9368552cde-b259782d83.zip/node_modules/vite/",\
+          "packageDependencies": [\
+            ["vite", "virtual:afbcdba491805b95379770ebb786c1a72caa435c60136bd6f1ea6c3e2be3c75d52dc712724efae6c15b5ea518864173ff8a18553aa113b2c304baa057219d15c#npm:4.0.2"],\
+            ["@types/less", null],\
+            ["@types/node", null],\
+            ["@types/sass", null],\
+            ["@types/stylus", null],\
+            ["@types/sugarss", null],\
+            ["@types/terser", null],\
+            ["esbuild", "npm:0.16.9"],\
+            ["fsevents", "patch:fsevents@npm%3A2.3.2#~builtin<compat/fsevents>::version=2.3.2&hash=df0bf1"],\
+            ["less", null],\
+            ["postcss", "npm:8.4.20"],\
+            ["resolve", "patch:resolve@npm%3A1.22.1#~builtin<compat/resolve>::version=1.22.1&hash=c3c19d"],\
+            ["rollup", "npm:3.7.5"],\
+            ["sass", null],\
+            ["stylus", null],\
+            ["sugarss", null],\
+            ["terser", null]\
           ],\
           "packagePeers": [\
             "@types/less",\
@@ -4655,7 +4707,8 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["elm-pages", "npm:3.0.0-beta.13"],\
             ["elm-review", "npm:2.9.0"],\
             ["elm-tooling", "npm:1.10.0"],\
-            ["prettier", "npm:2.8.1"]\
+            ["prettier", "npm:2.8.1"],\
+            ["vite", "virtual:afbcdba491805b95379770ebb786c1a72caa435c60136bd6f1ea6c3e2be3c75d52dc712724efae6c15b5ea518864173ff8a18553aa113b2c304baa057219d15c#npm:4.0.2"]\
           ],\
           "linkType": "SOFT"\
         }]\
