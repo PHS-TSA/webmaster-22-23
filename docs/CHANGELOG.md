@@ -33,4 +33,11 @@ A changelog that tracks our work.
 
 | Initials | Task                    | Time involved | Comments | Sponsor Initials |
 | -------- | ----------------------- | ------------- | -------- | ---------------- |
-| ED       | Added plan-of-work-log. | 2 hours       | N/A      |
+| ED       | Added plan-of-work-log. | 1 hour        | N/A      |
+| ED       | Added all-contributors. | 10 minutes    | N/A      |
+
+## 12/19/22
+
+| Initials | Task                | Time involved | Comments | Sponsor Initials |
+| -------- | ------------------- | ------------- | -------- | ---------------- |
+| ED       | Added CITATION.cff. | 1 hour        | N/A      |
