@@ -1,5 +1,9 @@
 # Webmaster (2022-2023)
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 Webmaster for the 2022-2023 school year.
 
 ## Topic
