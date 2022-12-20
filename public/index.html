@@ -113,7 +113,6 @@
       out of this world.
     </p> -->
     <div id="menu">
-      <!-- <button onclick="openMenu()" id="menuBtn"><span>Menu 三</span></button> -->
       <!-- <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link" href="#">Link</a>
@@ -130,13 +129,13 @@
             <a class="nav-link disabled" href="#">Disabled</a>
         </nav> -->
       <button onclick="openMenu()" id="menuBtn"><span>Menu 三</span></button>
-      <div
+      <ul
         class="nav flex-column nav-pills"
         id="v-pills-tab"
         role="tablist"
         aria-orientation="vertical"
       >
-        <a
+        <li
           class="nav-link active"
           id="v-pills-home-tab"
           data-toggle="pill"
@@ -144,9 +143,10 @@
           role="tab"
           aria-controls="v-pills-home"
           aria-selected="true"
-          >Home</a
         >
-        <a
+          Home
+        </li>
+        <li
           class="nav-link"
           id="v-pills-profile-tab"
           data-toggle="pill"
@@ -156,7 +156,7 @@
           aria-selected="false"
           >Profile</a
         >
-        <a
+        <li
           class="nav-link"
           id="v-pills-messages-tab"
           data-toggle="pill"
@@ -166,7 +166,7 @@
           aria-selected="false"
           >Messages</a
         >
-        <a
+        <li
           class="nav-link"
           id="v-pills-settings-tab"
           data-toggle="pill"
@@ -176,7 +176,7 @@
           aria-selected="false"
           >Settings</a
         >
-      </div>
+      </ul>
     </div>
 
     <script src="script.js"></script>
