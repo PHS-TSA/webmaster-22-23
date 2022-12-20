@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "automatically created by": "elm-review suppress",
+  "learn more": "elm-review suppress --help",
+  "suppressions": [
+    { "count": 15, "filePath": "src/Page/News.elm" },
+    { "count": 5, "filePath": "src/Shared.elm" },
+    { "count": 4, "filePath": "src/Page/About.elm" },
+    { "count": 4, "filePath": "src/Page/Donate.elm" },
+    { "count": 4, "filePath": "src/Page/Feedback.elm" },
+    { "count": 4, "filePath": "src/Page/Index.elm" },
+    { "count": 4, "filePath": "src/Page/Legal.elm" },
+    { "count": 4, "filePath": "src/Page/Offers.elm" },
+    { "count": 4, "filePath": "src/Page/Resources.elm" },
+    { "count": 4, "filePath": "src/Page/Services.elm" },
+    { "count": 4, "filePath": "src/Page/Sitemap.elm" },
+    { "count": 2, "filePath": "src/Site.elm" },
+    { "count": 1, "filePath": "src/Api.elm" }
+  ]
+}

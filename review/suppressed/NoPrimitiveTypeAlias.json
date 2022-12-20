@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "automatically created by": "elm-review suppress",
+  "learn more": "elm-review suppress --help",
+  "suppressions": [
+    { "count": 2, "filePath": "src/Page/About.elm" },
+    { "count": 2, "filePath": "src/Page/Donate.elm" },
+    { "count": 2, "filePath": "src/Page/Feedback.elm" },
+    { "count": 2, "filePath": "src/Page/Index.elm" },
+    { "count": 2, "filePath": "src/Page/Legal.elm" },
+    { "count": 2, "filePath": "src/Page/Offers.elm" },
+    { "count": 2, "filePath": "src/Page/Resources.elm" },
+    { "count": 2, "filePath": "src/Page/Services.elm" },
+    { "count": 2, "filePath": "src/Page/Sitemap.elm" }
+  ]
+}
