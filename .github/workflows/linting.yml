@@ -1,0 +1,263 @@
+name: CI/CD
+
+env:
+  CI: true
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    types: [opened, synchronize, reopened, closed]
+    branches:
+      - master
+
+jobs:
+  build_job:
+    if: github.event_name == 'push' || (github.event_name == 'pull_request' && github.event.action != 'closed')
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    name: Build Job
+    steps:
+      - uses: actions/checkout@v3.2.0
+        with:
+          submodules: true
+      - uses: actions/setup-node@v3.5.1
+        with:
+          node-version: "16"
+          cache: "npm"
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v3.0.11
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package.json', 'package-lock.json') }}
+      # Re-use ~/.elm between runs until elm.json, elm-tooling.json or review/elm.json changes. The Elm compiler saves downloaded Elm packages to ~/.elm, and elm-tooling saves downloaded tool executables there.
+      - name: Cache ~/.elm
+        uses: actions/cache@v3.0.11
+        with:
+          path: ~/.elm
+          key: elm-${{ hashFiles('elm.json', 'elm-tooling.json', 'review/elm.json') }}
+      - name: Cache elm-stuff
+        uses: actions/cache@v3.0.11
+        with:
+          path: elm-stuff/
+          key: elm-${{ hashFiles('elm.json', 'review/elm.json') }}
+      # Install npm packages, unless we restored them from cache.
+      # Since `npm ci` removes the node_modules folder before running it’s
+      # important to skip this step if cache was restored.
+      # `npm ci` does two things:
+      # 1. Installs everything in package-lock.json.
+      # 2. Checks that package.json and package-lock.json are in sync.
+      # That’s why the cache depends on both package-lock.json and package.json.
+      - name: Install npm dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        env:
+          NO_ELM_TOOLING_INSTALL: 1
+        run: npm ci
+      - name: Make sure the elm-pages installation worked
+        run: npx elm-pages --version
+      - name: Install elm-tooling dependencies
+        run: npx --no-install elm-tooling install
+      - name: Make sure the elm installation worked
+        run: npx elm --version
+      - name: Build
+        run: npm run build
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          # Artifact name
+          name: Build Directory
+          path: dist/
+          if-no-files-found: warn
+          # Duration after which artifact will expire in days. 0 means using default retention.
+          # Minimum 1 day. Maximum 90 days unless changed from the repository settings page.
+          retention-days: 7
+      - name: Upload Generated-Code Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          # Artifact name
+          name: Generated-Code
+          path: .elm-pages/
+          if-no-files-found: warn
+          # Duration after which artifact will expire in days. 0 means using default retention.
+          # Minimum 1 day. Maximum 90 days unless changed from the repository settings page.
+          retention-days: 7
+  lint_job:
+    needs: build_job
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    name: Lint Job
+    steps:
+      - uses: actions/checkout@v3.2.0
+        with:
+          submodules: true
+      - uses: actions/setup-node@v3.5.1
+        with:
+          node-version: "16"
+          cache: "npm"
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v3.0.11
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package.json', 'package-lock.json') }}
+      # Re-use ~/.elm between runs until elm.json, elm-tooling.json or review/elm.json changes. The Elm compiler saves downloaded Elm packages to ~/.elm, and elm-tooling saves downloaded tool executables there.
+      - name: Cache ~/.elm
+        uses: actions/cache@v3.0.11
+        with:
+          path: ~/.elm
+          key: elm-${{ hashFiles('elm.json', 'elm-tooling.json', 'review/elm.json') }}
+      - name: Cache elm-stuff
+        uses: actions/cache@v3.0.11
+        with:
+          path: elm-stuff/
+          key: elm-${{ hashFiles('elm.json', 'elm-tooling.json', 'review/elm.json') }}
+      # Install npm packages, unless we restored them from cache.
+      # Since `npm ci` removes the node_modules folder before running it’s
+      # important to skip this step if cache was restored.
+      # `npm ci` does two things:
+      # 1. Installs everything in package-lock.json.
+      # 2. Checks that package.json and package-lock.json are in sync.
+      # That’s why the cache depends on both package-lock.json and package.json.
+      - name: Install npm dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        env:
+          NO_ELM_TOOLING_INSTALL: 1
+        run: npm ci
+      - name: Make sure the elm-pages installation worked
+        run: npx elm-pages --version
+      - name: Install elm-tooling dependencies
+        run: npx --no-install elm-tooling install
+      - name: Make sure the elm installation worked
+        run: npx elm --version
+      - name: Download Generated-Code Artifact
+        uses: actions/download-artifact@v3.0.1
+        with:
+          # Artifact name
+          name: Generated-Code
+          # Destination path
+          path: .elm-pages/
+      - name: Linting
+        run: npm run lint
+      # - name: elm-review
+      #   uses: sparksp/elm-review-action@v1.0.9
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     elm_review: npx elm-review
+      - name: Linting Suppression check
+        run: npm run lint:after-checks # todo: if fail, pr
+
+  lint_fix_job:
+    needs: lint_job
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    if: ${{ needs.lint_job.if == 'failure' }}
+    name: elm-review Fixes Job.
+    steps:
+      - uses: actions/checkout@v3.2.0
+        with:
+          submodules: true
+      - uses: actions/setup-node@v3.5.1
+        with:
+          node-version: "16"
+          cache: "npm"
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v3.0.11
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package.json', 'package-lock.json') }}
+      # Re-use ~/.elm between runs until elm.json, elm-tooling.json or review/elm.json changes. The Elm compiler saves downloaded Elm packages to ~/.elm, and elm-tooling saves downloaded tool executables there.
+      - name: Cache ~/.elm
+        uses: actions/cache@v3.0.11
+        with:
+          path: ~/.elm
+          key: elm-${{ hashFiles('elm.json', 'elm-tooling.json', 'review/elm.json') }}
+      - name: Cache elm-stuff
+        uses: actions/cache@v3.0.11
+        with:
+          path: elm-stuff/
+          key: elm-${{ hashFiles('elm.json', 'elm-tooling.json', 'review/elm.json') }}
+      # Install npm packages, unless we restored them from cache.
+      # Since `npm ci` removes the node_modules folder before running it’s
+      # important to skip this step if cache was restored.
+      # `npm ci` does two things:
+      # 1. Installs everything in package-lock.json.
+      # 2. Checks that package.json and package-lock.json are in sync.
+      # That’s why the cache depends on both package-lock.json and package.json.
+      - name: Install npm dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        env:
+          NO_ELM_TOOLING_INSTALL: 1
+        run: npm ci
+      - name: Make sure the elm-pages installation worked
+        run: npx elm-pages --version
+      - name: Install elm-tooling dependencies
+        run: npx --no-install elm-tooling install
+      - name: Make sure the elm installation worked
+        run: npx elm --version
+      - name: Download Generated-Code Artifact
+        uses: actions/download-artifact@v3.0.1
+        with:
+          # Artifact name
+          name: Generated-Code
+          # Destination path
+          path: .elm-pages/
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
+      - name: Apply elm-review fixes # TODO: extract to it's own job.
+        id: elm-review
+        run: yes | npx elm-review --fix-all
+        continue-on-error: true
+      - uses: peter-evans/create-pull-request@v4.2.3
+        with:
+          commit-message: "Apply elm-review fixes"
+          branch: fixes/${{ steps.extract_branch.outputs.branch }}
+          title: "Apply elm-review fixes"
+          body: "*This is an automated pull request because elm-review found problems that could be fixed automatically.*"
+          reviewers: lishaduck
+          assignees: lishaduck
+
+  format_job:
+    needs: build_job
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    name: Verify Format Job
+    steps:
+      - uses: actions/checkout@v3.2.0
+        with:
+          submodules: true
+      - uses: actions/setup-node@v3.5.1
+        with:
+          node-version: "16"
+          cache: "npm"
+      - name: Cache node_modules
+        id: cache-node_modules
+        uses: actions/cache@v3.0.11
+        with:
+          path: node_modules
+          key: node_modules-${{ hashFiles('package.json', 'package-lock.json') }}
+      # Install npm packages, unless we restored them from cache.
+      # Since `npm ci` removes the node_modules folder before running it’s
+      # important to skip this step if cache was restored.
+      # `npm ci` does two things:
+      # 1. Installs everything in package-lock.json.
+      # 2. Checks that package.json and package-lock.json are in sync.
+      # That’s why the cache depends on both package-lock.json and package.json.
+      - name: Install npm dependencies
+        if: steps.cache-node_modules.outputs.cache-hit != 'true'
+        env:
+          NO_ELM_TOOLING_INSTALL: 1
+        run: npm ci
+      - name: Make sure the elm-pages installation worked
+        run: npx elm-pages --version
+      - name: Install elm-tooling dependencies
+        run: npx --no-install elm-tooling install
+      - name: Make sure the elm installation worked
+        run: npx elm --version
+      - name: Elm-format
+        run: npx elm-format --validate
