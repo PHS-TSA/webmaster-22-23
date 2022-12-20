@@ -7,9 +7,10 @@ and this project **_DOES NOT_** adhere to [Semantic Versioning](https://semver.o
 
 ## 2022-12-20
 
-| Initials | Task                             | Time involved | Comments | Sponsor Initials |
-| -------- | -------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Finish adding an elm-pages demo. | 30 minutes    | N/A      |
+| Initials | Task                                                | Time involved | Comments | Sponsor Initials |
+| -------- | --------------------------------------------------- | ------------- | -------- | ---------------- |
+| ED       | Finish adding an elm-pages demo.                    | 30 minutes    | N/A      |
+| ED       | Add my custom linting config to the elm-pages demo. | 30 minutes    | N/A      |
 
 ## 2022-12-19
 
