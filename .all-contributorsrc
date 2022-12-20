@@ -13,7 +13,11 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/120744214?v=4",
       "profile": "https://github.com/NolanBallard5",
       "contributions": [
-        "design"
+        "design",
+        "ideas",
+        "doc",
+        "projectManagement",
+        "promotion"
       ]
     },
     {
@@ -28,7 +32,8 @@
         "mentoring",
         "projectManagement",
         "ideas",
-        "maintenance"
+        "maintenance",
+        "promotion"
       ]
     },
     {
@@ -36,6 +41,16 @@
       "name": "Dependabot",
       "avatar_url": "https://avatars.githubusercontent.com/u/27347476?v=4",
       "profile": "https://github.com/features/security",
+      "contributions": [
+        "infra",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "all-contributors",
+      "name": "All Contributors",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46410174?v=4",
+      "profile": "https://allcontributors.org",
       "contributions": [
         "infra"
       ]
