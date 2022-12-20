@@ -1,6 +1,16 @@
 node_modules/
 elm-stuff/
 dist/
+.cache/
+generator/src/Main.js
+elm-pages-*.tgz
+coverage
+.netlify
+tests/VerifyExamples/
+cypress/videos
+cypress/screenshots
+.idea
+generated/
 .elm-pages/
 functions/render/elm-pages-cli.js
 

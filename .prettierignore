@@ -1,9 +1,8 @@
 # Ignore artifacts:
 elm-stuff/
-.vscode/
 dist/
+.cache/
 node_modules/
-.yarn/
 .elm-pages/
 functions/render/elm-pages-cli.js
 **/elm*.json

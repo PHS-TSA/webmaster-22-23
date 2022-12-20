@@ -1,0 +1,18 @@
+{
+    "recommendations": [
+        "github.codespaces",
+        "sidthesloth.html5-boilerplate",
+        "editorconfig.editorconfig",
+        "ms-edgedevtools.vscode-edge-devtools",
+        "joshbolduc.commitlint",
+        "elmtooling.elm-ls-vscode",
+        "tamasfe.even-better-toml",
+        "github.vscode-pull-request-github",
+        "eamodio.gitlens",
+        "ms-vsliveshare.vsliveshare-pack",
+        "davidanson.vscode-markdownlint",
+        "idered.npm",
+        "swellaby.node-pack",
+        "esbenp.prettier-vscode"
+    ]
+}

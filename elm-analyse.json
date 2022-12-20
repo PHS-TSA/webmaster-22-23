@@ -1,0 +1,14 @@
+{
+  "checks": {
+    "SingleFieldRecord": false,
+    "MapNothingToNothing": true
+  },
+  "excludedPaths": [
+    ".elm-pages",
+    ".generated",
+    "elm-stuff",
+    "vendor",
+    "codegen",
+    "gen"
+  ]
+}

@@ -1,6 +1,6 @@
 module View exposing (View, map, placeholder)
 
-import Html exposing (Html)
+import Accessibility.Styled as Html exposing (Html)
 
 
 type alias View msg =

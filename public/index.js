@@ -1,9 +1,7 @@
-type ElmPagesInit = {
-  load: (elmLoaded: Promise<unknown>) => Promise<void>;
-  flags: unknown;
-};
+/** @typedef {{load: (Promise<unknown>); flags: (unknown)}} ElmPagesInit */
 
-const config: ElmPagesInit = {
+/** @type ElmPagesInit */
+export default {
   load: async function (elmLoaded) {
     const app = await elmLoaded;
     console.log("App loaded", app);
@@ -12,5 +10,3 @@ const config: ElmPagesInit = {
     return "You can decode this in Shared.elm using Json.Decode.string!";
   },
 };
-
-export default config;

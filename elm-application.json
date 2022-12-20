@@ -1,0 +1,10 @@
+{
+    "name": "PHS-TSA/webmaster-22-23",
+    "summary": "A website for my not-for-profit.",
+    "version": "0.1.0",
+    "exposed-modules": [
+        "View",
+        "Page",
+        "Route"
+    ]
+}
