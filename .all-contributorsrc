@@ -63,6 +63,16 @@
       "contributions": [
         "code"
       ]
+    },
+    {
+      "login": "InstallBipole",
+      "name": "InstallBipole",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40724153?v=4",
+      "profile": "https://github.com/InstallBipole",
+      "contributions": [
+        "code",
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7,
