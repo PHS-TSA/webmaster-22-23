@@ -153,21 +153,25 @@ function createRandomStarOnBorder() {
   let newRadius = Math.floor(Math.random() * 4);
   let newZ = Math.random();
   switch (border) {
-    case 0:
-      newY = Math.random() * (window.innerHeight - newRadius * 2);
+    case 0: {
+      let newY = Math.random() * (window.innerHeight - newRadius * 2);
       createStar(newRadius, 10, newY, newZ);
       break;
-    case 1:
-      newX = Math.random() * (window.innerWidth - newRadius * 2);
+    }
+    case 1: {
+      let newX = Math.random() * (window.innerWidth - newRadius * 2);
       createStar(newRadius, newX, 10, newZ);
       break;
-    case 2:
-      newY = Math.random() * (window.innerHeight - newRadius * 2);
+    }
+    case 2: {
+      let newY = Math.random() * (window.innerHeight - newRadius * 2);
       createStar(newRadius, maxX, newY, newZ);
       break;
-    default:
-      newX = Math.random() * (window.innerWidth - newRadius * 2);
+    }
+    default: {
+      let newX = Math.random() * (window.innerWidth - newRadius * 2);
       createStar(newRadius, newX, maxY, newZ);
+    }
   }
 }
 function createStar(radius, xPos, yPos, zVal) {
