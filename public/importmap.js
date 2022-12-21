@@ -1,4 +1,4 @@
-const container = document.getElementById("importmpa");
+const container = document.getElementById("importmap");
 const script = document.createElement("script");
 script.setAttribute("type", "importmap");
 script.innerHTML = `{
