@@ -3,6 +3,8 @@
  * @see module:importmap
  */
 
+import * as bootstrap from "bootstrap";
+
 const maxX = window.innerWidth;
 const maxY = window.innerHeight;
 let backgroundCanv = document.getElementById("background");
