@@ -1,5 +1,6 @@
 const maxX = window.innerWidth;
 const maxY = window.innerHeight;
+let container = document.getElementById("container");
 let backgroundCanv = document.getElementById("background");
 let menuDiv = document.getElementById("menu");
 let menuBtn = document.getElementById("menuBtn");
