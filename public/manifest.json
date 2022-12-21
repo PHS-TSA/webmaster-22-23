@@ -1,0 +1,16 @@
+{
+  "dir": "auto",
+  "lang": "en-latn-us",
+  "icons": [],
+  "background_color": "#005",
+  "orientation": "portrait",
+  "display": "standalone",
+  "categories": [],
+  "description": "Home of the world's first cosmic cruise line!",
+  "name": "Cosmic Cruise Lines",
+  "prefer_related_applications": false,
+  "related_applications": [],
+  "theme_color": "#005",
+  "start_url": "/webmaster-22-23",
+  "scope": "/"
+}
