@@ -1,4 +1,9 @@
 {
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "css.lint.compatibleVendorPrefixes": "warning",
+  "css.lint.unknownVendorSpecificProperties": "warning",
+  "files.associations": {
+    ".prettierc": "json"
+  }
 }
