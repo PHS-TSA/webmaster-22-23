@@ -1,6 +1,5 @@
 const maxX = window.innerWidth;
 const maxY = window.innerHeight;
-let container = document.getElementById("container");
 let backgroundCanv = document.getElementById("background");
 let menuDiv = document.getElementById("menu");
 let menuBtn = document.getElementById("menuBtn");
@@ -10,8 +9,8 @@ let theMenuOptions = menuOptionsDiv.querySelectorAll("a");
 let toggleMenu = false;
 let mousePosition = {};
 var allowMoving = false;
-container.width = window.innerWidth;
-container.height = window.innerHeight;
+container.width = maxX;
+container.height = maxY;
 backgroundCanv.width = container.width;
 backgroundCanv.height = container.height;
 menuBtn.addEventListener("click", openMenu);
