@@ -2,7 +2,7 @@
 
 A list a contributors adhering to the [all-contributors](https://allcontributors.org/docs/en/specification) spec.
 
-## Contributors
+## Contributors list
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
