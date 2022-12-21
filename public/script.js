@@ -3,7 +3,7 @@
  * @see module:importmap
  */
 
-import * as bootstrap from "bootstrap";
+// import * as bootstrap from "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.esm.min.js";
 
 const maxX = window.innerWidth;
 const maxY = window.innerHeight;
@@ -14,10 +14,7 @@ let ctx = backgroundCanv.getContext("2d");
 let menuOptionsDiv = document.getElementById("v-pills-tab");
 let theMenuOptions = menuOptionsDiv.querySelectorAll("a");
 let toggleMenu = false;
-let mousePosition = {
-  x,
-  y,
-};
+let mousePosition = {};
 var allowMoving = false;
 container.width = maxX; /* Something's wrong with this.
   Uncaught TypeError: Cannot set properties of undefined (setting 'width')

@@ -92,3 +92,6 @@ body {
 .underlined {
   text-decoration: underline;
 }
+.no-italics {
+  font-style: normal;
+}
