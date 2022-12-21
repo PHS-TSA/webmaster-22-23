@@ -13,6 +13,7 @@ container.width = window.innerWidth;
 container.height = window.innerHeight;
 backgroundCanv.width = container.width;
 backgroundCanv.height = container.height;
+menuBtn.addEventListener("click", openMenu);
 
 class Star {
   constructor(x, y, z, alpha = 0.1, radius, fading = false) {
