@@ -39,7 +39,7 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
       crossorigin="anonymous"
     />
-    <link rel="manifest" href="manifest.json" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#005" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -164,6 +164,16 @@
           aria-selected="false"
         >
           <a class="nav-link" href="#v-pills-settings">Settings</a>
+        </li>
+        <li
+          class="nav-item disabled"
+          id="v-pills-settings-tab"
+          data-toggle="pill"
+          role="tab"
+          aria-controls="v-pills-settings"
+          aria-selected="false"
+        >
+          <button class="add-button">Add to home screen</button>
         </li>
       </ul>
     </nav>

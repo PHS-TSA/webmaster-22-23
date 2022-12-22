@@ -5,6 +5,8 @@
 
 // import * as bootstrap from "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.esm.min.js";
 
+import * as serviceWorker from "./service-worker.js";
+
 const maxX = window.innerWidth;
 const maxY = window.innerHeight;
 let backgroundCanv = document.getElementById("background");
@@ -288,3 +290,33 @@ function openMenu() {
     : "rgba(44, 44, 45, 0)";
 }
 setInterval(createRandomStar, 250);
+
+/* This code was taken and modified from the PWA example on MDN */
+let deferredPrompt;
+const addBtn = document.querySelector(".add-button");
+addBtn.style.display = "none";
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+  // Update UI to notify the user they can add to home screen
+  addBtn.style.display = "block";
+
+  addBtn.addEventListener("click", (e) => {
+    // hide our user interface that shows our A2HS button
+    addBtn.style.display = "none";
+    // Show the prompt
+    deferredPrompt.prompt();
+    // Wait for the user to respond to the prompt
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User accepted the A2HS prompt");
+      } else {
+        console.log("User dismissed the A2HS prompt");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
