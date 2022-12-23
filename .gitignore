@@ -86,6 +86,7 @@ dist
 dist
 dist-ssr
 *.local
+dev-dist
 
 # Gatsby files
 .cache/
