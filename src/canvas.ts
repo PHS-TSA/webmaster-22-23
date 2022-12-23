@@ -11,7 +11,14 @@ class Star {
    * @param {boolean} isFadingIn
    * @returns {Star}
    */
-  constructor(x, y, z, alpha = 0.1, radius, fading = true) {
+  constructor(
+    x: number,
+    y: number,
+    z: number,
+    alpha: number = 0.1,
+    radius: number,
+    fading: boolean = true
+  ): Star {
     this.x = x;
     this.y = y;
     this.z = z;
@@ -33,7 +40,7 @@ class Star {
    * @param {number} dx
    * @param {number} dy
    */
-  updatePos(dx, dy) {
+  updatePos(dx: number, dy: number) {
     this.x += dx;
     this.y += dy;
   }
@@ -42,7 +49,7 @@ class Star {
    * Update the alpha.
    * @param {number} deltaAlpha
    */
-  updateAlphaVal(deltaAlpha) {
+  updateAlphaVal(deltaAlpha: number) {
     this.alpha += deltaAlpha;
   }
 
@@ -50,7 +57,7 @@ class Star {
    * Set the alpha.
    * @param {number} alphaVal
    */
-  setAlphaVal(alphaVal) {
+  setAlphaVal(alphaVal: number) {
     this.alpha = alphaVal;
   }
 
@@ -58,11 +65,14 @@ class Star {
    * Set if a star is fading out.
    * @param {boolean} isFading
    */
-  setFadingBool(isFading) {
+  setFadingBool(isFading: boolean) {
     this.isFadingIn = isFading;
   }
 }
 
+/**
+ *
+ */
 function canvasRun() {
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
@@ -78,7 +88,7 @@ function canvasRun() {
   backgroundCanv.width = container.width;
   backgroundCanv.height = container.height;
 
-  const starsArray = [];
+  const starsArray: Star[] = [];
   for (let i = 0; i < 450; i++) {
     createRandomStar(starsArray);
   }
@@ -97,14 +107,14 @@ function canvasRun() {
 /**
  * Clear the stars from the viewer's eye.
  */
-function clear(ctx) {
+function clear(ctx, backgroundCanv) {
   ctx.clearRect(0, 0, backgroundCanv.width, backgroundCanv.height);
 }
 
 /**
  * Draw all the stars in the {@link starsArray}.
  */
-function drawStars(ctx) {
+function drawStars(ctx, starsArray: Star[]) {
   for (let i = 0; i < starsArray.length; i++) {
     starsArray[i].draw(ctx);
   }
@@ -115,7 +125,12 @@ function drawStars(ctx) {
  * Update the stars and their alphas.
  * @param {mousePosition} mP
  */
-function updateStarPositionsAndAlphaVal(mP, maxX, maxY, starsArray) {
+function updateStarPositionsAndAlphaVal(
+  mP: mousePosition,
+  maxX,
+  maxY,
+  starsArray
+) {
   if (allowMoving) {
     const mousePos = mP;
     for (let i = 0; i < starsArray.length; i++) {
@@ -159,7 +174,13 @@ function checkAndStartFadingAllStars(maxX, maxY, starsArray) {
  * @param {number} maxX
  * @param {number} maxY
  */
-function update(ctx, mousePosition, maxX, maxY, starsArray) {
+function update(
+  ctx: any,
+  mousePosition: any,
+  maxX: number,
+  maxY: number,
+  starsArray
+) {
   clear(ctx);
   drawStars(ctx);
   updateStarPositionsAndAlphaVal(mousePosition, maxX, maxY, starsArray);
@@ -177,7 +198,7 @@ function update(ctx, mousePosition, maxX, maxY, starsArray) {
  * @param {GlobalEventHandlers}
  * @param {Event} event
  */
-function getMouseCoords(_handler, event) {
+function getMouseCoords(_handler: GlobalEventHandlers, event: Event) {
   let eventDoc, doc, body;
   event = event || window.event; // IE-ism
 
@@ -209,7 +230,7 @@ function getMouseCoords(_handler, event) {
  * Set the mouse coordinates.
  * @param {Event} event
  */
-function setMouseCoords(ctx, event, maxX, maxY, starsArray) {
+function setMouseCoords(ctx, event: Event, maxX, maxY, starsArray) {
   const mousePosition = { x: event.clientX, y: event.clientY };
   update(ctx, mousePosition, maxX, maxY, starsArray);
 }
@@ -222,7 +243,7 @@ function setMouseCoords(ctx, event, maxX, maxY, starsArray) {
  * @param {number} y2
  * @returns {number}
  */
-function getDistance(x1, y1, x2, y2) {
+function getDistance(x1: number, y1: number, x2: number, y2: number): number {
   return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
 }
 
@@ -275,7 +296,13 @@ function createRandomStarOnBorder(maxX, maxY, starsArray) {
  * @param {number} yPos
  * @param {number} zVal
  */
-function createStar(starsArray, radius, xPos, yPos, zVal) {
+function createStar(
+  starsArray,
+  radius: number,
+  xPos: number,
+  yPos: number,
+  zVal: number
+) {
   starsArray.push(new Star(xPos, yPos, zVal, 0.1, radius));
 }
 
