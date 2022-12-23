@@ -1,0 +1,38 @@
+{
+  "ecmaFeatures": {
+    "arrowFunctions": true,
+    "classes": true,
+    "templateStrings": true,
+    "defaultParams": true
+  },
+  "root": true,
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "classes": true,
+      "templateStrings": true,
+      "defaultParams": true
+    },
+    "ecmaVersion": "latest"
+  },
+  "rules": {
+    "no-magic-numbers": "warn",
+    "no-shadow": "error",
+    "no-shadow-restricted-names": "error",
+    "no-dupe-keys": "error",
+    "no-dupe-args": "error",
+    "no-duplicate-imports": "warn",
+    "no-unreachable": "warn",
+    "no-invalid-regexp": "error",
+    "no-native-reassign": "warn",
+    "no-invalid-this": "warn",
+    "one-var-declaration-per-line": "warn",
+    "no-undefined": "warn",
+    "no-eq-null": "warn",
+    "valid-jsdoc": "warn",
+    "spaced-comment": "warn",
+    "symbol-description": "warn",
+    "require-jsdoc": "warn"
+  }
+}
