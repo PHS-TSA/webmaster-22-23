@@ -33,7 +33,7 @@
     "valid-jsdoc": "warn",
     "spaced-comment": "warn",
     "symbol-description": "warn",
-    "require-jsdoc": "warn"
-    // todo: https://prettier.io/docs/en/integrating-with-linters.html
+    "require-jsdoc": "warn",
+    "curly": ["error", "all"]
   }
 }
