@@ -27,6 +27,7 @@ class Star {
     ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
     ctx.fill();
   }
+
   /**
    * Update the position of the star.
    * @param {number} dx
@@ -65,10 +66,10 @@ class Star {
 function canvasRun() {
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
-  let backgroundCanv = document.getElementById("background");
-  let ctx = backgroundCanv.getContext("2d");
-  var allowMoving = false;
-  let container = document.getElementById("container");
+  const backgroundCanv = document.getElementById("background");
+  const ctx = backgroundCanv.getContext("2d");
+  let allowMoving = false;
+  const container = document.getElementById("container");
   container.width = maxX; /* Something's wrong with this.
   Uncaught TypeError: Cannot set properties of undefined (setting 'width')
   at script.js:formatted:12:17
@@ -77,7 +78,7 @@ function canvasRun() {
   backgroundCanv.width = container.width;
   backgroundCanv.height = container.height;
 
-  let starsArray = [];
+  const starsArray = [];
   for (let i = 0; i < 450; i++) {
     createRandomStar(starsArray);
   }
@@ -116,13 +117,13 @@ function drawStars(ctx) {
  */
 function updateStarPositionsAndAlphaVal(mP, maxX, maxY, starsArray) {
   if (allowMoving) {
-    let mousePos = mP;
+    const mousePos = mP;
     for (let i = 0; i < starsArray.length; i++) {
-      let star = starsArray[i];
-      let dx = ((mousePos.x - star.x) * star.z * -0.005) / star.radius;
-      let dy = ((mousePos.y - star.y) * star.z * -0.005) / star.radius;
+      const star = starsArray[i];
+      const dx = ((mousePos.x - star.x) * star.z * -0.005) / star.radius;
+      const dy = ((mousePos.y - star.y) * star.z * -0.005) / star.radius;
       star.updatePos(dx, dy);
-      let dist = getDistance(mousePos.x, mousePos.y, star.x, star.y);
+      const dist = getDistance(mousePos.x, mousePos.y, star.x, star.y);
       if (dist >= 50) {
         star.setFadingBool(true);
       } else {
@@ -138,7 +139,7 @@ function updateStarPositionsAndAlphaVal(mP, maxX, maxY, starsArray) {
  */
 function checkAndStartFadingAllStars(maxX, maxY, starsArray) {
   for (let i = 0; i < starsArray.length; i++) {
-    let star = starsArray[i];
+    const star = starsArray[i];
     if (star.fading) {
       star.updateAlphaVal(0.01);
       if (star.alpha <= 0) {
@@ -209,7 +210,7 @@ function getMouseCoords(_handler, event) {
  * @param {Event} event
  */
 function setMouseCoords(ctx, event, maxX, maxY, starsArray) {
-  let mousePosition = { x: event.clientX, y: event.clientY };
+  const mousePosition = { x: event.clientX, y: event.clientY };
   update(ctx, mousePosition, maxX, maxY, starsArray);
 }
 
@@ -230,10 +231,10 @@ function getDistance(x1, y1, x2, y2) {
  * This should conform to TimerHandler
  */
 function createRandomStar(starsArray) {
-  let newRadius = Math.floor(Math.random() * 4);
-  let newZ = Math.random();
-  let newX = Math.random() * (window.innerWidth - newRadius * 2);
-  let newY = Math.random() * (window.innerHeight - newRadius * 2);
+  const newRadius = Math.floor(Math.random() * 4);
+  const newZ = Math.random();
+  const newX = Math.random() * (window.innerWidth - newRadius * 2);
+  const newY = Math.random() * (window.innerHeight - newRadius * 2);
   createStar(starsArray, newRadius, newX, newY, newZ);
 }
 
@@ -241,27 +242,27 @@ function createRandomStar(starsArray) {
  * Create a random star on the border of the canvas.
  */
 function createRandomStarOnBorder(maxX, maxY, starsArray) {
-  let border = Math.floor(Math.random() * 4);
-  let newRadius = Math.floor(Math.random() * 4);
-  let newZ = Math.random();
+  const border = Math.floor(Math.random() * 4);
+  const newRadius = Math.floor(Math.random() * 4);
+  const newZ = Math.random();
   switch (border) {
     case 0: {
-      let newY = Math.random() * (window.innerHeight - newRadius * 2);
+      const newY = Math.random() * (window.innerHeight - newRadius * 2);
       createStar(starsArray, newRadius, 10, newY, newZ);
       break;
     }
     case 1: {
-      let newX = Math.random() * (window.innerWidth - newRadius * 2);
+      const newX = Math.random() * (window.innerWidth - newRadius * 2);
       createStar(starsArray, newRadius, newX, 10, newZ);
       break;
     }
     case 2: {
-      let newY = Math.random() * (window.innerHeight - newRadius * 2);
+      const newY = Math.random() * (window.innerHeight - newRadius * 2);
       createStar(starsArray, newRadius, maxX, newY, newZ);
       break;
     }
     default: {
-      let newX = Math.random() * (window.innerWidth - newRadius * 2);
+      const newX = Math.random() * (window.innerWidth - newRadius * 2);
       createStar(starsArray, newRadius, newX, maxY, newZ);
     }
   }

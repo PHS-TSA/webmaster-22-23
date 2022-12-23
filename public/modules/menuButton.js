@@ -10,9 +10,9 @@ import {} from "bootstrap.esm.min.js";
  * @param {MouseEvent} _event the event that happened to trigger this (currently just 'click')
  */
 function toggleMenu(_button, _event) {
-  let menuOptionsDiv = document.getElementById("v-pills-tab");
-  let menuDiv = document.getElementById("menu");
-  let theMenuOptions = menuOptionsDiv.querySelectorAll("a");
+  const menuOptionsDiv = document.getElementById("v-pills-tab");
+  const menuDiv = document.getElementById("menu");
+  const theMenuOptions = menuOptionsDiv.querySelectorAll("a");
   let is_toggled = false;
 
   is_toggled = !is_toggled;

@@ -1,11 +1,11 @@
 {
-  "ecmaFeatures": {
-    "arrowFunctions": true,
-    "classes": true,
-    "templateStrings": true,
-    "defaultParams": true
+  "env": {
+    "browser": true,
+    "es2021": true
   },
-  "root": true,
+  "plugins": ["prettier"],
+  "extends": ["standard-with-typescript", "plugin:prettier/recommended"],
+  "overrides": [],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -16,6 +16,7 @@
     },
     "ecmaVersion": "latest"
   },
+  "root": true,
   "rules": {
     "no-magic-numbers": "warn",
     "no-shadow": "error",
@@ -27,7 +28,6 @@
     "no-invalid-regexp": "error",
     "no-native-reassign": "warn",
     "no-invalid-this": "warn",
-    "one-var-declaration-per-line": "warn",
     "no-undefined": "warn",
     "no-eq-null": "warn",
     "valid-jsdoc": "warn",

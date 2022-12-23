@@ -1,0 +1,36 @@
+{
+  "name": "webmaster-22-23",
+  "version": "0.1.0",
+  "description": "Home of the world's first cosmic cruise line!",
+  "main": "public/script.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "npx vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PHS-TSA/webmaster-22-23.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PHS-TSA/webmaster-22-23/issues"
+  },
+  "homepage": "https://github.com/PHS-TSA/webmaster-22-23#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "eslint": "^8.30.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "^24.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "^6.1.1",
+    "prettier": "2.8.1",
+    "typescript": "^4.9.4",
+    "vite": "^4.0.3",
+    "vitest": "^0.26.2"
+  }
+}
