@@ -1,5 +1,5 @@
 /** Module for the service worker
- * @module service-worker
+ * @module serviceWorker
  * @see module:script
  *
  * {@link https://github.com/halfzebra/create-elm-app/tree/master/template#making-a-progressive-web-app}
@@ -8,7 +8,7 @@
  */
 
 if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("./service-worker.js");
+  navigator.serviceWorker.register("./modules/serviceWorker.js");
 }
 
 const cacheName = "cclPWA-v1";
