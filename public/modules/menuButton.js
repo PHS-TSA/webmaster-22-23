@@ -13,12 +13,12 @@ function toggleMenu(_button, _event) {
   const menuOptionsDiv = document.getElementById("v-pills-tab");
   const menuDiv = document.getElementById("menu");
   const theMenuOptions = menuOptionsDiv.querySelectorAll("a");
-  let is_toggled = false;
+  let isToggled = false;
 
-  is_toggled = !is_toggled;
-  menuOptionsDiv.style.visibility = is_toggled ? "visible" : "hidden";
-  menuOptionsDiv.style.display = is_toggled ? "block" : "none";
-  menuDiv.style.backgroundColor = is_toggled
+  isToggled = !isToggled;
+  menuOptionsDiv.style.visibility = isToggled ? "visible" : "hidden";
+  menuOptionsDiv.style.display = isToggled ? "block" : "none";
+  menuDiv.style.backgroundColor = isToggled
     ? "rgba(44, 44, 45, 1)"
     : "rgba(44, 44, 45, 0)";
 }
