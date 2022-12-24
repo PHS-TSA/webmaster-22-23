@@ -2,23 +2,29 @@
 
 /** Class representing a star. */
 class Star {
+  x: number;
+  y: number;
+  z: number;
+  alpha: number;
+  radius: number;
+  isFadingIn: boolean;
+
   /**
    * @param {number} x
    * @param {number} y
    * @param {number} z
    * @param {number} alpha
    * @param {number} radius
-   * @param {boolean} isFadingIn
-   * @returns {Star}
+   * @param {boolean} fading
    */
   constructor(
     x: number,
     y: number,
     z: number,
-    alpha: number = 0.1,
+    alpha = 0.1,
     radius: number,
-    fading: boolean = true
-  ): Star {
+    fading = true
+  ) {
     this.x = x;
     this.y = y;
     this.z = z;
@@ -28,7 +34,7 @@ class Star {
   }
 
   /** Draw the circle. */
-  draw(ctx) {
+  draw(ctx): void {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
@@ -40,7 +46,7 @@ class Star {
    * @param {number} dx
    * @param {number} dy
    */
-  updatePos(dx: number, dy: number) {
+  updatePos(dx: number, dy: number): void {
     this.x += dx;
     this.y += dy;
   }
@@ -49,7 +55,7 @@ class Star {
    * Update the alpha.
    * @param {number} deltaAlpha
    */
-  updateAlphaVal(deltaAlpha: number) {
+  updateAlphaVal(deltaAlpha: number): void {
     this.alpha += deltaAlpha;
   }
 
@@ -57,7 +63,7 @@ class Star {
    * Set the alpha.
    * @param {number} alphaVal
    */
-  setAlphaVal(alphaVal: number) {
+  setAlphaVal(alphaVal: number): void {
     this.alpha = alphaVal;
   }
 
@@ -65,7 +71,7 @@ class Star {
    * Set if a star is fading out.
    * @param {boolean} isFading
    */
-  setFadingBool(isFading: boolean) {
+  setFadingBool(isFading: boolean): void {
     this.isFadingIn = isFading;
   }
 }
@@ -73,7 +79,7 @@ class Star {
 /**
  *
  */
-function canvasRun() {
+function canvasRun(): void {
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
   const backgroundCanv = document.getElementById("background");
@@ -107,14 +113,17 @@ function canvasRun() {
 /**
  * Clear the stars from the viewer's eye.
  */
-function clear(ctx, backgroundCanv) {
+function clear(
+  ctx: unknown,
+  backgroundCanv: { width: number; height: number }
+): void {
   ctx.clearRect(0, 0, backgroundCanv.width, backgroundCanv.height);
 }
 
 /**
  * Draw all the stars in the {@link starsArray}.
  */
-function drawStars(ctx, starsArray: Star[]) {
+function drawStars(ctx, starsArray: Star[]): void {
   for (let i = 0; i < starsArray.length; i++) {
     starsArray[i].draw(ctx);
   }
@@ -130,7 +139,7 @@ function updateStarPositionsAndAlphaVal(
   maxX,
   maxY,
   starsArray
-) {
+): void {
   if (allowMoving) {
     const mousePos = mP;
     for (let i = 0; i < starsArray.length; i++) {
@@ -152,7 +161,7 @@ function updateStarPositionsAndAlphaVal(
 /**
  * Makes sure all stars fade out.
  */
-function checkAndStartFadingAllStars(maxX, maxY, starsArray) {
+function checkAndStartFadingAllStars(maxX, maxY, starsArray: Star[]): void {
   for (let i = 0; i < starsArray.length; i++) {
     const star = starsArray[i];
     if (star.fading) {
@@ -175,12 +184,12 @@ function checkAndStartFadingAllStars(maxX, maxY, starsArray) {
  * @param {number} maxY
  */
 function update(
-  ctx: any,
-  mousePosition: any,
+  ctx: unknown,
+  mousePosition: unknown,
   maxX: number,
   maxY: number,
-  starsArray
-) {
+  starsArray: Star[]
+): void {
   clear(ctx);
   drawStars(ctx);
   updateStarPositionsAndAlphaVal(mousePosition, maxX, maxY, starsArray);
@@ -195,43 +204,50 @@ function update(
 
 /**
  * Get the mouse coordinates.
- * @param {GlobalEventHandlers}
- * @param {Event} event
+ * @param {GlobalEventHandlers} this
+ * @param {MouseEvent} ev
  */
-function getMouseCoords(_handler: GlobalEventHandlers, event: Event) {
+function getMouseCoords(this: GlobalEventHandlers, ev: MouseEvent): void {
   let eventDoc, doc, body;
-  event = event || window.event; // IE-ism
+  ev = ev || window.event; // IE-ism
 
   // If pageX/Y aren't available and clientX/Y are,
   // calculate pageX/Y - logic taken from jQuery.
   // (This is to support old IE)
-  if (event.pageX == null && event.clientX != null) {
-    eventDoc = (event.target && event.target.ownerDocument) || document;
+  if (ev.pageX == null && ev.clientX != null) {
+    eventDoc = (ev.target != null && ev.target.ownerDocument) || document;
     doc = eventDoc.documentElement;
     body = eventDoc.body;
 
-    event.pageX =
-      event.clientX +
+    ev.pageX =
+      ev.clientX +
       ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
       ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
-    event.pageY =
-      event.clientY +
+    ev.pageY =
+      ev.clientY +
       ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
       ((doc && doc.clientTop) || (body && body.clientTop) || 0);
   }
   mousePosition = {
-    x: event.clientX,
-    y: event.clientY,
+    x: ev.clientX,
+    y: ev.clientY,
   };
   allowMoving = true;
 }
 
 /**
  * Set the mouse coordinates.
- * @param {Event} event
+ * @param {Event} ev
  */
-function setMouseCoords(ctx, event: Event, maxX, maxY, starsArray) {
-  const mousePosition = { x: event.clientX, y: event.clientY };
+function setMouseCoords(
+  this: GlobalEventHandlers,
+  ev: MouseEvent,
+  ctx: unknown,
+  maxX: number,
+  maxY: number,
+  starsArray: Star[]
+): void {
+  const mousePosition = { x: ev.clientX, y: ev.clientY };
   update(ctx, mousePosition, maxX, maxY, starsArray);
 }
 
@@ -251,7 +267,7 @@ function getDistance(x1: number, y1: number, x2: number, y2: number): number {
  * Create a random star.
  * This should conform to TimerHandler
  */
-function createRandomStar(starsArray) {
+function createRandomStar(starsArray: Star[]): void {
   const newRadius = Math.floor(Math.random() * 4);
   const newZ = Math.random();
   const newX = Math.random() * (window.innerWidth - newRadius * 2);
@@ -262,7 +278,11 @@ function createRandomStar(starsArray) {
 /**
  * Create a random star on the border of the canvas.
  */
-function createRandomStarOnBorder(maxX, maxY, starsArray) {
+function createRandomStarOnBorder(
+  maxX: number,
+  maxY: number,
+  starsArray: Star[]
+): void {
   const border = Math.floor(Math.random() * 4);
   const newRadius = Math.floor(Math.random() * 4);
   const newZ = Math.random();
@@ -297,12 +317,12 @@ function createRandomStarOnBorder(maxX, maxY, starsArray) {
  * @param {number} zVal
  */
 function createStar(
-  starsArray,
+  starsArray: Star[],
   radius: number,
   xPos: number,
   yPos: number,
   zVal: number
-) {
+): void {
   starsArray.push(new Star(xPos, yPos, zVal, 0.1, radius));
 }
 
