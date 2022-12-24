@@ -1,8 +1,9 @@
 /// <reference types="vitest" />
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import { webfontDownload } from "vite-plugin-webfont-dl";
+import webfontDownload from "vite-plugin-webfont-dl";
 import { VitePWA } from "vite-plugin-pwa";
+import lightningcss from "vite-plugin-lightningcss";
 
 export default defineConfig({
   build: {
@@ -11,7 +12,7 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
       },
     },
-    minify: true,
+    minify: "esbuild",
   },
   test: {
     coverage: {
@@ -50,6 +51,9 @@ export default defineConfig({
         start_url: "/webmaster-22-23",
         scope: "/webmaster-22-23",
       },
+    }),
+    lightningcss({
+      browserslist: "last 2 versions",
     }),
   ],
   base: "/webmaster-22-23",
