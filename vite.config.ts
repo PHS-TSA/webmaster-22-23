@@ -22,6 +22,28 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      manifest: {
+        lang: "en-latn-us",
+        icons: [
+          {
+            src: "images/large-favicon.png",
+            sizes: "192x192",
+            type: "image/png",
+          },
+        ],
+        background_color: "#005",
+        orientation: "portrait",
+        display: "standalone",
+        categories: [],
+        description: "Home of the world's first cosmic cruise line!",
+        name: "Cosmic Cruise Lines",
+        short_name: "CCL",
+        prefer_related_applications: false,
+        related_applications: [],
+        theme_color: "#005",
+        start_url: "/webmaster-22-23",
+        scope: "/webmaster-22-23",
+      },
     }),
   ],
   base: "/webmaster-22-23",
