@@ -3,17 +3,13 @@
  * @see module:canvas
  */
 
-import { runServiceWorker } from "./serviceWorker.js";
 import { canvasRun } from "./canvas.js";
 import { toggleMenu, createDownloadButton } from "./menuButton.js";
 import {} from "./styles.css";
 
-const menuBtn = document.getElementById("menuBtn");
-
 canvasRun();
 
+const menuBtn = document.getElementById("menuBtn");
 menuBtn.addEventListener("click", toggleMenu);
 
 createDownloadButton();
-
-runServiceWorker();
