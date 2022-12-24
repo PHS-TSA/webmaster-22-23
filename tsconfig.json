@@ -20,7 +20,7 @@
     "noImplicitReturns": true,
     "skipLibCheck": true
   },
-  "exclude": ["node_modules", "**/node_modules/*"],
-  "include": ["src"],
+  "exclude": ["node_modules", "**/node_modules/*", "dev-dist"],
+  "include": ["src", "vite.config.ts"],
   "types": ["vite/client"]
 }
