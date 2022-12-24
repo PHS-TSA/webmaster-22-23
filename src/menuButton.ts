@@ -2,14 +2,16 @@
 
 // imports popper in the wrong style, and fixing it
 // requires breaking the CSP so I commented-out the CSP
-import {} from "bootstrap.esm.min.js";
+import * as bootstrap from "bootstrap";
 
-/** Open the menu.
+/**
+ * Open the menu.
  *
- * @param {HTMLElement} _button the menu button
- * @param {MouseEvent} _event the event that happened to trigger this (currently just 'click')
+ * @param {HTMLElement} this the menu button
+ * @param {MouseEvent} ev the event that happened to trigger this (currently just 'click')
+ * @returns {void}
  */
-function toggleMenu(_button, _event) {
+function toggleMenu(this: HTMLElement, ev: MouseEvent): void {
   const menuOptionsDiv = document.getElementById("v-pills-tab");
   const menuDiv = document.getElementById("menu");
   const theMenuOptions = menuOptionsDiv.querySelectorAll("a");
@@ -25,27 +27,29 @@ function toggleMenu(_button, _event) {
 
 /**
  * Create the download button for the PWA.
+ *
+ * @returns {void}
  */
-function createDownloadButton() {
+function createDownloadButton(): void {
   /* This code was taken and modified from the PWA example on MDN */
-  let deferredPrompt;
-  const addBtn = document.querySelector(".add-button");
+  let deferredPrompt: Event | null;
+  const addBtn: HTMLElement = document.querySelector(".add-button");
   addBtn.style.display = "none";
-  window.addEventListener("beforeinstallprompt", (e) => {
+  window.addEventListener("beforeinstallprompt", (event: Event) => {
     // Prevent Chrome 67 and earlier from automatically showing the prompt
-    e.preventDefault();
+    event.preventDefault();
     // Stash the event so it can be triggered later.
-    deferredPrompt = e;
+    deferredPrompt = event;
     // Update UI to notify the user they can add to home screen
     addBtn.style.display = "block";
 
-    addBtn.addEventListener("click", (e) => {
+    addBtn.addEventListener("click", (e: Event) => {
       // hide our user interface that shows our A2HS button
       addBtn.style.display = "none";
       // Show the prompt
       deferredPrompt.prompt();
       // Wait for the user to respond to the prompt
-      deferredPrompt.userChoice.then((choiceResult) => {
+      deferredPrompt.userChoice.then((choiceResult: string) => {
         if (choiceResult.outcome === "accepted") {
           console.log("User accepted the A2HS prompt");
         } else {

@@ -10,12 +10,12 @@ class Star {
   isFadingIn: boolean;
 
   /**
-   * @param {number} x
-   * @param {number} y
-   * @param {number} z
-   * @param {number} alpha
-   * @param {number} radius
-   * @param {boolean} fading
+   * @param {number} x the x of the star
+   * @param {number} y the y of the star
+   * @param {number} z the z of the star
+   * @param {number} alpha the star's alpha
+   * @param {number} radius the star's radius
+   * @param {boolean} fading if the star is fading in
    */
   constructor(
     x: number,
@@ -131,13 +131,22 @@ function drawStars(ctx: CanvasRenderingContext2D, starsArray: Star[]): void {
 // function remove. @Ash-Greninja101 what did you mean?
 /**
  * Update the stars and their alphas.
- * @param {mousePosition} mP
+ *
+ * @param {*} mP the mouse position
+ * @param {number} mP.x the mouse location (x)
+ * @param {number} mP.y the mouse location (y)
+ * @param {number} maxX the width of the screen
+ * @param {number} maxY the height of the screen
+ * @param {Star[]} starsArray the list of stars
+ * @param {boolean} allowMoving If the stars can move
+ * @returns {void}
  */
 function updateStarPositionsAndAlphaVal(
-  mP: mousePosition,
-  maxX,
-  maxY,
-  starsArray
+  mP: { x: number; y: number },
+  maxX: number,
+  maxY: number,
+  starsArray: Star[],
+  allowMoving: boolean
 ): void {
   if (allowMoving) {
     const mousePos = mP;
@@ -160,10 +169,14 @@ function updateStarPositionsAndAlphaVal(
 /**
  * Makes sure all stars fade out.
  */
-function checkAndStartFadingAllStars(maxX, maxY, starsArray: Star[]): void {
+function checkAndStartFadingAllStars(
+  maxX: number,
+  maxY: number,
+  starsArray: Star[]
+): void {
   for (let i = 0; i < starsArray.length; i++) {
     const star = starsArray[i];
-    if (star.fading) {
+    if (star.isFadingIn) {
       star.updateAlphaVal(0.01);
       if (star.alpha <= 0) {
         starsArray.splice(i, 1);

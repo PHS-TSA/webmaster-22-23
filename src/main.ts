@@ -1,15 +1,18 @@
-/** Module for the star field background animation.
+/**
+ * Module for the star field background animation.
+ *
  * @module script
  * @see module:canvas
  */
 
 import { canvasRun } from "./canvas.js";
 import { toggleMenu, createDownloadButton } from "./menuButton.js";
-import {} from "./styles.css";
 
 canvasRun();
 
-const menuBtn = document.getElementById("menuBtn");
-menuBtn.addEventListener("click", toggleMenu);
+const menuBtn: HTMLElement | null = document.getElementById("menuBtn");
 
-createDownloadButton();
+if (menuBtn instanceof HTMLElement) {
+  menuBtn.addEventListener("click", toggleMenu);
+  createDownloadButton();
+}
