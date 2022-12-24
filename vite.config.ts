@@ -1,3 +1,4 @@
+/// <reference types="vitest" />
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import { webfontDownload } from "vite-plugin-webfont-dl";
@@ -11,6 +12,11 @@ export default defineConfig({
       },
     },
     minify: true,
+  },
+  test: {
+    coverage: {
+      provider: "c8", // or 'istanbul'
+    },
   },
   plugins: [
     webfontDownload(
