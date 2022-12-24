@@ -3,8 +3,14 @@
     "browser": true,
     "es2021": true
   },
-  "plugins": ["prettier"],
-  "extends": ["standard-with-typescript", "plugin:prettier/recommended"],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier", "@typescript-eslint"],
+  "extends": [
+    "eslint:recommended",
+    "standard-with-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended"
+  ],
   "overrides": [],
   "parserOptions": {
     "sourceType": "module",
@@ -14,7 +20,8 @@
       "templateStrings": true,
       "defaultParams": true
     },
-    "ecmaVersion": "latest"
+    "ecmaVersion": "latest",
+    "project": ["tsconfig.json"]
   },
   "root": true,
   "rules": {
@@ -27,13 +34,10 @@
     "no-unreachable": "warn",
     "no-invalid-regexp": "error",
     "no-native-reassign": "warn",
-    "no-invalid-this": "warn",
-    "no-undefined": "warn",
     "no-eq-null": "warn",
     "valid-jsdoc": "warn",
     "spaced-comment": "warn",
     "symbol-description": "warn",
-    "require-jsdoc": "warn",
-    "curly": ["error", "all"]
+    "require-jsdoc": "warn"
   }
 }
