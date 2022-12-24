@@ -2,3 +2,4 @@ esbuild
 lightningcss
 polygot
 webfont
+vite
