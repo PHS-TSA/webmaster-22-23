@@ -15,6 +15,13 @@
     "ecmel.vscode-html-css",
     "htmlhint.vscode-htmlhint",
     "visualstudioexptteam.vscodeintellicode",
-    "ms-sarifvscode.sarif-viewer"
+    "ms-sarifvscode.sarif-viewer",
+    "simonsiefke.svg-preview",
+    "dbaeumer.vscode-eslint",
+    "kisstkondoros.vscode-gutter-preview",
+    "swellaby.node-pack",
+    "stylelint.vscode-stylelint",
+    "zixuanchen.vitest-explorer",
+    "antfu.vite"
   ]
 }
