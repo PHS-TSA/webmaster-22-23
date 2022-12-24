@@ -21,9 +21,9 @@ class Star {
     x: number,
     y: number,
     z: number,
-    alpha = 0.1,
+    alpha: number = 0.1,
     radius: number,
-    fading = true
+    fading: boolean = true
   ) {
     this.x = x;
     this.y = y;
@@ -34,7 +34,7 @@ class Star {
   }
 
   /** Draw the circle. */
-  draw(ctx): void {
+  draw(ctx: CanvasRenderingContext2D): void {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
     ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
@@ -82,8 +82,9 @@ class Star {
 function canvasRun(): void {
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
-  const backgroundCanv = document.getElementById("background");
-  const ctx = backgroundCanv.getContext("2d");
+  const backgroundCanv: HTMLCanvasElement =
+    document.getElementById("background");
+  const ctx: CanvasRenderingContext2D = backgroundCanv.getContext("2d");
   let allowMoving = false;
   const container = document.getElementById("container");
   container.width = maxX; /* Something's wrong with this.
@@ -104,9 +105,7 @@ function canvasRun(): void {
 
   document.onmousemove = getMouseCoords;
   document.onmouseenter = setMouseCoords;
-  document.onmouseleave = (_handler, _event) => {
-    allowMoving = false;
-  };
+  document.onmouseleave = setAllowMoving;
 
   setInterval(createRandomStar, 250);
 }
@@ -114,8 +113,8 @@ function canvasRun(): void {
  * Clear the stars from the viewer's eye.
  */
 function clear(
-  ctx: unknown,
-  backgroundCanv: { width: number; height: number }
+  ctx: CanvasRenderingContext2D,
+  backgroundCanv: HTMLCanvasElement
 ): void {
   ctx.clearRect(0, 0, backgroundCanv.width, backgroundCanv.height);
 }
@@ -123,7 +122,7 @@ function clear(
 /**
  * Draw all the stars in the {@link starsArray}.
  */
-function drawStars(ctx, starsArray: Star[]): void {
+function drawStars(ctx: CanvasRenderingContext2D, starsArray: Star[]): void {
   for (let i = 0; i < starsArray.length; i++) {
     starsArray[i].draw(ctx);
   }
@@ -184,14 +183,15 @@ function checkAndStartFadingAllStars(maxX, maxY, starsArray: Star[]): void {
  * @param {number} maxY
  */
 function update(
-  ctx: unknown,
-  mousePosition: unknown,
+  ctx: CanvasRenderingContext2D,
+  mousePosition: { x: number; y: number },
   maxX: number,
   maxY: number,
-  starsArray: Star[]
+  starsArray: Star[],
+  backgroundCanv: HTMLCanvasElement
 ): void {
-  clear(ctx);
-  drawStars(ctx);
+  clear(ctx, backgroundCanv);
+  drawStars(ctx, starsArray);
   updateStarPositionsAndAlphaVal(mousePosition, maxX, maxY, starsArray);
   requestAnimationFrame(
     (
@@ -242,13 +242,23 @@ function getMouseCoords(this: GlobalEventHandlers, ev: MouseEvent): void {
 function setMouseCoords(
   this: GlobalEventHandlers,
   ev: MouseEvent,
-  ctx: unknown,
+  ctx: CanvasRenderingContext2D,
   maxX: number,
   maxY: number,
   starsArray: Star[]
 ): void {
   const mousePosition = { x: ev.clientX, y: ev.clientY };
   update(ctx, mousePosition, maxX, maxY, starsArray);
+}
+
+/**
+ *
+ * @param {GlobalEventHandlers} this
+ * @param {MouseEvent} ev
+ * @return {void}
+ */
+function setAllowMoving(this: GlobalEventHandlers, ev: MouseEvent): void {
+  allowMoving = false;
 }
 
 /**
@@ -326,4 +336,4 @@ function createStar(
   starsArray.push(new Star(xPos, yPos, zVal, 0.1, radius));
 }
 
-export { Star, canvasRun };
+export { Star, canvasRun, getDistance };
