@@ -4,11 +4,12 @@
     "es2021": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["prettier", "@typescript-eslint"],
+  "plugins": ["prettier", "@typescript-eslint", "jsdoc"],
   "extends": [
     "eslint:recommended",
     "standard-with-typescript",
     "plugin:@typescript-eslint/recommended",
+    "plugin:jsdoc/recommended",
     "plugin:prettier/recommended"
   ],
   "overrides": [],
@@ -38,6 +39,8 @@
     "valid-jsdoc": "warn",
     "spaced-comment": "warn",
     "symbol-description": "warn",
-    "require-jsdoc": "warn"
+    "require-jsdoc": "warn",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/no-inferrable-types": "off"
   }
 }
