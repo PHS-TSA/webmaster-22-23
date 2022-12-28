@@ -1,5 +1,7 @@
+commitlint
 esbuild
 lightningcss
 polygot
-webfont
+popperjs
 vite
+webfont
