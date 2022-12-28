@@ -2,19 +2,13 @@
   "compilerOptions": {
     "module": "ES2022",
     "moduleResolution": "Node",
-    // "strictNullChecks": true,
-    "strictFunctionTypes": true,
     "pretty": true,
-    "sourceMap": true,
-    "strict": true,
+    // "strict": true,
     "target": "ESNext",
-    "useDefineForClassFields": true,
-    "lib": ["ESNext", "DOM"],
-    "isolatedModules": true,
-    "esModuleInterop": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "WebWorker"],
+    "isolatedModules": true, // for vite
+    "useDefineForClassFields": true, // for vite
     "noEmit": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
     "noImplicitReturns": true
   },
   "exclude": ["node_modules", "**/node_modules/*", "dev-dist"],
