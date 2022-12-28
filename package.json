@@ -5,8 +5,10 @@
   "private": true,
   "main": "src/main.ts",
   "directories": {
-    "doc": "docs"
+    "doc": "docs",
+    "lib": "src"
   },
+  "type": "module",
   "scripts": {
     "test": "npx vitest",
     "coverage": "npx vitest run --coverage",
@@ -17,19 +19,14 @@
     "lint:spell": "npx cspell",
     "lint:commit": "npx commitlint"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PHS-TSA/webmaster-22-23.git"
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.3"
   },
-  "author": "",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/PHS-TSA/webmaster-22-23/issues"
-  },
-  "homepage": "https://github.com/PHS-TSA/webmaster-22-23#readme",
   "devDependencies": {
     "@types/bootstrap": "^5.2.6",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/eslint-plugin": "^5.47.1",
     "@vitest/coverage-c8": "^0.26.2",
     "@vitest/ui": "^0.26.2",
     "commitlint": "^17.3.0",
@@ -50,9 +47,25 @@
     "vite-plugin-webfont-dl": "^3.4.2",
     "vitest": "^0.26.2"
   },
-  "dependencies": {
-    "@popperjs/core": "^2.11.6",
-    "bootstrap": "^5.2.3",
-    "bootstrap-icons": "^1.10.2"
-  }
+  "repository": {
+    "type": "git",
+    "url": "github:PHS-TSA/webmaster-22-23"
+  },
+  "contributors": [
+    {
+      "name": "Elisha Dukes",
+      "email": "88557639+lishaduck@users.noreply.github.com",
+      "url": "https://lishaduck.github.io"
+    }
+  ],
+  "funding": [
+    {
+      "url": "https://phs-tsa.github.io/donations/"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PHS-TSA/webmaster-22-23/issues"
+  },
+  "homepage": "https://github.com/PHS-TSA/webmaster-22-23#readme"
 }
