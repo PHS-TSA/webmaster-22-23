@@ -10,12 +10,12 @@ class Star {
   isFadingIn: boolean;
 
   /**
-   * @param {number} x the x of the star
-   * @param {number} y the y of the star
-   * @param {number} z the z of the star
-   * @param {number} alpha the star's alpha
-   * @param {number} radius the star's radius
-   * @param {boolean} fading if the star is fading in
+   * @param x - the x of the star
+   * @param y - the y of the star
+   * @param z - the z of the star
+   * @param alpha - the star's alpha
+   * @param radius - the star's radius
+   * @param fading - if the star is fading in
    */
   constructor(
     x: number,
@@ -33,7 +33,11 @@ class Star {
     this.isFadingIn = fading;
   }
 
-  /** Draw the circle. */
+  /**
+   * Draw the circle.
+   *
+   * @param ctx - the canvas render
+   */
   draw(ctx: CanvasRenderingContext2D): void {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
@@ -43,8 +47,9 @@ class Star {
 
   /**
    * Update the position of the star.
-   * @param {number} dx
-   * @param {number} dy
+   *
+   * @param dx
+   * @param dy
    */
   updatePos(dx: number, dy: number): void {
     this.x += dx;
@@ -53,7 +58,8 @@ class Star {
 
   /**
    * Update the alpha.
-   * @param {number} deltaAlpha
+   *
+   * @param deltaAlpha
    */
   updateAlphaVal(deltaAlpha: number): void {
     this.alpha += deltaAlpha;
@@ -61,7 +67,8 @@ class Star {
 
   /**
    * Set the alpha.
-   * @param {number} alphaVal
+   *
+   * @param alphaVal
    */
   setAlphaVal(alphaVal: number): void {
     this.alpha = alphaVal;
@@ -69,7 +76,8 @@ class Star {
 
   /**
    * Set if a star is fading out.
-   * @param {boolean} isFading
+   *
+   * @param isFading
    */
   setFadingBool(isFading: boolean): void {
     this.isFadingIn = isFading;
@@ -85,7 +93,7 @@ function canvasRun(): void {
   const backgroundCanv: HTMLCanvasElement =
     document.getElementById("background");
   const ctx: CanvasRenderingContext2D = backgroundCanv.getContext("2d");
-  let allowMoving = false;
+  const allowMoving = false;
   const container = document.getElementById("container");
   container.width = maxX; /* Something's wrong with this.
   Uncaught TypeError: Cannot set properties of undefined (setting 'width')
@@ -111,6 +119,9 @@ function canvasRun(): void {
 }
 /**
  * Clear the stars from the viewer's eye.
+ *
+ * @param ctx
+ * @param backgroundCanv
  */
 function clear(
   ctx: CanvasRenderingContext2D,
@@ -121,6 +132,9 @@ function clear(
 
 /**
  * Draw all the stars in the {@link starsArray}.
+ *
+ * @param ctx
+ * @param starsArray
  */
 function drawStars(ctx: CanvasRenderingContext2D, starsArray: Star[]): void {
   for (let i = 0; i < starsArray.length; i++) {
@@ -128,21 +142,24 @@ function drawStars(ctx: CanvasRenderingContext2D, starsArray: Star[]): void {
   }
 }
 
+interface MousePosition {
+  x: number;
+  y: number;
+}
+
 // function remove. @Ash-Greninja101 what did you mean?
 /**
  * Update the stars and their alphas.
  *
- * @param {*} mP the mouse position
- * @param {number} mP.x the mouse location (x)
- * @param {number} mP.y the mouse location (y)
- * @param {number} maxX the width of the screen
- * @param {number} maxY the height of the screen
- * @param {Star[]} starsArray the list of stars
- * @param {boolean} allowMoving If the stars can move
- * @returns {void}
+ * @param mP - the mouse position
+ * @param maxX - the width of the screen
+ * @param maxY - the height of the screen
+ * @param starsArray - the list of stars
+ * @param allowMoving - If the stars can move
+ * @returns - Nothing (an effectual function)
  */
 function updateStarPositionsAndAlphaVal(
-  mP: { x: number; y: number },
+  mP: MousePosition,
   maxX: number,
   maxY: number,
   starsArray: Star[],
@@ -168,6 +185,10 @@ function updateStarPositionsAndAlphaVal(
 
 /**
  * Makes sure all stars fade out.
+ *
+ * @param maxX
+ * @param maxY
+ * @param starsArray
  */
 function checkAndStartFadingAllStars(
   maxX: number,
@@ -190,14 +211,17 @@ function checkAndStartFadingAllStars(
 
 /**
  * Update the stars location.
- * @param {*} ctx
- * @param {*} mousePosition
- * @param {number} maxX
- * @param {number} maxY
+ *
+ * @param ctx
+ * @param mP
+ * @param maxX
+ * @param maxY
+ * @param starsArray
+ * @param backgroundCanv
  */
 function update(
   ctx: CanvasRenderingContext2D,
-  mousePosition: { x: number; y: number },
+  mP: MousePosition,
   maxX: number,
   maxY: number,
   starsArray: Star[],
@@ -205,10 +229,10 @@ function update(
 ): void {
   clear(ctx, backgroundCanv);
   drawStars(ctx, starsArray);
-  updateStarPositionsAndAlphaVal(mousePosition, maxX, maxY, starsArray);
+  updateStarPositionsAndAlphaVal(mP, maxX, maxY, starsArray, true);
   requestAnimationFrame(
     (
-      callback // FrameRequestCallback or number?
+      callback: number // number?
     ) => {
       return callback;
     }
@@ -217,18 +241,28 @@ function update(
 
 /**
  * Get the mouse coordinates.
- * @param {GlobalEventHandlers} this
- * @param {MouseEvent} ev
+ *
+ * @param this
+ * @param ev
  */
 function getMouseCoords(this: GlobalEventHandlers, ev: MouseEvent): void {
-  let eventDoc, doc, body;
-  ev = ev || window.event; // IE-ism
+  let eventDoc: Document;
+  let doc;
+  let body;
 
-  // If pageX/Y aren't available and clientX/Y are,
-  // calculate pageX/Y - logic taken from jQuery.
-  // (This is to support old IE)
-  if (ev.pageX == null && ev.clientX != null) {
-    eventDoc = (ev.target != null && ev.target.ownerDocument) || document;
+  // ev = ev || window.event; // IE-ism
+
+  /**
+   * If pageX/Y aren't available and clientX/Y are,
+   * calculate pageX/Y - logic taken from jQuery.
+   * (This is to support old IE)
+   **/
+  if (ev.pageX === null && !(ev.clientX === null)) {
+    if (!(ev.target === null)) {
+      eventDoc = ev.target.ownerDocument;
+    } else {
+      eventDoc = document;
+    }
     doc = eventDoc.documentElement;
     body = eventDoc.body;
 
@@ -250,7 +284,13 @@ function getMouseCoords(this: GlobalEventHandlers, ev: MouseEvent): void {
 
 /**
  * Set the mouse coordinates.
- * @param {Event} ev
+ *
+ * @param ev
+ * @param ctx
+ * @param maxX
+ * @param maxY
+ * @param starsArray
+ * @returns - Nothing (an effectual function)
  */
 function setMouseCoords(
   this: GlobalEventHandlers,
@@ -260,15 +300,15 @@ function setMouseCoords(
   maxY: number,
   starsArray: Star[]
 ): void {
-  const mousePosition = { x: ev.clientX, y: ev.clientY };
-  update(ctx, mousePosition, maxX, maxY, starsArray);
+  const mP: MousePosition = { x: ev.clientX, y: ev.clientY };
+  update(ctx, mP, maxX, maxY, starsArray);
 }
 
 /**
  *
- * @param {GlobalEventHandlers} this
- * @param {MouseEvent} ev
- * @return {void}
+ * @param this
+ * @param ev
+ * @returns - Nothing (an effectual function)
  */
 function setAllowMoving(this: GlobalEventHandlers, ev: MouseEvent): void {
   allowMoving = false;
@@ -276,19 +316,22 @@ function setAllowMoving(this: GlobalEventHandlers, ev: MouseEvent): void {
 
 /**
  *
- * @param {number} x1
- * @param {number} y1
- * @param {number} x2
- * @param {number} y2
- * @returns {number}
+ * @param x1
+ * @param y1
+ * @param x2
+ * @param y2
+ * @returns The distance
  */
 function getDistance(x1: number, y1: number, x2: number, y2: number): number {
-  return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  const d: number = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  return d;
 }
 
 /**
  * Create a random star.
  * This should conform to TimerHandler
+ *
+ * @param starsArray
  */
 function createRandomStar(starsArray: Star[]): void {
   const newRadius = Math.floor(Math.random() * 4);
@@ -300,6 +343,10 @@ function createRandomStar(starsArray: Star[]): void {
 
 /**
  * Create a random star on the border of the canvas.
+ *
+ * @param maxX
+ * @param maxY
+ * @param starsArray
  */
 function createRandomStarOnBorder(
   maxX: number,
@@ -334,10 +381,12 @@ function createRandomStarOnBorder(
 
 /**
  * Create a star.
- * @param {number} radius
- * @param {number} xPos
- * @param {number} yPos
- * @param {number} zVal
+ *
+ * @param starsArray
+ * @param radius
+ * @param xPos
+ * @param yPos
+ * @param zVal
  */
 function createStar(
   starsArray: Star[],
