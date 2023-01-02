@@ -5,6 +5,13 @@ A changelog that tracks our work. All notable changes to this project will be do
 The format is based on [Keep a Changelog][keep-a-changelog], and as this project
 is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
+## 2023-01-02
+
+| Initials | Task                                     | Time involved | Comments | Sponsor Initials |
+| -------- | ---------------------------------------- | ------------- | -------- | ---------------- |
+| ED       | Fix file nesting.                        | 1 minute      | N/A      |
+| ED       | Commit changes, and add them to the log. | 15 minutes    | 12/28-30 |
+
 ## 2022-12-31
 
 | Initials | Task                               | Time involved | Comments | Sponsor Initials |
@@ -31,9 +38,9 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 ## 2022-12-24
 
-| Initials | Task                                     | Time involved | Comments                                         | Sponsor Initials |
-| -------- | ---------------------------------------- | ------------- | ------------------------------------------------ | ---------------- |
-| ED       | Fix a bunch of stuff that needed fixing. | 2 hours       | ESLint, Vite, typing, JSDoc, Vitest, cspell, etc.|
+| Initials | Task                                     | Time involved | Comments                                          | Sponsor Initials |
+| -------- | ---------------------------------------- | ------------- | ------------------------------------------------- | ---------------- |
+| ED       | Fix a bunch of stuff that needed fixing. | 2 hours       | ESLint, Vite, typing, JSDoc, Vitest, cspell, etc. |
 
 ## 2022-12-23
 
@@ -43,15 +50,15 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 ## 2022-12-22
 
-| Initials | Task              | Time involved | Comments | Sponsor Initials |
-| -------- | ----------------- | ------------- | -------- | ---------------- |
-| ED       | Configure stuff.  | 20 minutes    | N/A      |
+| Initials | Task             | Time involved | Comments | Sponsor Initials |
+| -------- | ---------------- | ------------- | -------- | ---------------- |
+| ED       | Configure stuff. | 20 minutes    | N/A      |
 
 ## 2022-12-21
 
-| Initials | Task                | Time involved | Comments                                                         | Sponsor Initials |
-| -------- | ------------------- | ------------- | ---------------------------------------------------------------- | ---------------- |
-| ED       | Fiddle with assets. | A while       | Added a CSP Policy, and an importmap. Oh, and looked into PWAs.  |
+| Initials | Task                | Time involved | Comments                                                        | Sponsor Initials |
+| -------- | ------------------- | ------------- | --------------------------------------------------------------- | ---------------- |
+| ED       | Fiddle with assets. | A while       | Added a CSP Policy, and an importmap. Oh, and looked into PWAs. |
 
 ## 2022-12-20
 
