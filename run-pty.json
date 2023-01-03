@@ -1,0 +1,52 @@
+[
+  {
+    "command": ["npm", "run", "dev"],
+    "title": "Vite",
+    "status": {
+      "Internal server error": ["🚨", "E"],
+      "ready in|page reload": null
+    },
+    "defaultStatus": ["⏳", "S"]
+  },
+  {
+    "command": ["npm", "run", "test"],
+    "title": "Vitest",
+    "status": {
+      "FAIL": ["🚨", "E"],
+      "PASS": null
+    },
+    "defaultStatus": ["⏳", "S"]
+  },
+  {
+    "command": ["npm", "run", "lint"],
+    "title": "eslint",
+    "defaultStatus": ["⏳", "S"]
+  },
+  {
+    "command": ["npm", "run", "lint:spell"],
+    "title": "cspell",
+    "defaultStatus": ["⏳", "S"]
+  },
+  {
+    "command": ["npm", "run", "lint:commit"],
+    "title": "commitlint",
+    "defaultStatus": ["⏳", "S"]
+  },
+  {
+    "command": ["npm", "run", "check:watch"],
+    "title": "tsc",
+    "defaultStatus": ["⏳", "S"],
+    "status": {
+      "\\[\\d+:\\d+:\\d+ [AP]M\\] Found \\d+ errors. Watching for file changes.": [
+        "🚨",
+        "E"
+      ],
+      "Success TODO: replace w/ actual success message": null
+    }
+  },
+  {
+    "command": ["npm", "run", "lint:markdown"],
+    "title": "markdownlint",
+    "defaultStatus": ["⏳", "S"]
+  }
+]
