@@ -8,16 +8,20 @@
     "doc": "docs",
     "lib": "src"
   },
-  "type": "module",
   "scripts": {
+    "start": "npx run-pty run-pty.json",
     "test": "npx vitest",
     "coverage": "npx vitest run --coverage",
     "dev": "npx vite",
-    "build": "npx tsc && npx vite build",
+    "build": "npm run check && npx vite build",
+    "check": "npx tsc",
+    "check:watch": "npx tsc -w",
     "preview": "npx vite preview",
     "lint": "npx eslint .",
-    "lint:spell": "npx cspell",
-    "lint:commit": "npx commitlint"
+    "lint:spell": "npx cspell lint --gitignore \"**/*.{js,md,html}\"",
+    "lint:commit": "npx commitlint --config commitlint.config.ts --edit",
+    "lint:markdown": "npx markdownlint-cli2",
+    "lint:markdown:fix": "npx markdownlint-cli2-fix"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
@@ -25,27 +29,38 @@
     "bootstrap-icons": "^1.10.3"
   },
   "devDependencies": {
+    "@commitlint/config-conventional": "^17.3.0",
+    "@commitlint/format": "^17.0.0",
     "@types/bootstrap": "^5.2.6",
-    "@typescript-eslint/eslint-plugin": "^5.47.1",
+    "@typescript-eslint/eslint-plugin": "5.47.1",
+    "@typescript-eslint/parser": "5.47.1",
     "@vitest/coverage-c8": "^0.26.2",
     "@vitest/ui": "^0.26.2",
     "commitlint": "^17.3.0",
+    "conventional-changelog-atom": "^2.0.8",
     "cspell": "^6.18.0",
     "eslint": "^8.30.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-prettier": "8.5.0",
     "eslint-config-standard-with-typescript": "^24.0.0",
+    "eslint-import-resolver-typescript": "^3.5.2",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-jsdoc": "^39.6.4",
+    "eslint-plugin-markdown": "^3.0.0",
     "eslint-plugin-n": "^15.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-tsdoc": "^0.2.17",
+    "markdownlint-cli2": "^0.6.0",
     "prettier": "2.8.1",
+    "run-pty": "^4.0.3",
     "typescript": "^4.9.4",
     "vite": "^4.0.3",
     "vite-plugin-lightningcss": "^0.0.3",
     "vite-plugin-pwa": "^0.14.0",
     "vite-plugin-webfont-dl": "^3.4.2",
     "vitest": "^0.26.2"
+  },
+  "engines": {
+    "node": ">=16.0"
   },
   "repository": {
     "type": "git",
