@@ -28,9 +28,9 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 ## 2022-12-29
 
-| Initials | Task | Time involved | Comments | Sponsor Initials |
-| -------- | ---- | ------------- | -------- | ---------------- |
-| ED       |      | ?             | N/A      |
+| Initials | Task | Time involved | Comments                                       | Sponsor Initials |
+| -------- | ---- | ------------- | ---------------------------------------------- | ---------------- |
+| ED       |      | Commitlint    | Who knew "type": "module" was such a big deal? |
 
 ## 2022-12-28
 
