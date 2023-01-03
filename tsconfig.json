@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "module": "ES2022",
+    "moduleResolution": "Node",
+    "pretty": true,
+    // "strict": true,
+    "target": "ESNext",
+    "lib": ["ESNext", "DOM", "DOM.Iterable", "WebWorker"],
+    "isolatedModules": true, // for vite
+    "useDefineForClassFields": true, // for vite
+    "noEmit": true,
+    "noImplicitReturns": true
+  },
+  "exclude": ["node_modules", "**/node_modules/*", "dev-dist"],
+  "include": ["src", "vite.config.ts"],
+  "types": ["vite/client"]
+}

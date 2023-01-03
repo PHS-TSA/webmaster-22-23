@@ -1,0 +1,84 @@
+{
+  "files": [
+    "README.md",
+    "CONTRIBUTORS.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributors": [
+    {
+      "login": "NolanBallard5",
+      "name": "Nolan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/120744214?v=4",
+      "profile": "https://github.com/NolanBallard5",
+      "contributions": [
+        "design",
+        "ideas",
+        "doc",
+        "projectManagement",
+        "promotion"
+      ]
+    },
+    {
+      "login": "lishaduck",
+      "name": "Eli",
+      "avatar_url": "https://avatars.githubusercontent.com/u/88557639?v=4",
+      "profile": "http://lishaduck.github.io",
+      "contributions": [
+        "code",
+        "doc",
+        "infra",
+        "mentoring",
+        "projectManagement",
+        "ideas",
+        "maintenance",
+        "promotion"
+      ]
+    },
+    {
+      "login": "dependabot",
+      "name": "Dependabot",
+      "avatar_url": "https://avatars.githubusercontent.com/u/27347476?v=4",
+      "profile": "https://github.com/features/security",
+      "contributions": [
+        "infra",
+        "maintenance"
+      ]
+    },
+    {
+      "login": "all-contributors",
+      "name": "All Contributors",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46410174?v=4",
+      "profile": "https://allcontributors.org",
+      "contributions": [
+        "infra"
+      ]
+    },
+    {
+      "login": "Ash-Greninja101",
+      "name": "Ash-Greninja101",
+      "avatar_url": "https://avatars.githubusercontent.com/u/80419579?v=4",
+      "profile": "https://github.com/Ash-Greninja101",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "InstallBipole",
+      "name": "InstallBipole",
+      "avatar_url": "https://avatars.githubusercontent.com/u/40724153?v=4",
+      "profile": "https://github.com/InstallBipole",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true,
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "projectName": "webmaster-22-23",
+  "projectOwner": "PHS-TSA"
+}

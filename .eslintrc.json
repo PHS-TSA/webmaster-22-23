@@ -1,0 +1,47 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier", "@typescript-eslint", "jsdoc"],
+  "extends": [
+    "eslint:recommended",
+    "standard-with-typescript",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jsdoc/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [],
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "classes": true,
+      "templateStrings": true,
+      "defaultParams": true
+    },
+    "ecmaVersion": "latest",
+    "project": ["tsconfig.json"]
+  },
+  "root": true,
+  "rules": {
+    "no-magic-numbers": "warn",
+    "no-shadow": "error",
+    "no-shadow-restricted-names": "error",
+    "no-dupe-keys": "error",
+    "no-dupe-args": "error",
+    "no-duplicate-imports": "warn",
+    "no-unreachable": "warn",
+    "no-invalid-regexp": "error",
+    "no-native-reassign": "warn",
+    "no-eq-null": "warn",
+    "valid-jsdoc": "warn",
+    "spaced-comment": "warn",
+    "symbol-description": "warn",
+    "require-jsdoc": "warn",
+    "@typescript-eslint/triple-slash-reference": "off",
+    "@typescript-eslint/no-inferrable-types": "off",
+    "@typescript-eslint/switch-exhaustiveness-check": "error"
+  }
+}
