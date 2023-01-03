@@ -11,6 +11,7 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 | -------- | ---------------------------------------- | ------------- | -------- | ---------------- |
 | ED       | Fix file nesting.                        | 1 minute      | N/A      |
 | ED       | Commit changes, and add them to the log. | 15 minutes    | 12/28-30 |
+| ED       | Fix merge conflicts                      | 1 minute      | N/A      |
 
 ## 2022-12-31
 
