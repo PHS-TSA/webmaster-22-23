@@ -12,7 +12,15 @@
     "plugin:jsdoc/recommended",
     "plugin:prettier/recommended"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["**/*test*"],
+      "rules": {
+        "no-magic-numbers": "off",
+        "@typescript-eslint/require-await": "off"
+      }
+    }
+  ],
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
