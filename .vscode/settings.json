@@ -19,6 +19,6 @@
     "jsconfig.json": "jsconfig.*.json",
     "tsconfig.json": "tsconfig.*.json",
     "package.json": "package-lock.json, yarn.lock, npm-shrinkwrap.json, .commitlint*, .editorconfig, .eslint*, .github*, .lighthouserc.*, markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .pnp.*, .pnpm*, .prettier*, .travis*, .vscode*, .yarnrc*, azure-pipelines*, commitlint*, cypress.*, lerna*, lighthouserc.*, netlify*, nodemon*, nx.*, pnpm*, prettier*, renovate*, vercel*, vitest.config.*, workspace.json,yarn*, cspell.json, .markdownlint-cli2.jsonc, run-pty.json",
-    "README.*": "*.md, .all-contributorsrc, CITATION.cff"
+    "README*": "*.md, .all-contributorsrc, CITATION.cff"
   }
 }
