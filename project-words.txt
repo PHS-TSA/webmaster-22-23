@@ -1,5 +1,6 @@
 commitlint
 esbuild
+importmap
 lightningcss
 polygot
 popperjs
