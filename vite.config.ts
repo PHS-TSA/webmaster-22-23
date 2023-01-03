@@ -1,4 +1,3 @@
-/// <reference types="vitest" />
 import { resolve } from "path";
 import { defineConfig } from "vite";
 import webfontDownload from "vite-plugin-webfont-dl";

@@ -41,6 +41,7 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 | Initials | Task                                     | Time involved | Comments                                          | Sponsor Initials |
 | -------- | ---------------------------------------- | ------------- | ------------------------------------------------- | ---------------- |
 | ED       | Fix a bunch of stuff that needed fixing. | 2 hours       | ESLint, Vite, typing, JSDoc, Vitest, cspell, etc. |
+| ED       | Fix triple-slash-references/libs.        | 15 minutes    | N/A                                               |
 
 ## 2022-12-23
 
