@@ -12,7 +12,6 @@
     "plugin:markdown/recommended",
     "plugin:import/recommended",
     "plugin:import/typescript",
-    "standard-with-typescript",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",

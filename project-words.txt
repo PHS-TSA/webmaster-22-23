@@ -4,5 +4,6 @@ importmap
 lightningcss
 polygot
 popperjs
+standardjs
 vite
 webfont

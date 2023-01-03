@@ -5,6 +5,13 @@ A changelog that tracks our work. All notable changes to this project will be do
 The format is based on [Keep a Changelog][keep-a-changelog], and as this project
 is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
+## 2023-01-03
+
+| Initials | Task                                     | Time involved | Comments | Sponsor Initials |
+| -------- | ---------------------------------------- | ------------- | -------- | ---------------- |
+| ED       | Remove standardjs config                 | 1 minute      | none     |
+| ED       | Commit changes, and add them to the log. | 30 minutes    | 12/28-30 |
+
 ## 2023-01-02
 
 | Initials | Task                                     | Time involved | Comments | Sponsor Initials |
@@ -36,18 +43,19 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 ## 2022-12-28
 
-| Initials | Task            | Time involved | Comments | Sponsor Initials |
-| -------- | --------------- | ------------- | -------- | ---------------- |
-| ED       | Fix more stuff. | 5 minutes     | none     |
+| Initials | Task                              | Time involved | Comments   | Sponsor Initials |
+| -------- | --------------------------------- | ------------- | ---------- | ---------------- |
+| ED       | Fix more stuff.                   | 5 minutes     | none       |
+| ED       | Fix triple-slash-references/libs. | 15 minutes    | none       |
+| ED       | Fix eslint errors in test.        | 15 minutes    | none       |
+| ED       | Fix cspell errors                 | 2 minutes     | none       |
+| ED       | Add run-pty                       | 15 minutes    | 'Twas Fun! |
 
 ## 2022-12-24
 
 | Initials | Task                                     | Time involved | Comments                                           | Sponsor Initials |
 | -------- | ---------------------------------------- | ------------- | -------------------------------------------------- | ---------------- |
 | ED       | Fix a bunch of stuff that needed fixing. | 2 hours       | ESLint, Vite, typings, JSDoc, Vitest, cspell, etc. |
-| ED       | Fix triple-slash-references/libs.        | 15 minutes    | none                                               |
-| ED       | Fix eslint errors in test.               | 15 minutes    | none                                               |
-| ED       | Fix cspell errors                        | 2 minutes     | none                                               |
 
 ## 2022-12-23
 
