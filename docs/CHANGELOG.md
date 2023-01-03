@@ -29,9 +29,10 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 ## 2022-12-29
 
-| Initials | Task       | Time involved | Comments                                       | Sponsor Initials |
-| -------- | ---------- | ------------- | ---------------------------------------------- | ---------------- |
-| ED       | Commitlint | 30 minutes    | Who knew "type": "module" was such a big deal? |
+| Initials | Task             | Time involved | Comments                                       | Sponsor Initials |
+| -------- | ---------------- | ------------- | ---------------------------------------------- | ---------------- |
+| ED       | Commitlint       | 30 minutes    | Who knew "type": "module" was such a big deal? |
+| ED       | Remove importmap | 1 minute      | none                                           |
 
 ## 2022-12-28
 
@@ -46,6 +47,7 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 | ED       | Fix a bunch of stuff that needed fixing. | 2 hours       | ESLint, Vite, typings, JSDoc, Vitest, cspell, etc. |
 | ED       | Fix triple-slash-references/libs.        | 15 minutes    | none                                               |
 | ED       | Fix eslint errors in test.               | 15 minutes    | none                                               |
+| ED       | Fix cspell errors                        | 2 minutes     | none                                               |
 
 ## 2022-12-23
 
