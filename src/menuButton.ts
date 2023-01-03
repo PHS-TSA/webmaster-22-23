@@ -7,9 +7,9 @@ import * as bootstrap from "bootstrap";
 /**
  * Open the menu.
  *
- * @param {HTMLElement} this the menu button
- * @param {MouseEvent} ev the event that happened to trigger this (currently just 'click')
- * @returns {void}
+ * @param this - the menu button
+ * @param ev - the event that happened to trigger this (currently just 'click')
+ * @returns - Nothing (an effectual function)
  */
 function toggleMenu(this: HTMLElement, ev: MouseEvent): void {
   const menuOptionsDiv = document.getElementById("v-pills-tab");
@@ -27,11 +27,11 @@ function toggleMenu(this: HTMLElement, ev: MouseEvent): void {
 
 /**
  * Create the download button for the PWA.
+ * This code was taken and modified from the PWA example on MDN
  *
- * @returns {void}
+ * @returns Nothing
  */
 function createDownloadButton(): void {
-  /* This code was taken and modified from the PWA example on MDN */
   let deferredPrompt: Event | null;
   const addBtn: HTMLElement = document.querySelector(".add-button");
   addBtn.style.display = "none";

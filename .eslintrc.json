@@ -1,15 +1,21 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "worker": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["prettier", "@typescript-eslint", "jsdoc"],
+  "plugins": ["prettier", "@typescript-eslint", "tsdoc", "promise", "import"],
   "extends": [
     "eslint:recommended",
+    "plugin:promise/recommended",
+    "plugin:markdown/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "standard-with-typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jsdoc/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended"
   ],
   "overrides": [
@@ -44,12 +50,12 @@
     "no-invalid-regexp": "error",
     "no-native-reassign": "warn",
     "no-eq-null": "warn",
-    "valid-jsdoc": "warn",
     "spaced-comment": "warn",
     "symbol-description": "warn",
     "require-jsdoc": "warn",
-    "@typescript-eslint/triple-slash-reference": "off",
+    "tsdoc/syntax": "warn",
     "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/switch-exhaustiveness-check": "error"
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/no-require-imports": "warn"
   }
 }
