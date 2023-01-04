@@ -5,12 +5,19 @@ A changelog that tracks our work. All notable changes to this project will be do
 The format is based on [Keep a Changelog][keep-a-changelog], and as this project
 is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
+## 2023-01-04
+
+| Initials | Task                  | Time involved | Comments | Sponsor Initials |
+| -------- | --------------------- | ------------- | -------- | ---------------- |
+| ED       | Finish adding sources | 10 minutes    | none     |
+
 ## 2023-01-03
 
 | Initials | Task                                     | Time involved | Comments | Sponsor Initials |
 | -------- | ---------------------------------------- | ------------- | -------- | ---------------- |
 | ED       | Remove standardjs config                 | 1 minute      | none     |
 | ED       | Commit changes, and add them to the log. | 30 minutes    | 12/28-30 |
+| ED       | Add sources                              | 15 minutes    | none     |
 
 ## 2023-01-02
 

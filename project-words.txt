@@ -1,9 +1,11 @@
 commitlint
 esbuild
+Hadz
 importmap
 lightningcss
 polygot
 popperjs
+Stackshare
 standardjs
 vite
 webfont
