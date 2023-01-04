@@ -4,12 +4,12 @@
 # the repo. Unless a later match takes precedence,
 # the global owners will be requested for
 # review when someone opens a pull request.
-*        @PHS-TSA/webmaster
+*                    @PHS-TSA/webmaster
 
-*.js    pandeys01@student.psdr3.org #TODO: Switch to his username
-*.ts    pandeys01@student.psdr3.org #TODO: Switch to his username
-/docs/  @lishaduck
-/.github/  @lishaduck
-/src/ @lishaduck
-/public/ pandeys01@student.psdr3.org @lishaduck @NolanBallard5 #TODO: Switch to his username
+*.js                 @Ash-Greninja101 
+*.ts                 @Ash-Greninja101 @lishaduck
+/docs/               @lishaduck @PHS-TSA/webmaster
+/.github/            @lishaduck
+/src/                @Ash-Greninja101 @lishaduck @NolanBallard5
+/public/             @lishaduck
 /.all-contributorsrc @lishaduck
