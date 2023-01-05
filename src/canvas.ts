@@ -90,9 +90,9 @@ class Star {
 function canvasRun(): void {
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
-  const backgroundCanv: HTMLCanvasElement =
+  const backgroundCanvas: HTMLCanvasElement =
     document.getElementById("background");
-  const ctx: CanvasRenderingContext2D = backgroundCanv.getContext("2d");
+  const ctx: CanvasRenderingContext2D = backgroundCanvas.getContext("2d");
   const allowMoving = false;
   const container = document.getElementById("container");
   container.width = maxX; /* Something's wrong with this.
@@ -100,8 +100,8 @@ function canvasRun(): void {
   at script.js:formatted:12:17
   */
   container.height = maxY;
-  backgroundCanv.width = container.width;
-  backgroundCanv.height = container.height;
+  backgroundCanvas.width = container.width;
+  backgroundCanvas.height = container.height;
 
   const starsArray: Star[] = [];
   for (let i = 0; i < 450; i++) {
@@ -121,13 +121,13 @@ function canvasRun(): void {
  * Clear the stars from the viewer's eye.
  *
  * @param ctx
- * @param backgroundCanv
+ * @param backgroundCanvas
  */
 function clear(
   ctx: CanvasRenderingContext2D,
-  backgroundCanv: HTMLCanvasElement
+  backgroundCanvas: HTMLCanvasElement
 ): void {
-  ctx.clearRect(0, 0, backgroundCanv.width, backgroundCanv.height);
+  ctx.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height);
 }
 
 /**
@@ -217,7 +217,7 @@ function checkAndStartFadingAllStars(
  * @param maxX
  * @param maxY
  * @param starsArray
- * @param backgroundCanv
+ * @param backgroundCanvas
  */
 function update(
   ctx: CanvasRenderingContext2D,
@@ -225,9 +225,9 @@ function update(
   maxX: number,
   maxY: number,
   starsArray: Star[],
-  backgroundCanv: HTMLCanvasElement
+  backgroundCanvas: HTMLCanvasElement
 ): void {
-  clear(ctx, backgroundCanv);
+  clear(ctx, backgroundCanvas);
   drawStars(ctx, starsArray);
   updateStarPositionsAndAlphaVal(mP, maxX, maxY, starsArray, true);
   requestAnimationFrame(

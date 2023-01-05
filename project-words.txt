@@ -1,5 +1,7 @@
+CODEOWNERS
 commitlint
 esbuild
+Greninja
 Hadz
 importmap
 lightningcss
