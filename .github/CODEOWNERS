@@ -10,6 +10,7 @@
 *.ts                 @Ash-Greninja101 @lishaduck
 /docs/               @lishaduck @PHS-TSA/webmaster
 /.github/            @lishaduck
+/.vscode/            @lishaduck
 /src/                @Ash-Greninja101 @lishaduck @NolanBallard5
 /public/             @lishaduck
 /.all-contributorsrc @lishaduck
