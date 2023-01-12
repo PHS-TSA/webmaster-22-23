@@ -5,6 +5,19 @@ A changelog that tracks our work. All notable changes to this project will be do
 The format is based on [Keep a Changelog][keep-a-changelog], and as this project
 is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
+## 2023-01-12
+
+| Initials | Task                 | Time involved | Comments                     | Sponsor Initials |
+| -------- | -------------------- | ------------- | ---------------------------- | ---------------- |
+| ED       | Finish fixing types. | 45 minutes    | First successful build!      |
+| ED       | Fix ESLint errors    | 1 hour        | Also, remove duplicate rules |
+
+## 2023-01-11
+
+| Initials | Task            | Time involved      | Comments | Sponsor Initials |
+| -------- | --------------- | ------------------ | -------- | ---------------- |
+| ED       | Fix some types. | 1 hour, 20 minutes | none     |
+
 ## 2023-01-04
 
 | Initials | Task                  | Time involved | Comments | Sponsor Initials |

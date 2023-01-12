@@ -17,6 +17,7 @@ _Note: the lists of articles and specific links is non-exhaustive._
   - [Error while loading rule '@typescript-eslint/dot-notation'](https://stackoverflow.com/questions/64116378/error-while-loading-rule-typescript-eslint-dot-notation)
   - [node_modules/@types/node/index.d.ts(20,1): error TS1084: Invalid 'reference' directive syntax](https://stackoverflow.com/questions/63720450/node-modules-types-node-index-d-ts20-1-error-ts1084-invalid-reference-dir)
   - [Why is 'type: module' in package.json file?](https://stackoverflow.com/questions/61401475/why-is-type-module-in-package-json-file)
+  - [Event listeners with arguments](https://stackoverflow.com/questions/56275497/event-listeners-with-arguments)
 - [RegExr](https://regexr.com/)
 - [Stackshare](https://stackshare.io)
   - [Prettier vs Standard JS](https://stackshare.io/stackups/prettier-vs-standard-js)

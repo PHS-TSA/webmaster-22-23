@@ -1,6 +1,6 @@
 import { resolve } from "path";
 import { defineConfig } from "vite";
-import webfontDownload from "vite-plugin-webfont-dl";
+import { ViteWebfontDownload } from "vite-plugin-webfont-dl";
 import { VitePWA } from "vite-plugin-pwa";
 import lightningcss from "vite-plugin-lightningcss";
 
@@ -19,9 +19,9 @@ export default defineConfig({
     },
   },
   plugins: [
-    webfontDownload(
+    ViteWebfontDownload(
       ["https://fonts.googleapis.com/css2?family=Montserrat&display=swap"],
-      { injectAsStyleTag: false }
+      { injectAsStyleTag: true }
     ),
     VitePWA({
       registerType: "autoUpdate",

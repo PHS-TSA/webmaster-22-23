@@ -1,5 +1,5 @@
-import { getDistance } from "./canvas";
 import { it, expect, describe } from "vitest";
+import { getDistance } from "./canvas";
 
 // All tests within this suite will be run in parallel
 describe.concurrent("suite", () => {

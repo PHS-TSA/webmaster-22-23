@@ -1,7 +1,6 @@
 /**
  * Module for the star field background animation.
  *
- * @module script
  * @see module:canvas
  */
 
@@ -12,7 +11,7 @@ canvasRun();
 
 const menuBtn: HTMLElement | null = document.getElementById("menuBtn");
 
-if (menuBtn instanceof HTMLElement) {
+if (menuBtn instanceof HTMLButtonElement) {
   menuBtn.addEventListener("click", toggleMenu);
   createDownloadButton();
 }

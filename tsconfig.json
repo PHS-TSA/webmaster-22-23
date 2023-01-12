@@ -3,16 +3,22 @@
     "module": "ES2022",
     "moduleResolution": "Node",
     "target": "ESNext",
+    "skipLibCheck": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable", "WebWorker"],
     "pretty": true,
     // "strict": true,
     "strictNullChecks": true,
+    "strictPropertyInitialization": true,
     "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noImplicitAny": true,
+    "noImplicitOverride": true,
+    "resolveJsonModule": true,
     "isolatedModules": true, // for vite
     "useDefineForClassFields": true, // for vite
     "noEmit": true, // for vite
     "types": ["vite/client", "node", "bootstrap", "vitest"]
   },
-  "exclude": ["node_modules", "**/node_modules/*", "dev-dist"],
+  "exclude": ["node_modules", "**/node_modules/*", "dev-dist", "dist"],
   "include": ["src", "vite.config.ts", "commitlint.config.ts"]
 }
