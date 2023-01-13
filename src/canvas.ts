@@ -110,7 +110,7 @@ function canvasRun(): void {
       backgroundCanvas.getContext("2d");
 
     if (ctx instanceof CanvasRenderingContext2D) {
-      const starsArray: Star[] = [];
+      var starsArray: Star[] = [];
       for (let i = 0; i < 450; i++) {
         createRandomStar(starsArray);
       }
@@ -433,7 +433,6 @@ function createRandomStarOnBorder(
  * @param zVal - The `z` position of the star.
  */
 function createStar(
-  starsArray: Star[],
   radius: number,
   xPos: number,
   yPos: number,

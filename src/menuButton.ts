@@ -9,25 +9,29 @@ import * as bootstrap from "bootstrap";
  * @param ev - The event that happened to trigger this (currently just 'click').
  * @returns - Nothing (an effectual function).
  */
-function toggleMenu(this: HTMLButtonElement, ev: MouseEvent): void {
-  const menuOptionsDiv: HTMLElement | null =
-    document.getElementById("v-pills-tab");
-  const menuDiv: HTMLElement | null = document.getElementById("menu");
-  let isToggled = false;
-  if (
-    menuOptionsDiv instanceof HTMLDivElement &&
-    menuDiv instanceof HTMLDivElement
-  ) {
-    const theMenuOptions: NodeListOf<HTMLAnchorElement> =
-      menuOptionsDiv.querySelectorAll("a");
+function toggleMenuFactory(
+  isToggled: boolean
+): (this: HTMLButtonElement, ev: MouseEvent) => void {
+  function toggleMenu(this: HTMLButtonElement, ev: MouseEvent) {
+    const menuOptionsDiv: HTMLElement | null =
+      document.getElementById("v-pills-tab");
+    const menuDiv: HTMLElement | null = document.getElementById("menu");
+    if (
+      menuOptionsDiv instanceof HTMLDivElement &&
+      menuDiv instanceof HTMLDivElement
+    ) {
+      const theMenuOptions: NodeListOf<HTMLAnchorElement> =
+        menuOptionsDiv.querySelectorAll("a");
 
-    isToggled = !isToggled;
-    menuOptionsDiv.style.visibility = isToggled ? "visible" : "hidden";
-    menuOptionsDiv.style.display = isToggled ? "block" : "none";
-    menuDiv.style.backgroundColor = isToggled
-      ? "rgba(44, 44, 45, 1)"
-      : "rgba(44, 44, 45, 0)";
+      isToggled = !isToggled;
+      menuOptionsDiv.style.visibility = isToggled ? "visible" : "hidden";
+      menuOptionsDiv.style.display = isToggled ? "block" : "none";
+      menuDiv.style.backgroundColor = isToggled
+        ? "rgba(44, 44, 45, 1)"
+        : "rgba(44, 44, 45, 0)";
+    }
   }
+  return toggleMenu;
 }
 
 // from https://stackoverflow.com/questions/51503754/typescript-type-beforeinstallpromptevent
@@ -105,4 +109,4 @@ function createDownloadButton(): void {
   }
 }
 
-export { createDownloadButton, toggleMenu };
+export { createDownloadButton, toggleMenuFactory };
