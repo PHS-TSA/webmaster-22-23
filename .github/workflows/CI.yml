@@ -168,6 +168,7 @@ jobs:
           dry: true
           prettier_options: --check
   lhci:
+    name: Lighthouse CI
     needs: [build]
     runs-on: ubuntu-latest
     steps:
@@ -191,6 +192,7 @@ jobs:
           runs: 3
 
   deploy:
+    name: Deploy static content to Pages
     needs: [build, lint, test, format, lhci]
     if: ${{ github.ref_name == 'master' }}
     environment:
