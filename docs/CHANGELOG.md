@@ -5,12 +5,18 @@ A changelog that tracks our work. All notable changes to this project will be do
 The format is based on [Keep a Changelog][keep-a-changelog], and as this project
 is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
+## 2023-01-13
+
+| Initials | Task        | Time involved | Comments                | Sponsor Initials |
+| -------- | ----------- | ------------- | ----------------------- | ---------------- |
+| ED       | Work on CI. | 2 hours       | Also, work on security. |
+
 ## 2023-01-12
 
-| Initials | Task                 | Time involved | Comments                     | Sponsor Initials |
-| -------- | -------------------- | ------------- | ---------------------------- | ---------------- |
-| ED       | Finish fixing types. | 45 minutes    | First successful build!      |
-| ED       | Fix ESLint errors    | 1 hour        | Also, remove duplicate rules |
+| Initials | Task                 | Time involved | Comments                      | Sponsor Initials |
+| -------- | -------------------- | ------------- | ----------------------------- | ---------------- |
+| ED       | Finish fixing types. | 45 minutes    | First successful build!       |
+| ED       | Fix ESLint errors.   | 1 hour        | Also, remove duplicate rules. |
 
 ## 2023-01-11
 
@@ -20,17 +26,17 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 ## 2023-01-04
 
-| Initials | Task                  | Time involved | Comments | Sponsor Initials |
-| -------- | --------------------- | ------------- | -------- | ---------------- |
-| ED       | Finish adding sources | 10 minutes    | none     |
+| Initials | Task                   | Time involved | Comments | Sponsor Initials |
+| -------- | ---------------------- | ------------- | -------- | ---------------- |
+| ED       | Finish adding sources. | 10 minutes    | none     |
 
 ## 2023-01-03
 
 | Initials | Task                                     | Time involved | Comments | Sponsor Initials |
 | -------- | ---------------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Remove standardjs config                 | 1 minute      | none     |
+| ED       | Remove standardjs config.                | 1 minute      | none     |
 | ED       | Commit changes, and add them to the log. | 30 minutes    | 12/28-30 |
-| ED       | Add sources                              | 15 minutes    | none     |
+| ED       | Add sources.                             | 15 minutes    | none     |
 
 ## 2023-01-02
 
@@ -52,14 +58,14 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 | -------- | --------------------------------- | ------------- | -------- | ---------------- |
 | ED       | Update the README.                | 2 minutes     | none     |
 | ED       | add a markdownlint configuration. | 10 minutes    | none     |
-| ED       | Fix CONTRIBUTORS.md               | 2 minutes     | none     |
+| ED       | Fix CONTRIBUTORS.md.              | 2 minutes     | none     |
 
 ## 2022-12-29
 
-| Initials | Task             | Time involved | Comments                                       | Sponsor Initials |
-| -------- | ---------------- | ------------- | ---------------------------------------------- | ---------------- |
-| ED       | Commitlint       | 30 minutes    | Who knew "type": "module" was such a big deal? |
-| ED       | Remove importmap | 1 minute      | none                                           |
+| Initials | Task              | Time involved | Comments                                       | Sponsor Initials |
+| -------- | ----------------- | ------------- | ---------------------------------------------- | ---------------- |
+| ED       | Commitlint.       | 30 minutes    | Who knew "type": "module" was such a big deal? |
+| ED       | Remove importmap. | 1 minute      | none                                           |
 
 ## 2022-12-28
 
@@ -68,8 +74,8 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 | ED       | Fix more stuff.                   | 5 minutes     | none       |
 | ED       | Fix triple-slash-references/libs. | 15 minutes    | none       |
 | ED       | Fix eslint errors in test.        | 15 minutes    | none       |
-| ED       | Fix cspell errors                 | 2 minutes     | none       |
-| ED       | Add run-pty                       | 15 minutes    | 'Twas Fun! |
+| ED       | Fix cspell errors.                | 2 minutes     | none       |
+| ED       | Add run-pty.                      | 15 minutes    | 'Twas Fun! |
 
 ## 2022-12-24
 
@@ -99,13 +105,13 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 > A meeting day
 
-| Initials | Task                                                | Time involved | Comments | Sponsor Initials |
-| -------- | --------------------------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Finish adding an elm-pages demo.                    | 30 minutes    | none     |
-| ED       | Add my custom linting config to the elm-pages demo. | 30 minutes    | none     |
-| ED       | Remove elm-pages demo.                              | 5 minutes     | Too bad  |
-| ED       | Add contributors.                                   | 10 minutes    | none     |
-| SP       | Work on animation.                                  | 10 minutes    | none     |
+| Initials | Task                                                | Time involved | Comments   | Sponsor Initials |
+| -------- | --------------------------------------------------- | ------------- | ---------- | ---------------- |
+| ED       | Finish adding an elm-pages demo.                    | 30 minutes    | none       |
+| ED       | Add my custom linting config to the elm-pages demo. | 30 minutes    | none       |
+| ED       | Remove elm-pages demo.                              | 5 minutes     | Too bad :) |
+| ED       | Add contributors.                                   | 10 minutes    | none       |
+| SP       | Work on animation.                                  | 10 minutes    | none       |
 
 ## 2022-12-19
 
