@@ -8,7 +8,8 @@
     "tamasfe.even-better-toml",
     "github.vscode-pull-request-github",
     "eamodio.gitlens",
-    "ms-vsliveshare.vsliveshare-pack",
+    "ms-vsliveshare.vsliveshare",
+    "ms-vsliveshare.vsliveshare-audio",
     "davidanson.vscode-markdownlint",
     "esbenp.prettier-vscode",
     "bierner.github-markdown-preview",
@@ -22,6 +23,7 @@
     "swellaby.node-pack",
     "stylelint.vscode-stylelint",
     "zixuanchen.vitest-explorer",
-    "antfu.vite"
+    "antfu.vite",
+    "github.vscode-codeql"
   ]
 }
