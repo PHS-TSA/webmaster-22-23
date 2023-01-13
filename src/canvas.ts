@@ -1,4 +1,6 @@
-/** The canvas managing module */
+/**
+ * The canvas managing module for the star field background animation.
+ */
 
 /** Class representing a star. */
 class Star {
@@ -10,20 +12,20 @@ class Star {
   isFadingIn: boolean;
 
   /**
-   * @param {number} x the x of the star
-   * @param {number} y the y of the star
-   * @param {number} z the z of the star
-   * @param {number} alpha the star's alpha
-   * @param {number} radius the star's radius
-   * @param {boolean} fading if the star is fading in
+   * @param x - The x of the star.
+   * @param y - The y of the star.
+   * @param z - The z of the star.
+   * @param alpha - The star's alpha.
+   * @param radius - The star's radius.
+   * @param fading - If the star is fading in.
    */
   constructor(
     x: number,
     y: number,
     z: number,
-    alpha: number = 0.1,
+    alpha = 0.1,
     radius: number,
-    fading: boolean = true
+    fading = true
   ) {
     this.x = x;
     this.y = y;
@@ -33,7 +35,11 @@ class Star {
     this.isFadingIn = fading;
   }
 
-  /** Draw the circle. */
+  /**
+   * Draw the circle.
+   *
+   * @param ctx - The canvas, kinda.
+   */
   draw(ctx: CanvasRenderingContext2D): void {
     ctx.beginPath();
     ctx.arc(this.x, this.y, this.radius, 0, 2 * Math.PI);
@@ -43,8 +49,9 @@ class Star {
 
   /**
    * Update the position of the star.
-   * @param {number} dx
-   * @param {number} dy
+   *
+   * @param dx - The amount to move the `x` by.
+   * @param dy - The amount to move the `y` by.
    */
   updatePos(dx: number, dy: number): void {
     this.x += dx;
@@ -53,7 +60,8 @@ class Star {
 
   /**
    * Update the alpha.
-   * @param {number} deltaAlpha
+   *
+   * @param deltaAlpha - The amount to move the `alpha` by.
    */
   updateAlphaVal(deltaAlpha: number): void {
     this.alpha += deltaAlpha;
@@ -61,7 +69,8 @@ class Star {
 
   /**
    * Set the alpha.
-   * @param {number} alphaVal
+   *
+   * @param alphaVal - What to set the new `alpha` to.
    */
   setAlphaVal(alphaVal: number): void {
     this.alpha = alphaVal;
@@ -69,7 +78,8 @@ class Star {
 
   /**
    * Set if a star is fading out.
-   * @param {boolean} isFading
+   *
+   * @param isFading - Set if the stars are fading.
    */
   setFadingBool(isFading: boolean): void {
     this.isFadingIn = isFading;
@@ -82,45 +92,65 @@ class Star {
 function canvasRun(): void {
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
-  const backgroundCanv: HTMLCanvasElement =
+  const backgroundCanvas: HTMLElement | null =
     document.getElementById("background");
-  const ctx: CanvasRenderingContext2D = backgroundCanv.getContext("2d");
-  let allowMoving = false;
   const container = document.getElementById("container");
-  container.width = maxX; /* Something's wrong with this.
-  Uncaught TypeError: Cannot set properties of undefined (setting 'width')
-  at script.js:formatted:12:17
-  */
-  container.height = maxY;
-  backgroundCanv.width = container.width;
-  backgroundCanv.height = container.height;
+  const allowMoving = false;
 
-  const starsArray: Star[] = [];
-  for (let i = 0; i < 450; i++) {
-    createRandomStar(starsArray);
+  if (
+    backgroundCanvas instanceof HTMLCanvasElement &&
+    container instanceof HTMLDivElement
+  ) {
+    // container.width = maxX; // @Ash-Greninja101 - replaced this with the below
+    container.setAttribute("width", maxX.toString());
+    container.setAttribute("height", maxY.toString());
+    backgroundCanvas.setAttribute("width", maxX.toString());
+    backgroundCanvas.setAttribute("width", maxY.toString());
+    const ctx: CanvasRenderingContext2D | null =
+      backgroundCanvas.getContext("2d");
+
+    if (ctx instanceof CanvasRenderingContext2D) {
+      var starsArray: Star[] = [];
+      for (let i = 0; i < 450; i++) {
+        createRandomStar(starsArray);
+      }
+      for (let i = 0; i < starsArray.length; i++) {
+        starsArray[i].draw(ctx);
+      }
+
+      document.onmousemove = getMouseCoordsFactory(allowMoving);
+      document.onmouseenter = setMouseCoordsFactory(
+        ctx,
+        maxX,
+        maxY,
+        starsArray,
+        backgroundCanvas,
+        allowMoving
+      );
+      document.onmouseleave = setAllowMovingFactory(allowMoving);
+
+      setInterval(createRandomStar, 250);
+    }
   }
-  for (let i = 0; i < starsArray.length; i++) {
-    starsArray[i].draw(ctx);
-  }
-
-  document.onmousemove = getMouseCoords;
-  document.onmouseenter = setMouseCoords;
-  document.onmouseleave = setAllowMoving;
-
-  setInterval(createRandomStar, 250);
 }
 /**
  * Clear the stars from the viewer's eye.
+ *
+ * @param ctx - The canvas, kinda.
+ * @param backgroundCanvas - The background.
  */
 function clear(
   ctx: CanvasRenderingContext2D,
-  backgroundCanv: HTMLCanvasElement
+  backgroundCanvas: HTMLCanvasElement
 ): void {
-  ctx.clearRect(0, 0, backgroundCanv.width, backgroundCanv.height);
+  ctx.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height);
 }
 
 /**
  * Draw all the stars in the {@link starsArray}.
+ *
+ * @param ctx - The canvas, kinda.
+ * @param starsArray - The list of stars.
  */
 function drawStars(ctx: CanvasRenderingContext2D, starsArray: Star[]): void {
   for (let i = 0; i < starsArray.length; i++) {
@@ -128,21 +158,24 @@ function drawStars(ctx: CanvasRenderingContext2D, starsArray: Star[]): void {
   }
 }
 
+interface MousePosition {
+  x: number;
+  y: number;
+}
+
 // function remove. @Ash-Greninja101 what did you mean?
 /**
  * Update the stars and their alphas.
  *
- * @param {*} mP the mouse position
- * @param {number} mP.x the mouse location (x)
- * @param {number} mP.y the mouse location (y)
- * @param {number} maxX the width of the screen
- * @param {number} maxY the height of the screen
- * @param {Star[]} starsArray the list of stars
- * @param {boolean} allowMoving If the stars can move
- * @returns {void}
+ * @param mP - The mouse position.
+ * @param maxX - The width of the screen.
+ * @param maxY - The height of the screen.
+ * @param starsArray - The list of stars.
+ * @param allowMoving - If the stars can move.
+ * @returns - Nothing (an effectual function).
  */
 function updateStarPositionsAndAlphaVal(
-  mP: { x: number; y: number },
+  mP: MousePosition,
   maxX: number,
   maxY: number,
   starsArray: Star[],
@@ -168,6 +201,10 @@ function updateStarPositionsAndAlphaVal(
 
 /**
  * Makes sure all stars fade out.
+ *
+ * @param maxX - The max `x` of the stars.
+ * @param maxY - The max `y` of the stars.
+ * @param starsArray - The array of `Star`s.
  */
 function checkAndStartFadingAllStars(
   maxX: number,
@@ -190,105 +227,155 @@ function checkAndStartFadingAllStars(
 
 /**
  * Update the stars location.
- * @param {*} ctx
- * @param {*} mousePosition
- * @param {number} maxX
- * @param {number} maxY
+ *
+ * @param ctx - The canvas, kinda.
+ * @param mP - The mouse position.
+ * @param maxX - The width of the screen.
+ * @param maxY - The height of the screen.
+ * @param starsArray - The list of stars.
+ * @param backgroundCanvas - The background.
  */
 function update(
   ctx: CanvasRenderingContext2D,
-  mousePosition: { x: number; y: number },
+  mP: MousePosition,
   maxX: number,
   maxY: number,
   starsArray: Star[],
-  backgroundCanv: HTMLCanvasElement
+  backgroundCanvas: HTMLCanvasElement,
+  allowMoving: boolean
 ): void {
-  clear(ctx, backgroundCanv);
+  clear(ctx, backgroundCanvas);
   drawStars(ctx, starsArray);
-  updateStarPositionsAndAlphaVal(mousePosition, maxX, maxY, starsArray);
-  requestAnimationFrame(
-    (
-      callback // FrameRequestCallback or number?
-    ) => {
-      return callback;
-    }
-  );
+  updateStarPositionsAndAlphaVal(mP, maxX, maxY, starsArray, allowMoving);
+  requestAnimationFrame((callback: number) => {
+    return callback;
+  });
 }
 
 /**
  * Get the mouse coordinates.
- * @param {GlobalEventHandlers} this
- * @param {MouseEvent} ev
  */
-function getMouseCoords(this: GlobalEventHandlers, ev: MouseEvent): void {
-  let eventDoc, doc, body;
-  ev = ev || window.event; // IE-ism
+function getMouseCoordsFactory(
+  allowMoving: boolean
+): (this: GlobalEventHandlers, ev: MouseEvent) => void {
+  /**
+   *
+   * @param this - The event handler
+   * @param ev - The event that happened to trigger this.
+   */
+  function name(this: GlobalEventHandlers, ev: MouseEvent) {
+    let eventDoc: Document;
+    let doc: HTMLElement;
+    let body: HTMLElement;
 
-  // If pageX/Y aren't available and clientX/Y are,
-  // calculate pageX/Y - logic taken from jQuery.
-  // (This is to support old IE)
-  if (ev.pageX == null && ev.clientX != null) {
-    eventDoc = (ev.target != null && ev.target.ownerDocument) || document;
-    doc = eventDoc.documentElement;
-    body = eventDoc.body;
+    const mP: MousePosition = { x: ev.clientX, y: ev.clientY };
 
-    ev.pageX =
-      ev.clientX +
-      ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
-      ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
-    ev.pageY =
-      ev.clientY +
-      ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
-      ((doc && doc.clientTop) || (body && body.clientTop) || 0);
+    ev = ev || window.event; // IE-ism
+
+    /**
+     * If pageX/Y aren't available and clientX/Y are,
+     * calculate pageX/Y - logic taken from jQuery.
+     * (This is to support old IE)
+     **/
+    if (ev.pageX === null && !(ev.clientX === null)) {
+      /*
+      if (!(ev.target === null)) {
+        eventDoc = ev.target.ownerDocument(); // @Ash-Greninja101 what is this?
+      } else {
+        eventDoc = document;
+      }
+
+      doc = eventDoc.documentElement;
+      body = eventDoc.body;
+      */
+      /* ev. */
+      /* let pageX =
+        ev.clientX +
+        ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
+        ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
+        */
+      /* ev. */
+      /* let pageY =
+        ev.clientY +
+        ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
+        ((doc && doc.clientTop) || (body && body.clientTop) || 0);
+        */
+    }
+
+    allowMoving = true;
   }
-  mousePosition = {
-    x: ev.clientX,
-    y: ev.clientY,
-  };
-  allowMoving = true;
+  return name;
 }
 
 /**
- * Set the mouse coordinates.
- * @param {Event} ev
+ * Create a function to set the mouse coordinates.
+ *
+ * @param ctx - The canvas, kinda.
+ * @param maxX - The max `x` of the stars.
+ * @param maxY - The max `y` of the stars.
+ * @param starsArray - The array of `Star`s.
+ * @returns - Nothing (an effectual function).
  */
-function setMouseCoords(
-  this: GlobalEventHandlers,
-  ev: MouseEvent,
+function setMouseCoordsFactory(
   ctx: CanvasRenderingContext2D,
   maxX: number,
   maxY: number,
-  starsArray: Star[]
-): void {
-  const mousePosition = { x: ev.clientX, y: ev.clientY };
-  update(ctx, mousePosition, maxX, maxY, starsArray);
+  starsArray: Star[],
+  backgroundCanvas: HTMLCanvasElement,
+  allowMoving: boolean
+): (this: GlobalEventHandlers, ev: MouseEvent) => void {
+  /**
+   * Set the mouse coordinates.
+   *
+   * @param this - Event handlers.
+   * @param ev - The event that happened to trigger this (currently just 'click').
+   */
+  function setMouseCoords(this: GlobalEventHandlers, ev: MouseEvent) {
+    const mP: MousePosition = { x: ev.clientX, y: ev.clientY };
+    update(ctx, mP, maxX, maxY, starsArray, backgroundCanvas, allowMoving);
+  }
+  return setMouseCoords;
 }
 
 /**
  *
- * @param {GlobalEventHandlers} this
- * @param {MouseEvent} ev
- * @return {void}
+ * @param this - The event handler
+ * @param ev - The event that happened to trigger this.
+ * @returns - Nothing (an effectual function).
  */
-function setAllowMoving(this: GlobalEventHandlers, ev: MouseEvent): void {
-  allowMoving = false;
+function setAllowMovingFactory(
+  allowMoving: boolean
+): (this: GlobalEventHandlers, ev: MouseEvent) => void {
+  /**
+   * Set whether or not stars are allowed to move.
+   *
+   * @param this - The event handler
+   * @param ev - The event that happened to trigger this.
+   */
+  function setAllowMoving(this: GlobalEventHandlers, ev: MouseEvent) {
+    allowMoving = false;
+  }
+  return setAllowMoving;
 }
 
 /**
  *
- * @param {number} x1
- * @param {number} y1
- * @param {number} x2
- * @param {number} y2
- * @returns {number}
+ * @param x1 - `x` for the first location
+ * @param y1 - `y` for the first location
+ * @param x2 - `x` for the second location
+ * @param y2 - `y` for the second location
+ * @returns The distance
  */
 function getDistance(x1: number, y1: number, x2: number, y2: number): number {
-  return Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  const d: number = Math.sqrt(Math.pow(x1 - x2, 2) + Math.pow(y1 - y2, 2));
+  return d;
 }
 
 /**
  * Create a random star.
  * This should conform to TimerHandler
+ *
+ * @param starsArray - The list of stars.
  */
 function createRandomStar(starsArray: Star[]): void {
   const newRadius = Math.floor(Math.random() * 4);
@@ -300,6 +387,10 @@ function createRandomStar(starsArray: Star[]): void {
 
 /**
  * Create a random star on the border of the canvas.
+ *
+ * @param maxX - The width of the screen.
+ * @param maxY - The height of the screen.
+ * @param starsArray - The list of stars.
  */
 function createRandomStarOnBorder(
   maxX: number,
@@ -334,13 +425,14 @@ function createRandomStarOnBorder(
 
 /**
  * Create a star.
- * @param {number} radius
- * @param {number} xPos
- * @param {number} yPos
- * @param {number} zVal
+ *
+ * @param starsArray - The list of stars.
+ * @param radius - The star's radius.
+ * @param xPos - The `x` position of the star.
+ * @param yPos - The `y` position of the star.
+ * @param zVal - The `z` position of the star.
  */
 function createStar(
-  starsArray: Star[],
   radius: number,
   xPos: number,
   yPos: number,

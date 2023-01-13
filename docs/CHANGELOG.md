@@ -5,42 +5,77 @@ A changelog that tracks our work. All notable changes to this project will be do
 The format is based on [Keep a Changelog][keep-a-changelog], and as this project
 is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
+## 2023-01-12
+
+| Initials | Task                 | Time involved | Comments                     | Sponsor Initials |
+| -------- | -------------------- | ------------- | ---------------------------- | ---------------- |
+| ED       | Finish fixing types. | 45 minutes    | First successful build!      |
+| ED       | Fix ESLint errors    | 1 hour        | Also, remove duplicate rules |
+
+## 2023-01-11
+
+| Initials | Task            | Time involved      | Comments | Sponsor Initials |
+| -------- | --------------- | ------------------ | -------- | ---------------- |
+| ED       | Fix some types. | 1 hour, 20 minutes | none     |
+
+## 2023-01-04
+
+| Initials | Task                  | Time involved | Comments | Sponsor Initials |
+| -------- | --------------------- | ------------- | -------- | ---------------- |
+| ED       | Finish adding sources | 10 minutes    | none     |
+
+## 2023-01-03
+
+| Initials | Task                                     | Time involved | Comments | Sponsor Initials |
+| -------- | ---------------------------------------- | ------------- | -------- | ---------------- |
+| ED       | Remove standardjs config                 | 1 minute      | none     |
+| ED       | Commit changes, and add them to the log. | 30 minutes    | 12/28-30 |
+| ED       | Add sources                              | 15 minutes    | none     |
+
 ## 2023-01-02
 
 | Initials | Task                                     | Time involved | Comments | Sponsor Initials |
 | -------- | ---------------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Fix file nesting.                        | 1 minute      | N/A      |
-| ED       | Commit changes, and add them to the log. | 15 minutes    | 12/28-30 |
+| ED       | Fix file nesting.                        | 1 minute      | none     |
+| ED       | Commit changes, and add them to the log. | 30 minutes    | 12/28-30 |
+| ED       | Fix merge conflicts.                     | 1 minute      | none     |
 
 ## 2022-12-31
 
 | Initials | Task                               | Time involved | Comments | Sponsor Initials |
 | -------- | ---------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Write up missing sections of this. | 30 minutes    | N/A      |
+| ED       | Write up missing sections of this. | 30 minutes    | none     |
 
 ## 2022-12-30
 
-| Initials | Task               | Time involved | Comments | Sponsor Initials |
-| -------- | ------------------ | ------------- | -------- | ---------------- |
-| ED       | Update the README. | 2 minutes     | N/A      |
+| Initials | Task                              | Time involved | Comments | Sponsor Initials |
+| -------- | --------------------------------- | ------------- | -------- | ---------------- |
+| ED       | Update the README.                | 2 minutes     | none     |
+| ED       | add a markdownlint configuration. | 10 minutes    | none     |
+| ED       | Fix CONTRIBUTORS.md               | 2 minutes     | none     |
 
 ## 2022-12-29
 
-| Initials | Task | Time involved | Comments | Sponsor Initials |
-| -------- | ---- | ------------- | -------- | ---------------- |
-| ED       |      | ?             | N/A      |
+| Initials | Task             | Time involved | Comments                                       | Sponsor Initials |
+| -------- | ---------------- | ------------- | ---------------------------------------------- | ---------------- |
+| ED       | Commitlint       | 30 minutes    | Who knew "type": "module" was such a big deal? |
+| ED       | Remove importmap | 1 minute      | none                                           |
 
 ## 2022-12-28
 
-| Initials | Task            | Time involved | Comments | Sponsor Initials |
-| -------- | --------------- | ------------- | -------- | ---------------- |
-| ED       | Fix more stuff. | 5 minutes     | N/A      |
+| Initials | Task                              | Time involved | Comments   | Sponsor Initials |
+| -------- | --------------------------------- | ------------- | ---------- | ---------------- |
+| ED       | Fix more stuff.                   | 5 minutes     | none       |
+| ED       | Fix triple-slash-references/libs. | 15 minutes    | none       |
+| ED       | Fix eslint errors in test.        | 15 minutes    | none       |
+| ED       | Fix cspell errors                 | 2 minutes     | none       |
+| ED       | Add run-pty                       | 15 minutes    | 'Twas Fun! |
 
 ## 2022-12-24
 
-| Initials | Task                                     | Time involved | Comments                                          | Sponsor Initials |
-| -------- | ---------------------------------------- | ------------- | ------------------------------------------------- | ---------------- |
-| ED       | Fix a bunch of stuff that needed fixing. | 2 hours       | ESLint, Vite, typing, JSDoc, Vitest, cspell, etc. |
+| Initials | Task                                     | Time involved | Comments                                           | Sponsor Initials |
+| -------- | ---------------------------------------- | ------------- | -------------------------------------------------- | ---------------- |
+| ED       | Fix a bunch of stuff that needed fixing. | 2 hours       | ESLint, Vite, typings, JSDoc, Vitest, cspell, etc. |
 
 ## 2022-12-23
 
@@ -52,7 +87,7 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 | Initials | Task             | Time involved | Comments | Sponsor Initials |
 | -------- | ---------------- | ------------- | -------- | ---------------- |
-| ED       | Configure stuff. | 20 minutes    | N/A      |
+| ED       | Configure stuff. | 20 minutes    | none     |
 
 ## 2022-12-21
 
@@ -66,43 +101,43 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 | Initials | Task                                                | Time involved | Comments | Sponsor Initials |
 | -------- | --------------------------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Finish adding an elm-pages demo.                    | 30 minutes    | N/A      |
-| ED       | Add my custom linting config to the elm-pages demo. | 30 minutes    | N/A      |
+| ED       | Finish adding an elm-pages demo.                    | 30 minutes    | none     |
+| ED       | Add my custom linting config to the elm-pages demo. | 30 minutes    | none     |
 | ED       | Remove elm-pages demo.                              | 5 minutes     | Too bad  |
-| ED       | Add contributors.                                   | 10 minutes    | N/A      |
-| SP       | Work on animation.                                  | 10 minutes    | N/A      |
+| ED       | Add contributors.                                   | 10 minutes    | none     |
+| SP       | Work on animation.                                  | 10 minutes    | none     |
 
 ## 2022-12-19
 
 | Initials | Task                           | Time involved | Comments | Sponsor Initials |
 | -------- | ------------------------------ | ------------- | -------- | ---------------- |
-| ED       | Added CITATION.cff.            | 10 minutes    | N/A      |
-| ED       | Reformat changelog.            | 10 minutes    | N/A      |
-| ED       | Add CODEOWNERS.                | 10 minutes    | N/A      |
-| ED       | Update community health files. | 5 minutes     | N/A      |
-| ED       | Add elm-pages demo.            | 20 minutes    | N/A      |
+| ED       | Added CITATION.cff.            | 10 minutes    | none     |
+| ED       | Reformat changelog.            | 10 minutes    | none     |
+| ED       | Add CODEOWNERS.                | 10 minutes    | none     |
+| ED       | Update community health files. | 5 minutes     | none     |
+| ED       | Add elm-pages demo.            | 20 minutes    | none     |
 
 ## 2022-12-18
 
 | Initials | Task                    | Time involved | Comments | Sponsor Initials |
 | -------- | ----------------------- | ------------- | -------- | ---------------- |
-| ED       | Added plan-of-work-log. | 1 hour        | N/A      |
-| ED       | Added all-contributors. | 10 minutes    | N/A      |
+| ED       | Added plan-of-work-log. | 1 hour        | none     |
+| ED       | Added all-contributors. | 10 minutes    | none     |
 
 ## 2022-12-17
 
 | Initials | Task                                                  | Time involved | Comments | Sponsor Initials |
 | -------- | ----------------------------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Added basic documentation and community health files. | 45 minutes    | N/A      |
+| ED       | Added basic documentation and community health files. | 45 minutes    | none     |
 
 ## 2022-12-16
 
 | Initials | Task                                                                 | Time involved | Comments | Sponsor Initials |
 | -------- | -------------------------------------------------------------------- | ------------- | -------- | ---------------- |
-| ED       | Created Github Org and Repo.                                         | 1 hour        | N/A      |
-| NB       | Replied to proposals by ED.                                          | 10 minutes    | N/A      |
-| ED       | Moved todo list to GitHub issues/projects.                           | 10 minutes    | N/A      |
-| ED       | Added scaffolded HTML as placeholder until SP uploaded actual files. | 15 minutes    | N/A      |
+| ED       | Created Github Org and Repo.                                         | 1 hour        | none     |
+| NB       | Replied to proposals by ED.                                          | 10 minutes    | none     |
+| ED       | Moved todo list to GitHub issues/projects.                           | 10 minutes    | none     |
+| ED       | Added scaffolded HTML as placeholder until SP uploaded actual files. | 15 minutes    | none     |
 
 > A meeting day
 
@@ -110,7 +145,7 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 | Initials | Task         | Time involved | Comments |
 | -------- | ------------ | ------------- | -------- |
-| ED       | Joined Team. | 1 hour        | N/A      |
+| ED       | Joined Team. | 1 hour        | none     |
 
 ## 2022-12-08
 
@@ -118,7 +153,7 @@ is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
 | Initials | Task                                  | Time involved | Comments | Sponsor Initials |
 | -------- | ------------------------------------- | ------------- | -------- | ---------------- |
-| NB, SP   | Added basic TODO list in Google Docs. | 1 hour        | N/A      |
+| NB, SP   | Added basic TODO list in Google Docs. | 1 hour        | none     |
 
 [keep-a-changelog]: https://keepachangelog.com/en/1.0.0/
 [semver]: https://semver.org/spec/v2.0.0.html

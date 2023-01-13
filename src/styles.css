@@ -11,6 +11,7 @@
 body {
   background-color: black;
   height: 100%;
+  font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #startBtn span {
@@ -61,7 +62,6 @@ body {
   animation: fadein 2s;
   position: absolute;
   padding-right: 25px;
-  font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #v-pills-tab {
@@ -102,4 +102,10 @@ body {
 
 .no-italics {
   font-style: normal;
+}
+
+#intro {
+  z-index: 3;
+  color: white;
+  position: relative;
 }

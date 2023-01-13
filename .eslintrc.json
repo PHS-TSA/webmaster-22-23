@@ -1,18 +1,48 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "worker": true
   },
   "parser": "@typescript-eslint/parser",
-  "plugins": ["prettier", "@typescript-eslint", "jsdoc"],
+  "plugins": ["prettier", "@typescript-eslint", "tsdoc", "promise", "import"],
   "extends": [
     "eslint:recommended",
-    "standard-with-typescript",
+    "plugin:promise/recommended",
+    "plugin:markdown/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:jsdoc/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:prettier/recommended"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["**/*test*"],
+      "rules": {
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/require-await": "off"
+      }
+    },
+    {
+      "files": ["commitlint.config.ts", "vite.config.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-magic-numbers": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
   "parserOptions": {
     "sourceType": "module",
     "ecmaFeatures": {
@@ -26,22 +56,33 @@
   },
   "root": true,
   "rules": {
-    "no-magic-numbers": "warn",
-    "no-shadow": "error",
+    "no-magic-numbers": "off",
+    "@typescript-eslint/no-magic-numbers": "warn",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
     "no-shadow-restricted-names": "error",
-    "no-dupe-keys": "error",
-    "no-dupe-args": "error",
-    "no-duplicate-imports": "warn",
-    "no-unreachable": "warn",
-    "no-invalid-regexp": "error",
-    "no-native-reassign": "warn",
     "no-eq-null": "warn",
-    "valid-jsdoc": "warn",
     "spaced-comment": "warn",
     "symbol-description": "warn",
-    "require-jsdoc": "warn",
-    "@typescript-eslint/triple-slash-reference": "off",
-    "@typescript-eslint/no-inferrable-types": "off",
-    "@typescript-eslint/switch-exhaustiveness-check": "error"
+    "tsdoc/syntax": "warn",
+    "@typescript-eslint/naming-convention": "warn",
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/no-require-imports": "warn",
+    "@typescript-eslint/prefer-regexp-exec": "warn",
+    "@typescript-eslint/sort-type-constituents": "warn",
+    "import/first": "warn",
+    "import/exports-last": "error",
+    "import/extensions": [
+      "error",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/order": "error",
+    "import/group-exports": "error",
+    "import/newline-after-import": "error"
   }
 }
