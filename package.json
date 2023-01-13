@@ -11,6 +11,7 @@
   "scripts": {
     "start": "npx run-pty run-pty.json",
     "test": "npx vitest",
+    "test:no-watch": "npx vitest run",
     "coverage": "npx vitest run --coverage",
     "dev": "npx vite",
     "build": "npm run check && npx vite build",

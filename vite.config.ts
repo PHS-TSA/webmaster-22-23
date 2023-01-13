@@ -16,6 +16,7 @@ export default defineConfig({
   test: {
     coverage: {
       provider: "c8", // or 'istanbul'
+      reporter: ["text", "html", "json-summary", "json"],
     },
   },
   plugins: [
