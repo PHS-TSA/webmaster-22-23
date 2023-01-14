@@ -21,7 +21,7 @@ body {
   transition: 0.5s;
 }
 
-#startBtn span:after {
+#startBtn span::after {
   content: "\00bb";
   position: absolute;
   opacity: 0;
@@ -31,13 +31,14 @@ body {
 }
 
 #menuBtn:hover {
-  background-color: rgba(40, 40, 40, 0.7);
+  background-color: rgb(40 40 40 / 70%);
 }
 
-#menuBtn:hover span:after {
+#menuBtn:hover span::after {
   opacity: 1;
+
   /* right: 0; */
-  background-color: rgba(44, 44, 45, 1);
+  background-color: rgb(44 44 45 / 100%);
 }
 
 #menuBtn span {
@@ -50,9 +51,10 @@ body {
   background-color: inherit;
   right: 0;
   border: none;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   font-size: 32px;
+
   /* padding: 5px; */
   width: fit-content;
   transition: all 0.5s;
@@ -66,6 +68,7 @@ body {
 
 #v-pills-tab {
   /* top: 0; */
+
   /* z-index: 3; */
   top: 75px;
   right: 0;
@@ -84,13 +87,14 @@ body {
   height: 100%;
   top: 0;
   z-index: 2;
-  background-color: rgba(44, 44, 45, 0);
+  background-color: rgb(44 44 45 / 0%);
 }
 
 @keyframes fadein {
   from {
     opacity: 0;
   }
+
   to {
     opacity: 1;
   }
