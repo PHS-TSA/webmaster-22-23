@@ -128,11 +128,30 @@ jobs:
       - name: Install npm dependencies
         if: steps.cache-node_modules.outputs.cache-hit != 'true'
         run: npm ci
-      - name: Lint
+      - name: ESLint
         uses: reviewdog/action-eslint@v1.17.0
         with:
           reporter: github-check
           github_token: ${{ github.token }}
+      - name: Link Check
+        if: ${{ always() }}
+        uses: gaurav-nelson/github-action-markdown-link-check@v1
+        with:
+          use-quiet-mode: false
+          use-verbose-mode: false
+          config-file: mlc_config.json
+          folder-path: "docs"
+          file-path: "./README.md, ./CONTRIBUTORS.md"
+          max-depth: -1
+          check-modified-files-only: false
+          base-branch: master
+          file-extension: ".md"
+      - name: Markdownlint
+        if: ${{ always() }}
+        uses: DavidAnson/markdownlint-cli2-action@v9.0.0
+      - name: Spell Check
+        uses: streetsidesoftware/cspell-action@v2.15.1
+
   format:
     name: Prettier
     needs: [build]

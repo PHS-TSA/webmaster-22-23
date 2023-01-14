@@ -48,5 +48,10 @@
     "command": ["npm", "run", "lint:markdown"],
     "title": "markdownlint",
     "defaultStatus": ["⏳", "S"]
+  },
+  {
+    "command": ["npm", "run", "lint:markdown:links"],
+    "title": "markdown-link-check",
+    "defaultStatus": ["⏳", "S"]
   }
 ]

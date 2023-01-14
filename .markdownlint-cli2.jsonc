@@ -4,7 +4,8 @@
     "extends": "markdownlint/style/prettier",
     "MD025": {
       "front_matter_title": ""
-    }
+    },
+    "MD013": false
   },
   "ignores": [
     "node_modules",

@@ -9,5 +9,6 @@
     }
   ],
   "dictionaries": ["project-words", "en_us"],
-  "ignorePaths": ["node_modules", "project-words.txt", "CONTRIBUTORS.md"]
+  "ignorePaths": ["project-words.txt", "CONTRIBUTORS.md"],
+  "useGitignore": true
 }

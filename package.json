@@ -19,10 +19,11 @@
     "check:watch": "npx tsc -w",
     "preview": "npx vite preview",
     "lint": "npx eslint .",
-    "lint:spell": "npx cspell lint --gitignore \"**/*.{js,md,html}\"",
+    "lint:spell": "npx cspell lint --gitignore \"**/*.{txt,js,html,ts,md,json,cff,jsonc}\"",
     "lint:commit": "npx commitlint --config commitlint.config.ts --edit",
     "lint:markdown": "npx markdownlint-cli2",
-    "lint:markdown:fix": "npx markdownlint-cli2-fix"
+    "lint:markdown:fix": "npx markdownlint-cli2-fix",
+    "lint:markdown:links": "npx markdown-link-check docs/CHANGELOG.md docs/sources.md --config mlc-config.json"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.6",
@@ -50,6 +51,7 @@
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-tsdoc": "^0.2.17",
+    "markdown-link-check": "^3.10.3",
     "markdownlint-cli2": "^0.6.0",
     "prettier": "2.8.1",
     "run-pty": "^4.0.3",
@@ -59,6 +61,9 @@
     "vite-plugin-pwa": "^0.14.0",
     "vite-plugin-webfont-dl": "^3.4.2",
     "vitest": "^0.26.2"
+  },
+  "optionalDependencies": {
+    "eslint-module-utils": "^2.7.4"
   },
   "engines": {
     "node": ">=16.0"
