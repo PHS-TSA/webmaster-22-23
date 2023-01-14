@@ -14,14 +14,14 @@ body {
   font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#startBtn span {
+#start-btn span {
   cursor: pointer;
   display: inline-block;
   position: relative;
   transition: 0.5s;
 }
 
-#startBtn span::after {
+#start-btn span::after {
   content: "\00bb";
   position: absolute;
   opacity: 0;
@@ -30,22 +30,7 @@ body {
   transition: 0.5s;
 }
 
-#menuBtn:hover {
-  background-color: rgb(40 40 40 / 70%);
-}
-
-#menuBtn:hover span::after {
-  opacity: 1;
-
-  /* right: 0; */
-  background-color: rgb(44 44 45 / 100%);
-}
-
-#menuBtn span {
-  opacity: 1;
-}
-
-#menuBtn {
+#menu-btn {
   visibility: visible;
   border-radius: 4px;
   background-color: inherit;
@@ -64,6 +49,21 @@ body {
   animation: fadein 2s;
   position: absolute;
   padding-right: 25px;
+}
+
+#menu-btn:hover {
+  background-color: rgb(40 40 40 / 70%);
+}
+
+#menu-btn:hover span::after {
+  opacity: 1;
+
+  /* right: 0; */
+  background-color: rgb(44 44 45 / 100%);
+}
+
+#menu-btn span {
+  opacity: 1;
 }
 
 #v-pills-tab {
