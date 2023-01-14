@@ -1,3 +1,5 @@
+megalinter-reports/
+
 # Logs
 logs
 *.log
