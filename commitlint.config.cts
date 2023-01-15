@@ -1,4 +1,4 @@
-import { UserConfig } from "@commitlint/types";
+import type { UserConfig } from "@commitlint/types";
 
 const Configuration: UserConfig = {
   /*
@@ -20,12 +20,14 @@ const Configuration: UserConfig = {
    * Any rules defined here will override rules from @commitlint/config-conventional
    */
   rules: {
-    "type-enum": [2, "always", ["foo"]],
+    "body-max-line-length": [2, "always", 72],
+    "footer-max-line-length": [2, "always", 72],
+    "header-max-length": [2, "always", 50],
   },
   /*
    * Functions that return true if commitlint should ignore the given message.
    */
-  ignores: [(commit) => commit === ""],
+  ignores: [(commit: string) => commit === ""],
   /*
    * Whether commitlint uses the default ignore rules.
    */
@@ -48,4 +50,4 @@ const Configuration: UserConfig = {
   },
 };
 
-export { Configuration };
+module.exports = Configuration;

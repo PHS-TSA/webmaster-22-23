@@ -26,7 +26,7 @@
       }
     },
     {
-      "files": ["commitlint.config.ts", "vite.config.ts"],
+      "files": ["commitlint.config.cts", "vite.config.ts"],
       "rules": {
         "@typescript-eslint/naming-convention": "off",
         "@typescript-eslint/no-magic-numbers": "off"
