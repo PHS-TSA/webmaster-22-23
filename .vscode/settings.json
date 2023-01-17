@@ -1,8 +1,8 @@
 {
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "css.lint.compatibleVendorPrefixes": "warning",
-  "css.lint.unknownVendorSpecificProperties": "warning",
+  "scss.lint.compatibleVendorPrefixes": "warning",
+  "scss.lint.unknownVendorSpecificProperties": "warning",
   "files.associations": {
     ".prettierc": "jsonc",
     ".prettierignore": "ignore",
@@ -18,7 +18,8 @@
     ".eslintrc": ".eslintignore",
     "jsconfig.json": "jsconfig.*.json",
     "tsconfig.json": "tsconfig.*.json",
-    "package.json": "package-lock.json, yarn.lock, npm-shrinkwrap.json, .commitlint*, .editorconfig, .eslint*, .github*, .lighthouserc.*, markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .pnp.*, .pnpm*, .prettier*, .travis*, .vscode*, .yarnrc*, azure-pipelines*, commitlint*, cypress.*, lerna*, lighthouserc.*, netlify*, nodemon*, nx.*, pnpm*, prettier*, renovate*, vercel*, vitest.config.*, workspace.json,yarn*, cspell.json, .markdownlint-cli2.jsonc, run-pty.json",
+    "package.json": "package-lock.json, yarn.lock, npm-shrinkwrap.json, .commitlint*, .editorconfig, .eslint*, .github*, .lighthouserc.*, markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .pnp.*, .pnpm*, .prettier*, .travis*, .vscode*, .yarnrc*, azure-pipelines*, commitlint*, cypress.*, lerna*, lighthouserc.*, netlify*, nodemon*, nx.*, pnpm*, prettier*, renovate*, vercel*, vitest.config.*, workspace.json,yarn*, cspell.json, .markdownlint-cli2.jsonc, run-pty.json, .jsonlintrc.json .mega-linter.yml, mlc-config.json",
+    "lighthouserc": "budget.json",
     "README*": "*.md, .all-contributorsrc, CITATION.cff"
   }
 }
