@@ -172,7 +172,7 @@ interface MousePosition {
  * @param maxY - The height of the screen.
  * @param starsArray - The list of stars.
  * @param allowMoving - If the stars can move.
- * @returns - Nothing (an effectual function).
+ * @returns Nothing (an effectual function).
  */
 function updateStarPositionsAndAlphaVal(
   mP: MousePosition,
@@ -314,7 +314,7 @@ function getMouseCoordsFactory(
  * @param maxX - The max `x` of the stars.
  * @param maxY - The max `y` of the stars.
  * @param starsArray - The array of `Star`s.
- * @returns - Nothing (an effectual function).
+ * @returns Nothing (an effectual function).
  */
 function setMouseCoordsFactory(
   ctx: CanvasRenderingContext2D,
@@ -341,7 +341,7 @@ function setMouseCoordsFactory(
  *
  * @param this - The event handler
  * @param ev - The event that happened to trigger this.
- * @returns - Nothing (an effectual function).
+ * @returns Nothing (an effectual function).
  */
 function setAllowMovingFactory(
   allowMoving: boolean

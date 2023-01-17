@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "Home of the world's first cosmic cruise line!",
   "private": true,
-  "main": "src/main.ts",
+  "main": "src/js/main.ts",
   "directories": {
     "doc": "docs",
     "lib": "src"
@@ -14,11 +14,11 @@
     "test": "npx vitest",
     "test:no-watch": "npx vitest run",
     "coverage": "npx vitest run --coverage",
-    "dev": "npx vite",
+    "dev": "npx vite --host",
     "build": "npm run check && npx vite build",
     "check": "npx tsc",
     "check:watch": "npx tsc -w",
-    "preview": "npx vite preview",
+    "preview": "npx vite preview --host",
     "lint": "npx eslint .",
     "lint:spell": "npx cspell lint --gitignore \"**/*.{txt,js,html,ts,md,json,cff,jsonc}\"",
     "lint:commit": "npx commitlint --config commitlint.config.cts --edit",

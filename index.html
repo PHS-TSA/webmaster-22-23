@@ -13,18 +13,7 @@
       content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://fonts.googleapis.com https://cdn.jsdelivr.net; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net"
     /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
-      crossorigin="anonymous"
-    />
-    <link href="/src/styles.css" rel="stylesheet" type="text/css" />
+    <link href="src/scss/styles.scss" rel="stylesheet" type="text/css" />
     <!-- <base href="https://phs-tsa.github.io/webmaster-22-23/" /> -->
     <title>Home | Cosmic Cruise Lines!</title>
     <meta
@@ -44,11 +33,11 @@
 
     <meta
       property="og:image"
-      content="https://phs-tsa.github.io/webmaster-22-23//images/logo-main.svg"
+      content="https://phs-tsa.github.io/webmaster-22-23/images/logo-main.svg"
     />
     <meta
       property="og:image:secure_url"
-      content="https://phs-tsa.github.io/webmaster-22-23//images/logo-main.svg"
+      content="https://phs-tsa.github.io/webmaster-22-23/images/logo-main.svg"
     />
     <meta property="og:image:alt" content="Cosmic Cruise Lines' logo" />
     <meta property="og:title" content="Home" />
@@ -68,7 +57,10 @@
       property="twitter:description"
       content="Home of the world's first cosmic cruise line!"
     />
-    <meta property="twitter:image" content="/images/logo-main.svg" />
+    <meta
+      property="twitter:image"
+      content="https://phs-tsa.github.io/webmaster-22-23/images/logo-main.svg"
+    />
     <meta property="twitter:image:alt" content="Cosmic Cruise Lines' logo" />
     <meta property="og:type" content="website" />
     <meta name="geo.region" content="US-MO" />
@@ -80,13 +72,8 @@
     <meta name="ICBM" content="38.7459277, -90.4541215" />
 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg" />
-    <link
-      rel="icon"
-      sizes="48x48"
-      type="image/png"
-      href="/images/favicon.png"
-    />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="icon" sizes="48x48" type="image/png" href="images/favicon.png" />
   </head>
   <body>
     <!--[if lt IE 7]>
@@ -99,7 +86,7 @@
     <canvas id="background">
       <div id="container"></div>
     </canvas>
-    <script src="src/main.ts" type="module"></script>
+    <script src="src/js/main.ts" type="module"></script>
     <p id="intro">
       Hi! Welcome to Cosmic Cruise Lines, the only
       <span class="underlined">authentic</span> space cruises out of this world.
@@ -108,7 +95,10 @@
       <!-- 'menuOptions' for id?-->
 
       <button id="menu-btn">
-        <span>Menu <i class="fas fa-bars no-italics">三</i></span>
+        <span
+          >Menu <i class="fas fa-bars no-italics icons">三</i
+          ><i class="fas fa-bars"></i
+        ></span>
       </button>
       <ul
         class="nav flex-column nav-pills"

@@ -11,7 +11,12 @@ export default defineConfig({
         main: resolve(__dirname, "index.html"),
       },
     },
-    minify: "esbuild",
+  },
+  resolve: {
+    alias: {
+      "~bootstrap": resolve(__dirname, "node_modules/bootstrap"),
+      "~bootstrap-icons": resolve(__dirname, "node_modules/bootstrap-icons"),
+    },
   },
   test: {
     coverage: {
@@ -33,7 +38,7 @@ export default defineConfig({
         lang: "en-latn-us",
         icons: [
           {
-            src: "images/large-favicon.png",
+            src: "src/images/large-favicon.png",
             sizes: "192x192",
             type: "image/png",
           },

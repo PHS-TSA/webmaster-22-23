@@ -1,3 +1,7 @@
+// Import all of Bootstrap's CSS
+@import "~bootstrap/scss/bootstrap";
+@import "~bootstrap-icons/font/bootstrap-icons.scss";
+
 #background {
   background-image: linear-gradient(black, #005);
   opacity: 1;
@@ -8,26 +12,32 @@
   height: 100vh;
 }
 
+#icons {
+  font-family: bootstrap-icons;
+}
+
 body {
   background-color: black;
   height: 100%;
   font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#start-btn span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
+#start-btn {
+  span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.5s;
+  }
 
-#start-btn span::after {
-  content: "\00bb";
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
+  span::after {
+    content: "\00bb";
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -20px;
+    transition: 0.5s;
+  }
 }
 
 #menu-btn {
@@ -49,21 +59,21 @@ body {
   animation: fadein 2s;
   position: absolute;
   padding-right: 25px;
+
+  span {
+    opacity: 1;
+  }
 }
 
 #menu-btn:hover {
   background-color: rgb(40 40 40 / 70%);
-}
 
-#menu-btn:hover span::after {
-  opacity: 1;
+  span::after {
+    opacity: 1;
 
-  /* right: 0; */
-  background-color: rgb(44 44 45 / 100%);
-}
-
-#menu-btn span {
-  opacity: 1;
+    /* right: 0; */
+    background-color: rgb(44 44 45 / 100%);
+  }
 }
 
 #v-pills-tab {

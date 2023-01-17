@@ -7,7 +7,7 @@ import * as bootstrap from "bootstrap";
  *
  * @param this - The menu button.
  * @param ev - The event that happened to trigger this (currently just 'click').
- * @returns - Nothing (an effectual function).
+ * @returns Nothing (an effectual function).
  */
 function toggleMenuFactory(
   isToggled: boolean
