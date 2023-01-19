@@ -1,10 +1,13 @@
 // Import all of Bootstrap's CSS
 @import "~bootstrap/scss/bootstrap";
-@import "~bootstrap-icons/font/bootstrap-icons.scss";
+@import "~bootstrap-icons/font/bootstrap-icons";
+
+$black: #000000;
+$white: #ffffff;
 
 #background {
-  background-image: linear-gradient(black, #005);
-  opacity: 1;
+  background-image: linear-gradient($black, #005);
+  opacity: 0.9;
   z-index: 1;
   position: fixed;
   top: 0;
@@ -17,12 +20,27 @@
 }
 
 body {
-  background-color: black;
+  background-color: $black;
   height: 100%;
   font-family: Montserrat, Verdana, Geneva, Tahoma, sans-serif;
+  margin: zero;
+  color: $black;
+  font-size: 1em;
+  min-height: 100vh;
+  white-space: pre-wrap;
+  line-height: 1.35em;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 #start-btn {
+  -webkit-backdrop-filter: blur(0.625em);
+  backdrop-filter: blur(0.625em);
+
   span {
     cursor: pointer;
     display: inline-block;
@@ -46,7 +64,7 @@ body {
   background-color: inherit;
   right: 0;
   border: none;
-  color: #fff;
+  color: $white;
   text-align: center;
   font-size: 32px;
 
@@ -76,10 +94,9 @@ body {
   }
 }
 
-#v-pills-tab {
-  /* top: 0; */
-
-  /* z-index: 3; */
+[class^="v-pills"] {
+  top: 0;
+  z-index: 3;
   top: 75px;
   right: 0;
   display: none;
@@ -120,6 +137,6 @@ body {
 
 #intro {
   z-index: 3;
-  color: white;
+  color: $white;
   position: relative;
 }
