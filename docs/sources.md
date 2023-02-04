@@ -54,3 +54,4 @@ _Note: the lists of articles and specific links is non-exhaustive._
   - [Type 'HTMLElement or null' is not assignable to type in TS](https://bobbyhadz.com/blog/typescript-type-htmlelement-null-not-assignable-to-type)
 - [MasteringJS](https://masteringjs.io/)
   - [ESLint Configs](https://masteringjs.io/tutorials/eslint/config)
+- [HOW TO USE REGULAR EXPRESSIONS IN CSS](https://www.clevelandwebdeveloper.com/tutorials/use-regular-expressions-css/)

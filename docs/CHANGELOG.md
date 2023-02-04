@@ -5,6 +5,20 @@ A changelog that tracks our work. All notable changes to this project will be do
 The format is based on [Keep a Changelog][keep-a-changelog], and as this project
 is an application, it **_DOES NOT_** adhere to [Semantic Versioning][semver].
 
+## 2023-01-17
+
+## 2023-01-16
+
+| Initials | Task        | Time involved | Comments | Sponsor Initials |
+| -------- | ----------- | ------------- | -------- | ---------------- |
+| ED       | Do research | 45 minutes    | none     |
+
+## 2023-01-15
+
+| Initials | Task        | Time involved | Comments                | Sponsor Initials |
+| -------- | ----------- | ------------- | ----------------------- | ---------------- |
+| ED       | Work on CI. | 2 hours       | Also, work on security. |
+
 ## 2023-01-13
 
 | Initials | Task        | Time involved | Comments                | Sponsor Initials |
