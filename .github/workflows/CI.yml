@@ -186,6 +186,8 @@ jobs:
         with:
           dry: true
           prettier_options: --check
+          file_pattern: "."
+
   lhci:
     name: Lighthouse CI
     needs: [build]
