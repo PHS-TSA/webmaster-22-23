@@ -3,6 +3,12 @@ import { defineConfig } from "vite";
 import { ViteWebfontDownload } from "vite-plugin-webfont-dl";
 import { VitePWA } from "vite-plugin-pwa";
 import lightningcss from "vite-plugin-lightningcss";
+import { createMpaPlugin, createPages } from "vite-plugin-virtual-mpa";
+
+const pages = createPages([
+  { name: "index" },
+  // You can pass a single page object or a pages array.
+]);
 
 export default defineConfig({
   build: {
@@ -25,6 +31,7 @@ export default defineConfig({
     },
   },
   plugins: [
+    createMpaPlugin({ pages: pages }),
     ViteWebfontDownload(
       ["https://fonts.googleapis.com/css2?family=Montserrat&display=swap"],
       { injectAsStyleTag: true }
