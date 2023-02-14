@@ -64,6 +64,7 @@
     "vite": "^4.0.4",
     "vite-plugin-lightningcss": "^0.0.3",
     "vite-plugin-pwa": "^0.14.1",
+    "vite-plugin-virtual-mpa": "^1.6.0",
     "vite-plugin-webfont-dl": "^3.4.3",
     "vitest": "^0.27.1"
   },
