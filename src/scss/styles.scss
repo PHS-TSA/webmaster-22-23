@@ -74,6 +74,7 @@ body {
   font-size: 32px;
 
   // padding: 5px;
+  width: -moz-fit-content;
   width: fit-content;
   transition: all 0.5s;
   cursor: pointer;
@@ -104,6 +105,7 @@ body {
   right: 0;
   display: none;
   position: absolute;
+  width: -moz-fit-content;
   width: fit-content;
   text-align: left;
   background-color: inherit;
