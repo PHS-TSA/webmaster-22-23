@@ -2,9 +2,6 @@
  * The canvas managing module for the star field background animation.
  */
 
-// eslint-disable-next-line prefer-const
-let starsArray: Star[] = [];
-
 /** Class representing a star. */
 class Star {
   x: number;
@@ -113,8 +110,10 @@ function canvasRun(): void {
       backgroundCanvas.getContext("2d");
 
     if (ctx instanceof CanvasRenderingContext2D) {
+      const starsArray: Star[] = [];
+
       for (let i = 0; i < 450; i++) {
-        createRandomStar();
+        createRandomStar(starsArray);
       }
       for (let i = 0; i < starsArray.length; i++) {
         starsArray[i].draw(ctx);
@@ -122,6 +121,7 @@ function canvasRun(): void {
 
       document.onmousemove = getMouseCoordsFactory(allowMoving);
       document.onmouseenter = setMouseCoordsFactory(
+        starsArray,
         ctx,
         maxX,
         maxY,
@@ -151,9 +151,10 @@ function clear(
 /**
  * Draw all the stars in the {@link starsArray}.
  *
+ * @param starsArray - The list of stars
  * @param ctx - The canvas, kinda.
  */
-function drawStars(ctx: CanvasRenderingContext2D): void {
+function drawStars(starsArray: Star[], ctx: CanvasRenderingContext2D): void {
   for (let i = 0; i < starsArray.length; i++) {
     starsArray[i].draw(ctx);
   }
@@ -168,6 +169,7 @@ interface MousePosition {
 /**
  * Update the stars and their alphas.
  *
+ * @param starsArray - The list of stars
  * @param mP - The mouse position.
  * @param maxX - The width of the screen.
  * @param maxY - The height of the screen.
@@ -175,6 +177,7 @@ interface MousePosition {
  * @returns Nothing (an effectual function).
  */
 function updateStarPositionsAndAlphaVal(
+  starsArray: Star[],
   mP: MousePosition,
   maxX: number,
   maxY: number,
@@ -194,24 +197,29 @@ function updateStarPositionsAndAlphaVal(
         star.setFadingBool(false);
       }
     }
-    checkAndStartFadingAllStars(maxX, maxY);
+    checkAndStartFadingAllStars(starsArray, maxX, maxY);
   }
 }
 
 /**
  * Makes sure all stars fade out.
  *
+ * @param starsArray - The list of stars
  * @param maxX - The max `x` of the stars.
  * @param maxY - The max `y` of the stars.
  */
-function checkAndStartFadingAllStars(maxX: number, maxY: number): void {
+function checkAndStartFadingAllStars(
+  starsArray: Star[],
+  maxX: number,
+  maxY: number
+): void {
   for (let i = 0; i < starsArray.length; i++) {
     const star = starsArray[i];
     if (star.isFadingIn) {
       star.updateAlphaVal(0.01);
       if (star.alpha <= 0) {
         starsArray.splice(i, 1);
-        createRandomStarOnBorder(maxX, maxY);
+        createRandomStarOnBorder(starsArray, maxX, maxY);
       }
     } else {
       star.setAlphaVal(1);
@@ -222,6 +230,7 @@ function checkAndStartFadingAllStars(maxX: number, maxY: number): void {
 /**
  * Update the stars location.
  *
+ * @param starsArray - The list of stars
  * @param ctx - The canvas, kinda.
  * @param mP - The mouse position.
  * @param maxX - The width of the screen.
@@ -229,6 +238,7 @@ function checkAndStartFadingAllStars(maxX: number, maxY: number): void {
  * @param backgroundCanvas - The background.
  */
 function update(
+  starsArray: Star[],
   ctx: CanvasRenderingContext2D,
   mP: MousePosition,
   maxX: number,
@@ -237,8 +247,8 @@ function update(
   allowMoving: boolean
 ): void {
   clear(ctx, backgroundCanvas);
-  drawStars(ctx);
-  updateStarPositionsAndAlphaVal(mP, maxX, maxY, allowMoving);
+  drawStars(starsArray, ctx);
+  updateStarPositionsAndAlphaVal(starsArray, mP, maxX, maxY, allowMoving);
   requestAnimationFrame((callback: number) => {
     return callback;
   });
@@ -270,28 +280,24 @@ function getMouseCoordsFactory(
      * (This is to support old IE)
      **/
     if (ev.pageX === null && !(ev.clientX === null)) {
-      /*
-      if (!(ev.target === null)) {
-        eventDoc = ev.target.ownerDocument(); // @Ash-Greninja101 what is this?
-      } else {
-        eventDoc = document;
-      }
+      // if (!(ev.target === null)) {
+      //   eventDoc = ev.target.ownerDocument(); // @Ash-Greninja101 what is this?
+      // } else {
+      eventDoc = document;
+      // }
 
       doc = eventDoc.documentElement;
       body = eventDoc.body;
-      */
-      /* ev. */
-      /* let pageX =
-        ev.clientX +
-        ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
-        ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
-        */
-      /* ev. */
-      /* let pageY =
-        ev.clientY +
-        ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
-        ((doc && doc.clientTop) || (body && body.clientTop) || 0);
-        */
+
+      // let ev.pageX =
+      //   ev.clientX +
+      //   ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
+      //   ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
+
+      // let ev.pageY =
+      //   ev.clientY +
+      //   ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
+      //   ((doc && doc.clientTop) || (body && body.clientTop) || 0);
     }
 
     allowMoving = true;
@@ -302,12 +308,14 @@ function getMouseCoordsFactory(
 /**
  * Create a function to set the mouse coordinates.
  *
+ * @param starsArray - The list of stars
  * @param ctx - The canvas, kinda.
  * @param maxX - The max `x` of the stars.
  * @param maxY - The max `y` of the stars.
  * @returns Nothing (an effectual function).
  */
 function setMouseCoordsFactory(
+  starsArray: Star[],
   ctx: CanvasRenderingContext2D,
   maxX: number,
   maxY: number,
@@ -322,7 +330,7 @@ function setMouseCoordsFactory(
    */
   function setMouseCoords(this: GlobalEventHandlers, ev: MouseEvent) {
     const mP: MousePosition = { x: ev.clientX, y: ev.clientY };
-    update(ctx, mP, maxX, maxY, backgroundCanvas, allowMoving);
+    update(starsArray, ctx, mP, maxX, maxY, backgroundCanvas, allowMoving);
   }
   return setMouseCoords;
 }
@@ -365,44 +373,50 @@ function getDistance(x1: number, y1: number, x2: number, y2: number): number {
  * Create a random star.
  * This should conform to TimerHandler
  *
+ * @param starsArray - The list of stars
  */
-function createRandomStar(): void {
+function createRandomStar(starsArray: Star[]): void {
   const newRadius = Math.floor(Math.random() * 4);
   const newZ = Math.random();
   const newX = Math.random() * (window.innerWidth - newRadius * 2);
   const newY = Math.random() * (window.innerHeight - newRadius * 2);
-  createStar(newRadius, newX, newY, newZ);
+  createStar(starsArray, newRadius, newX, newY, newZ);
 }
 
 /**
  * Create a random star on the border of the canvas.
  *
+ * @param starsArray - The list of stars
  * @param maxX - The width of the screen.
  * @param maxY - The height of the screen.
  */
-function createRandomStarOnBorder(maxX: number, maxY: number): void {
+function createRandomStarOnBorder(
+  starsArray: Star[],
+  maxX: number,
+  maxY: number
+): void {
   const border = Math.floor(Math.random() * 4);
   const newRadius = Math.floor(Math.random() * 4);
   const newZ = Math.random();
   switch (border) {
     case 0: {
       const newY = Math.random() * (window.innerHeight - newRadius * 2);
-      createStar(newRadius, 10, newY, newZ);
+      createStar(starsArray, newRadius, 10, newY, newZ);
       break;
     }
     case 1: {
       const newX = Math.random() * (window.innerWidth - newRadius * 2);
-      createStar(newRadius, newX, 10, newZ);
+      createStar(starsArray, newRadius, newX, 10, newZ);
       break;
     }
     case 2: {
       const newY = Math.random() * (window.innerHeight - newRadius * 2);
-      createStar(newRadius, maxX, newY, newZ);
+      createStar(starsArray, newRadius, maxX, newY, newZ);
       break;
     }
     default: {
       const newX = Math.random() * (window.innerWidth - newRadius * 2);
-      createStar(newRadius, newX, maxY, newZ);
+      createStar(starsArray, newRadius, newX, maxY, newZ);
     }
   }
 }
@@ -410,12 +424,14 @@ function createRandomStarOnBorder(maxX: number, maxY: number): void {
 /**
  * Create a star.
  *
+ * @param starsArray - The list of stars
  * @param radius - The star's radius.
  * @param xPos - The `x` position of the star.
  * @param yPos - The `y` position of the star.
  * @param zVal - The `z` position of the star.
  */
 function createStar(
+  starsArray: Star[],
   radius: number,
   xPos: number,
   yPos: number,
