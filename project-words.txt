@@ -15,6 +15,7 @@ Shaurya
 stackoverflow
 Stackshare
 standardjs
+stylelint
 tsdoc
 vite
 webfont
