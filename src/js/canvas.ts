@@ -110,7 +110,8 @@ function canvasRun(): void {
       backgroundCanvas.getContext("2d");
 
     if (ctx instanceof CanvasRenderingContext2D) {
-      const starsArray: Star[] = [];
+      // eslint-disable-next-line no-var
+      var starsArray: Array<Star> = [];
 
       for (let i = 0; i < 450; i++) {
         createRandomStar(starsArray);
