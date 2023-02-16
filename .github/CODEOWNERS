@@ -6,7 +6,7 @@
 # review when someone opens a pull request.
 *                    @PHS-TSA/webmaster
 
-*.js                 @Ash-Greninja101 
+*.js                 @Ash-Greninja101
 *.ts                 @Ash-Greninja101 @lishaduck
 /docs/               @lishaduck @PHS-TSA/webmaster
 /.github/            @lishaduck
