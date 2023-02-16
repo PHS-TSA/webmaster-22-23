@@ -25,6 +25,7 @@
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="theme-color" content="#005" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="src/images/favicon.png" />
     <meta
       name="apple-mobile-web-app-status-bar-style"
       content="black-translucent"
@@ -94,7 +95,7 @@
     <nav class="nav flex-column" id="menu">
       <!-- 'menuOptions' for id?-->
 
-      <button id="menu-btn">
+      <button id="menu-btn" type="button">
         <span
           >Menu <i class="fas fa-bars no-italics icons">三</i
           ><i class="fas fa-bars"></i
@@ -114,7 +115,7 @@
           aria-controls="v-pills-home"
           aria-selected="true"
         >
-          <a class="nav-link" href="#v-pills-home">Home</a>
+          <a class="nav-link" id="v-pills-home" href="#v-pills-home">Home</a>
         </li>
         <li
           class="nav-item disabled"
