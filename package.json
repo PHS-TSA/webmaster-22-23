@@ -58,6 +58,7 @@
     "run-pty": "^4.0.3",
     "sass": "^1.57.1",
     "stylelint": "^15.1.0",
+    "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-scss": "^4.4.0",
     "typescript": "^4.9.4",
     "vite": "^4.0.4",
