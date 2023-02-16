@@ -2,8 +2,11 @@
 @import "~bootstrap/scss/bootstrap";
 @import "~bootstrap-icons/font/bootstrap-icons";
 
-$black: #000000;
-$white: #ffffff;
+$black: #000;
+$white: #fff;
+$black-hover: rgb(40 40 40 / 70%);
+$black-hover-text: rgb(44 44 45 / 100%);
+$menu-black: rgb(44 44 45 / 0%);
 
 #background {
   background-image: linear-gradient($black, #005);
@@ -37,7 +40,7 @@ body {
   }
 }
 
-#start-btn {
+.start-btn {
   -webkit-backdrop-filter: blur(0.625em);
   backdrop-filter: blur(0.625em);
 
@@ -58,17 +61,17 @@ body {
   }
 }
 
-#menu-btn {
+.menu-btn {
   visibility: visible;
   border-radius: 4px;
   background-color: inherit;
   right: 0;
-  border: none;
+  border: 0;
   color: $white;
   text-align: center;
   font-size: 32px;
 
-  /* padding: 5px; */
+  // padding: 5px;
   width: fit-content;
   transition: all 0.5s;
   cursor: pointer;
@@ -81,20 +84,18 @@ body {
   span {
     opacity: 1;
   }
-}
+  &:hover {
+    background-color: $black-hover;
 
-#menu-btn:hover {
-  background-color: rgb(40 40 40 / 70%);
+    span::after {
+      opacity: 1;
 
-  span::after {
-    opacity: 1;
-
-    /* right: 0; */
-    background-color: rgb(44 44 45 / 100%);
+      // right: 0;
+    }
   }
 }
 
-[class^="v-pills"] {
+.v-pills {
   top: 0;
   z-index: 3;
   top: 75px;
@@ -106,7 +107,7 @@ body {
   background-color: inherit;
 }
 
-#menu {
+.menu {
   visibility: hidden;
   position: relative;
   float: right;
@@ -114,7 +115,7 @@ body {
   height: 100%;
   top: 0;
   z-index: 2;
-  background-color: rgb(44 44 45 / 0%);
+  background-color: $menu-black;
 }
 
 @keyframes fadein {
@@ -135,7 +136,7 @@ body {
   font-style: normal;
 }
 
-#intro {
+.intro {
   z-index: 3;
   color: $white;
   position: relative;

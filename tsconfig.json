@@ -19,6 +19,12 @@
     "noEmit": true, // for vite
     "types": ["vite/client", "node", "bootstrap", "vitest"]
   },
-  "exclude": ["node_modules", "**/node_modules/*", "dev-dist", "dist", "megalinter-reports"],
+  "exclude": [
+    "node_modules",
+    "**/node_modules/*",
+    "dev-dist",
+    "dist",
+    "megalinter-reports"
+  ],
   "include": ["src", "vite.config.ts", "commitlint.config.cts"]
 }
