@@ -31,17 +31,23 @@ DISABLE_ERRORS_LINTERS:
   - MARKDOWN_MARKDOWN_LINK_CHECK
   - SPELL_CSPELL
 
-PRE_COMMANDS:
-  - command: npm install eslint-import-resolver-typescript eslint-plugin-markdown eslint-plugin-tsdoc # stylelint-config-standard-scss # this is currently broken
-    cwd: root
-
 SHOW_ELAPSED_TIME: true
 JSON_REPORTER: true
 GITHUB_STATUS_REPORTER: true
-JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '(\.vscode/)'
-TYPESCRIPT_DEFAULT_STYLE: prettier
-TYPESCRIPT_ES_CONFIG_FILE: ".eslintrc.json"
+
 EDITORCONFIG_EDITORCONFIG_CHECKER_CONFIG_FILE: ".editorconfig"
 MARKDOWN_MARKDOWN_LINK_CHECK_CONFIG_FILE: "mlc-config.json"
 SPELL_CSPELL_CONFIG_FILE: "cspell.json"
+
+TYPESCRIPT_DEFAULT_STYLE: prettier
+TYPESCRIPT_ES_PRE_COMMANDS:
+  - command: npm install eslint-import-resolver-typescript eslint-plugin-markdown eslint-plugin-tsdoc # this is currently broken
+    cwd: root
+TYPESCRIPT_ES_CONFIG_FILE: ".eslintrc.json"
+
+CSS_STYLELINT_PRE_COMMANDS:
+  - command: stylelint-config-standard-scss # this is currently broken
+    cwd: root
+
 JSON_JSONLINT_CONFIG_FILE: ".jsonlintrc.json"
+JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '(\.vscode/)'
