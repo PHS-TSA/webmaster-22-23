@@ -73,8 +73,8 @@ body {
   transition: all 0.5s;
   cursor: pointer;
   margin: 1%;
-  z-index: 3;
-  animation: fadein 2s;
+  float: right;
+
   position: absolute;
   padding-right: 25px;
 
@@ -114,7 +114,7 @@ body {
   height: 100%;
   top: 0;
   z-index: 2;
-  background-color: rgb(44 44 45 / 0%);
+  background-color: rgba(44, 44, 45, 0);
 }
 
 @keyframes fadein {
@@ -136,7 +136,13 @@ body {
 }
 
 #intro {
-  z-index: 3;
+  // z-index: 3;
   color: $white;
   position: relative;
+  float: left;
+}
+#top {
+  z-index: 3;
+  justify-content: center;
+  animation: fadein 2s;
 }

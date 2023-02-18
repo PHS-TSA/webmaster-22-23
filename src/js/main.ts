@@ -3,7 +3,7 @@ window.onload = () => {
   const maxY = window.innerHeight;
   const backgroundCanv = document.getElementById("background");
   const menuDiv = document.getElementById("menu");
-  const menuBtn = document.getElementById("menuBtn");
+  const menuBtn = document.getElementById("menu-btn");
   // if (backgroundCanv instanceof HTMLCanvasElement) {
   const ctx = backgroundCanv.getContext("2d");
   const menuOptionsDiv = document.getElementById("v-pills-tab");
@@ -15,6 +15,7 @@ window.onload = () => {
   container.height = window.innerHeight;
   backgroundCanv.width = container.width;
   backgroundCanv.height = container.height;
+  menuBtn.onclick = openMenu;
 
   class Star {
     x: number;
@@ -158,6 +159,8 @@ window.onload = () => {
     let border = Math.floor(Math.random() * 4);
     let newRadius = Math.floor(Math.random() * 4);
     let newZ = Math.random();
+    let newY = 0;
+    let newX = 0;
     switch (border) {
       case 0:
         newY = Math.random() * (window.innerHeight - newRadius * 2);
@@ -186,6 +189,7 @@ window.onload = () => {
     menuDiv.style.backgroundColor = toggleMenu
       ? "rgba(44, 44, 45, 1)"
       : "rgba(44, 44, 45, 0)";
+    console.log("Button clicked and options should be visible");
   }
 };
 export {};
