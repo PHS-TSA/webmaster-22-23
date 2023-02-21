@@ -17,7 +17,7 @@
     "isolatedModules": true, // for vite
     "useDefineForClassFields": true, // for vite
     "noEmit": true, // for vite
-    "types": ["vite/client", "node", "bootstrap", "vitest"]
+    "types": ["vite/client", "bootstrap", "vitest"]
   },
   "exclude": [
     "node_modules",
