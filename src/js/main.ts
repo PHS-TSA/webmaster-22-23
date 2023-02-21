@@ -187,9 +187,10 @@ window.onload = () => {
     menuOptionsDiv.style.visibility = toggleMenu ? "visible" : "hidden";
     menuOptionsDiv.style.display = toggleMenu ? "block" : "none";
     menuDiv.style.backgroundColor = toggleMenu
-      ? "rgba(44, 44, 45, 1)"
-      : "rgba(44, 44, 45, 0)";
+      ? "rgb(44, 44, 45 / 1)"
+      : "rgb(44, 44, 45 / 0)";
     console.log("Button clicked and options should be visible");
   }
 };
+
 export {};

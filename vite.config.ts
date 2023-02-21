@@ -7,6 +7,7 @@ import { createMpaPlugin, createPages } from "vite-plugin-virtual-mpa";
 
 const pages = createPages([
   { name: "index" },
+  { name: "about-us" },
   // You can pass a single page object or a pages array.
 ]);
 

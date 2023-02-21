@@ -21,6 +21,7 @@
     "package.json": "package-lock.json, yarn.lock, npm-shrinkwrap.json, .commitlint*, .editorconfig, .eslint*, .github*, .lighthouserc.*, markdownlint*, .node-version, .nodemon*, .npm*, .nvmrc, .pnp.*, .pnpm*, .prettier*, .travis*, .vscode*, .yarnrc*, azure-pipelines*, commitlint*, cypress.*, lerna*, lighthouserc.*, netlify*, nodemon*, nx.*, pnpm*, prettier*, renovate*, vercel*, vitest.config.*, workspace.json,yarn*, cspell.json, .markdownlint-cli2.jsonc, run-pty.json, .jsonlintrc.json, .mega-linter.yml, mlc-config.json, .stylelintrc.json",
     "lighthouserc.json": "budget.json",
     "*cspell.json": "project-words.txt",
-    "README.*": "*.md, .all-contributorsrc, CITATION.cff"
+    "README.*": "*.md, .all-contributorsrc, CITATION.cff",
+    "index.html": "*.html"
   }
 }
