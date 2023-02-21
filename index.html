@@ -93,76 +93,78 @@
       <div id="container"></div>
     </canvas>
     <script src="src/js/main.ts" type="module"></script>
-    <p class="intro">
-      Hi! Welcome to Cosmic Cruise Lines, the only
-      <span class="underlined">authentic</span> space cruises out of this world.
-    </p>
-    <nav class="nav flex-column menu">
-      <!-- 'menuOptions' for id?-->
+    <div id="top">
+      <p class="intro">
+        Hi! Welcome to Cosmic Cruise Lines, the only
+        <span class="underlined">authentic</span> space cruises out of this world.
+      </p>
+      <nav class="nav flex-column menu">
+        <!-- 'menuOptions' for id?-->
 
-      <button class="menu-btn" type="button">
-        <span
-          >Menu <i class="fas fa-bars no-italics icons">三</i
-          ><i class="fas fa-bars"></i
-        ></span>
-      </button>
-      <ul
-        class="nav flex-column nav-pills v-pills"
-        id="v-pills-tab"
-        role="tablist"
-        aria-orientation="vertical"
-      >
-        <li
-          class="nav-item active v-pills"
-          id="v-pills-home-tab"
-          data-toggle="pill"
-          role="tab"
-          aria-controls="v-pills-home"
-          aria-selected="true"
+        <button class="menu-btn" type="button">
+          <span
+            >Menu <i class="fas fa-bars no-italics icons">三</i
+            ><i class="fas fa-bars"></i
+          ></span>
+        </button>
+        <div
+          class="nav flex-column nav-pills v-pills"
+          id="v-pills-tab"
+          role="tablist"
+          aria-orientation="vertical"
         >
-          <a class="nav-link" id="v-pills-home" href="#v-pills-home">Home</a>
-        </li>
-        <li
-          class="nav-item disabled v-pills"
-          id="v-pills-profile-tab"
-          data-toggle="pill"
-          role="tab"
-          aria-controls="v-pills-profile"
-          aria-selected="false"
-        >
-          <a class="nav-link" href="#v-pills-profile">Profile</a>
-        </li>
-        <li
-          class="nav-item disabled v-pills"
-          id="v-pills-messages-tab"
-          data-toggle="pill"
-          role="tab"
-          aria-controls="v-pills-messages"
-          aria-selected="false"
-        >
-          <a class="nav-link" href="#v-pills-messages">Messages</a>
-        </li>
-        <li
-          class="nav-item disabled v-pills"
-          id="v-pills-settings-tab"
-          data-toggle="pill"
-          role="tab"
-          aria-controls="v-pills-settings"
-          aria-selected="false"
-        >
-          <a class="nav-link" href="#v-pills-settings">Settings</a>
-        </li>
-        <li
-          class="nav-item disabled v-pills"
-          id="v-pills-pwa-tab"
-          data-toggle="pill"
-          role="tab"
-          aria-controls="v-pills-settings"
-          aria-selected="false"
-        >
-          <button class="add-button">Add to home screen</button>
-        </li>
-      </ul>
-    </nav>
+          <li
+            class="nav-item active v-pills"
+            id="v-pills-home-tab"
+            data-toggle="pill"
+            role="tab"
+            aria-controls="v-pills-home"
+            aria-selected="true"
+          >
+            <a class="nav-link" id="v-pills-home" href="#v-pills-home">Home</a>
+          </li>
+          <li
+            class="nav-item disabled v-pills"
+            id="v-pills-profile-tab"
+            data-toggle="pill"
+            role="tab"
+            aria-controls="v-pills-profile"
+            aria-selected="false"
+          >
+            <a class="nav-link" href="#v-pills-profile">Profile</a>
+          </li>
+          <li
+            class="nav-item disabled v-pills"
+            id="v-pills-messages-tab"
+            data-toggle="pill"
+            role="tab"
+            aria-controls="v-pills-messages"
+            aria-selected="false"
+          >
+            <a class="nav-link" href="#v-pills-messages">Messages</a>
+          </li>
+          <li
+            class="nav-item disabled v-pills"
+            id="v-pills-settings-tab"
+            data-toggle="pill"
+            role="tab"
+            aria-controls="v-pills-settings"
+            aria-selected="false"
+          >
+            <a class="nav-link" href="#v-pills-settings">Settings</a>
+          </li>
+          <li
+            class="nav-item disabled v-pills"
+            id="v-pills-pwa-tab"
+            data-toggle="pill"
+            role="tab"
+            aria-controls="v-pills-settings"
+            aria-selected="false"
+          >
+            <button class="add-button">Add to home screen</button>
+          </li>
+        </div>
+      </nav>
+    </div>
   </body>
 </html>
