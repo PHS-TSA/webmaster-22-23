@@ -91,7 +91,7 @@ window.onload = () => {
   let allowMoving = false;
   {
     const menuDiv = document.getElementById("menu");
-    const menuBtn = document.getElementById("menuBtn");
+    const menuBtn = document.getElementById("menu-btn");
     // if (backgroundCanvas instanceof HTMLCanvasElement) {
     const ctx = backgroundCanvas.getContext("2d");
     const menuOptionsDiv = document.getElementById("v-pills-tab");
@@ -99,6 +99,7 @@ window.onload = () => {
     let toggleMenu = false;
     let mousePosition = {};
     let allowMoving = false;
+    menuBtn.onclick = openMenu;
     container.width = window.innerWidth;
     container.height = window.innerHeight;
     backgroundCanvas.width = container.width;
@@ -243,12 +244,12 @@ window.onload = () => {
           doc = eventDoc.documentElement;
           body = eventDoc.body;
 
-          ev.pageX =
+          event.pageX =
             ev.clientX +
             ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
             ((doc && doc.clientLeft) || (body && body.clientLeft) || 0);
 
-          ev.pageY =
+          event.pageY =
             ev.clientY +
             ((doc && doc.scrollTop) || (body && body.scrollTop) || 0) -
             ((doc && doc.clientTop) || (body && body.clientTop) || 0);
