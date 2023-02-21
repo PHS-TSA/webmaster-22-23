@@ -1,1 +1,1 @@
-# PHS-TSA's documentation
+# PHS-TSA project documentation

@@ -8,13 +8,22 @@
     "tamasfe.even-better-toml",
     "github.vscode-pull-request-github",
     "eamodio.gitlens",
-    "ms-vsliveshare.vsliveshare-pack",
+    "ms-vsliveshare.vsliveshare",
+    "ms-vsliveshare.vsliveshare-audio",
     "davidanson.vscode-markdownlint",
     "esbenp.prettier-vscode",
     "bierner.github-markdown-preview",
     "ecmel.vscode-html-css",
     "htmlhint.vscode-htmlhint",
     "visualstudioexptteam.vscodeintellicode",
-    "ms-sarifvscode.sarif-viewer"
+    "ms-sarifvscode.sarif-viewer",
+    "simonsiefke.svg-preview",
+    "dbaeumer.vscode-eslint",
+    "kisstkondoros.vscode-gutter-preview",
+    "swellaby.node-pack",
+    "stylelint.vscode-stylelint",
+    "zixuanchen.vitest-explorer",
+    "antfu.vite",
+    "github.vscode-codeql"
   ]
 }

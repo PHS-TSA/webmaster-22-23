@@ -1,0 +1,49 @@
+# Configuration file for MegaLinter
+# See all available variables at https://megalinter.io/configuration/ and in linters documentation
+
+APPLY_FIXES: all
+ENABLE: # If you use ENABLE variable, all other languages/formats/tooling formats will be disabled by default
+  - JAVASCRIPT
+  - TYPESCRIPT
+  - HTML
+  - CSS
+  - JSON
+  - SPELL
+  - MARKDOWN
+  - YAML
+  - ACTION
+  - EDITORCONFIG
+  - COPYPASTE
+  - REPOSITORY
+
+DISABLE_LINTERS:
+  - JAVASCRIPT_STANDARD
+  - TYPESCRIPT_STANDARD
+  - REPOSITORY_DEVSKIM
+  - REPOSITORY_TRIVY
+  - MARKDOWN_MARKDOWN_TABLE_FORMATTER
+  - CSS_SCSS_LINT
+
+DISABLE_ERRORS_LINTERS:
+  - REPOSITORY_DEVSKIM
+  - REPOSITORY_SEMGREP
+  - MARKDOWN_MARKDOWN_LINK_CHECK
+  - SPELL_CSPELL
+
+SHOW_ELAPSED_TIME: true
+JSON_REPORTER: true
+GITHUB_STATUS_REPORTER: true
+
+EDITORCONFIG_EDITORCONFIG_CHECKER_CONFIG_FILE: ".editorconfig"
+MARKDOWN_MARKDOWN_LINK_CHECK_CONFIG_FILE: "mlc-config.json"
+SPELL_CSPELL_CONFIG_FILE: "cspell.json"
+
+TYPESCRIPT_DEFAULT_STYLE: prettier
+PRE_COMMANDS:
+  - command: npm install
+    cwd: workspace
+TYPESCRIPT_ES_CONFIG_FILE: ".eslintrc.json"
+
+
+JSON_JSONLINT_CONFIG_FILE: ".jsonlintrc.json"
+JSON_JSONLINT_FILTER_REGEX_EXCLUDE: '(\.vscode/)'

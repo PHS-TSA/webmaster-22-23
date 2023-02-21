@@ -1,6 +1,6 @@
 # Contributors
 
-A list a contributors adhering to the [all-contributors](https://allcontributors.org/docs/en/specification) spec.
+A list of contributors adhering to the [all-contributors][all-contribs] spec.
 
 ## Contributors list
 
@@ -24,3 +24,5 @@ A list a contributors adhering to the [all-contributors](https://allcontributors
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
+
+[all-contribs]: https://allcontributors.org/docs/en/specification

@@ -1,3 +1,5 @@
+megalinter-reports/
+
 # Logs
 logs
 *.log
@@ -81,6 +83,12 @@ typings/
 # Nuxt.js build / generate output
 .nuxt
 dist
+
+# Vite.js build / generate output
+dist
+dist-ssr
+*.local
+dev-dist
 
 # Gatsby files
 .cache/

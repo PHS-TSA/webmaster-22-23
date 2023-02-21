@@ -1,0 +1,4 @@
+node_modules/
+dev-dist/
+vite-env.d.ts
+dist/

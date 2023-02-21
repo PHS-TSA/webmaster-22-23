@@ -10,4 +10,10 @@ updates:
     schedule:
       interval: "daily"
     assignees:
-     - "lishaduck"
+      - "lishaduck"
+  - package-ecosystem: "npm" # See documentation for possible values
+    directory: "/" # Location of package manifests
+    schedule:
+      interval: "daily"
+    assignees:
+      - "lishaduck"

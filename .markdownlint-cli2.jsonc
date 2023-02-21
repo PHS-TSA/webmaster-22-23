@@ -1,0 +1,20 @@
+{
+  "config": {
+    "default": true,
+    "extends": "markdownlint/style/prettier",
+    "MD025": {
+      "front_matter_title": ""
+    },
+    "MD013": false
+  },
+  "ignores": [
+    "node_modules",
+    ".github",
+    ".vscode",
+    "dev-dist",
+    "dist",
+    "public",
+    "src"
+  ],
+  "globs": ["*.{md,markdown}", "docs"]
+}

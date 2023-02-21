@@ -1,0 +1,88 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true,
+    "worker": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["prettier", "@typescript-eslint", "tsdoc", "promise", "import"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:promise/recommended",
+    "plugin:markdown/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:@typescript-eslint/recommended-requiring-type-checking",
+    "plugin:prettier/recommended"
+  ],
+  "overrides": [
+    {
+      "files": ["**/*test*"],
+      "rules": {
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/require-await": "off"
+      }
+    },
+    {
+      "files": ["commitlint.config.cts", "vite.config.ts"],
+      "rules": {
+        "@typescript-eslint/naming-convention": "off",
+        "@typescript-eslint/no-magic-numbers": "off"
+      }
+    }
+  ],
+  "settings": {
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx"]
+    },
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "arrowFunctions": true,
+      "classes": true,
+      "templateStrings": true,
+      "defaultParams": true
+    },
+    "ecmaVersion": "latest",
+    "project": ["tsconfig.json"]
+  },
+  "root": true,
+  "rules": {
+    "no-magic-numbers": "off",
+    // "@typescript-eslint/no-magic-numbers": "warn",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": "error",
+    "no-shadow-restricted-names": "error",
+    "no-eq-null": "warn",
+    "spaced-comment": "warn",
+    "symbol-description": "warn",
+    "tsdoc/syntax": "warn",
+    "@typescript-eslint/naming-convention": "warn",
+    "@typescript-eslint/switch-exhaustiveness-check": "error",
+    "@typescript-eslint/no-require-imports": "warn",
+    "@typescript-eslint/prefer-regexp-exec": "warn",
+    "@typescript-eslint/sort-type-constituents": "warn",
+    "import/first": "warn",
+    "import/exports-last": "error",
+    "import/extensions": [
+      "error",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "import/order": "error",
+    "import/group-exports": "error",
+    "import/newline-after-import": "error"
+  }
+}
