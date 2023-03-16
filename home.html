@@ -73,22 +73,8 @@
     <meta name="ICBM" content="38.7459277, -90.4541215" />
 
     <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-    <!-- <link rel="icon" type="image/svg+xml" href="src/images/favicon.svg" /> -->
-    <!-- <link
-      rel="icon"
-      sizes="48x48"
-      type="image/png"
-      href="src/images/favicon.png"
-    /> -->
   </head>
   <body>
-    <!--[if lt IE 7]>
-      <p>
-        You are using an <strong>outdated</strong> browser. Please
-        <a href="https://brave.com/">upgrade your browser</a> to improve your
-        experience.
-      </p>
-    <![endif]-->
     <canvas id="background">
       <div id="container"></div>
     </canvas>
@@ -98,8 +84,6 @@
       <span class="underlined">authentic</span> space cruises out of this world.
     </p>
     <div class="nav flex-column menu" id="menu">
-      <!-- 'menuOptions' for id?-->
-
       <button class="menu-btn" type="button" id="menu-btn">
         <span
           >Menu <i class="fas fa-bars no-italics icons">三</i
@@ -112,45 +96,35 @@
         role="tablist"
         aria-orientation="vertical"
       >
-        <li
+        <!-- <li
           class="nav-item active v-pills"
-          id="v-pills-home-tab"
+          id="v-pills-about-tab"
           data-toggle="pill"
           role="tab"
-          aria-controls="v-pills-home"
+          aria-controls="v-pills-about"
           aria-selected="true"
         >
-          <a class="nav-link" id="v-pills-home" href="#v-pills-home">Home</a>
-        </li>
+          <a class="nav-link" id="v-pills-about" href="about.html">Abouts Us</a>
+        </li> -->
         <li
-          class="nav-item disabled v-pills"
-          id="v-pills-profile-tab"
+          class="nav-item active v-pills"
+          id="v-pills-packages-tab"
           data-toggle="pill"
           role="tab"
-          aria-controls="v-pills-profile"
+          aria-controls="v-pills-packages"
           aria-selected="false"
         >
-          <a class="nav-link" href="#v-pills-profile">Profile</a>
+          <a class="nav-link" href="packages.html">Our Packages</a>
         </li>
         <li
-          class="nav-item disabled v-pills"
-          id="v-pills-messages-tab"
+          class="nav-item active v-pills"
+          id="v-pills-about-tab"
           data-toggle="pill"
           role="tab"
-          aria-controls="v-pills-messages"
-          aria-selected="false"
+          aria-controls="v-pills-about"
+          aria-selected="true"
         >
-          <a class="nav-link" href="#v-pills-messages">Messages</a>
-        </li>
-        <li
-          class="nav-item disabled v-pills"
-          id="v-pills-settings-tab"
-          data-toggle="pill"
-          role="tab"
-          aria-controls="v-pills-settings"
-          aria-selected="false"
-        >
-          <a class="nav-link" href="#v-pills-settings">Settings</a>
+          <a class="nav-link" id="v-pills-about" href="about.html">About Us</a>
         </li>
         <li
           class="nav-item disabled v-pills"
@@ -160,7 +134,7 @@
           aria-controls="v-pills-settings"
           aria-selected="false"
         >
-          <button class="add-button nav-link" type="button">
+          <button class="nav-link" id="add-button" type="button">
             Add to home screen
           </button>
         </li>

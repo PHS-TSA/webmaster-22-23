@@ -1,13 +1,14 @@
 window.onload = () => {
   const maxX = window.innerWidth;
   const maxY = window.innerHeight;
+  const centerX = maxX / 2;
+  const centerY = maxY / 2;
   let backgroundCanv = document.getElementById("background");
   let menuDiv = document.getElementById("menu");
   let menuBtn = document.getElementById("menu-btn");
   let ctx = backgroundCanv.getContext("2d");
   let menuOptionsDiv = document.getElementById("v-pills-tab");
-  console.warn(menuBtn, menuDiv, menuOptionsDiv);
-  // let theMenuOptions = menuOptionsDiv.querySelectorAll("a");
+  // console.warn(menuBtn, menuDiv, menuOptionsDiv);
   let toggleMenu = false;
   let mousePosition = {};
   var allowMoving = false;
@@ -69,15 +70,17 @@ window.onload = () => {
       let mousePos = mP;
       for (let i = 0; i < starsArray.length; i++) {
         let star = starsArray[i];
-        let dx = ((mousePos.x - star.x) * star.z * 0.0005) / star.radius;
-        let dy = ((mousePos.y - star.y) * star.z * 0.0005) / star.radius;
+        // let dx = ((mousePos.x - star.x) * star.z * 0.0005) / star.radius;
+        // let dy = ((mousePos.y - star.y) * star.z * 0.0005) / star.radius;
+        let dx = ((centerX - star.x) * star.z * -0.05) / star.radius;
+        let dy = ((centerY - star.y) * star.z * -0.05) / star.radius;
         star.updatePos(dx, dy);
-        let dist = getDistance(mousePos.x, mousePos.y, star.x, star.y);
-        if (dist <= 50) {
-          star.setFadingBool(true);
-        } else {
-          star.setFadingBool(false);
-        }
+        // let dist = getDistance(mousePos.x, mousePos.y, star.x, star.y);
+        // if (dist <= 50) {
+        //   star.setFadingBool(true);
+        // } else {
+        //   star.setFadingBool(false);
+        // }
       }
       checkAndStartFadingAllStars();
     }
@@ -85,14 +88,10 @@ window.onload = () => {
   function checkAndStartFadingAllStars() {
     for (let i = 0; i < starsArray.length; i++) {
       let star = starsArray[i];
-      if (star.fading) {
-        star.updateAlphaVal(-0.01);
-        if (star.alpha <= 0) {
-          starsArray.splice(i, 1);
-          createRandomStarOnBorder();
-        }
-      } else {
-        star.setAlphaVal(1);
+      // star.updateAlphaVal(+0.001);
+      if (inBorder(star)) {
+        starsArray.splice(i, 1);
+        createCenterRandomStar();
       }
     }
   }
@@ -108,6 +107,7 @@ window.onload = () => {
   document.onmouseleave = (e) => {
     allowMoving = false;
   };
+  setInterval(createCenterRandomStar, 100);
 
   function getMouseCoords(event) {
     let eventDoc, doc, body;
@@ -154,6 +154,21 @@ window.onload = () => {
     let newY = Math.random() * (window.innerHeight - newRadius * 2);
     createStar(newRadius, newX, newY, newZ);
   }
+  function createCenterRandomStar() {
+    if (allowMoving) {
+      let newRadius = Math.floor(Math.random() * 4);
+      let newZ = Math.random();
+      let r = Math.random();
+      let r2 = Math.random();
+      r = r >= 0.5 ? 1 : -1;
+      r2 = r2 >= 0.5 ? 1 : -1;
+      let newX = r * Math.random() * 200 + centerX;
+      let newY = r2 * Math.random() * 200 + centerY;
+      console.log("New star created ");
+      console.log(starsArray.length);
+      createStar(newRadius, newX, newY, newZ);
+    }
+  }
 
   function createRandomStarOnBorder() {
     let border = Math.floor(Math.random() * 4);
@@ -178,8 +193,19 @@ window.onload = () => {
     }
   }
 
-  function createStar(radius, xPos, yPos, zVal) {
-    starsArray.push(new Star(xPos, yPos, zVal, 1, radius));
+  function createStar(radius, xPos, yPos, zVal, alphaVal = 1) {
+    starsArray.push(new Star(xPos, yPos, zVal, alphaVal, radius));
+  }
+  function inBorder(star) {
+    let x = star.x;
+    let y = star.y;
+    let width = backgroundCanv.width;
+    let height = backgroundCanv.height;
+    let d = star.radius * 2;
+    if (0 - d <= x || x >= height + d || 0 - d <= y || y >= width + d) {
+      return false;
+    }
+    return true;
   }
   function openMenu() {
     toggleMenu = !toggleMenu;
