@@ -106,23 +106,27 @@ body {
   font-style: normal;
 }
 
-#intro {
+.intro {
   z-index: 4;
+  color: white;
   position: relative;
   margin: 2%;
   display: flex;
   justify-content: space-between;
   width: 98%;
 }
+
 #home-btn {
   position: relative;
   margin: 1%;
 }
+
 #home-btn:hover {
   background-color: black;
   border: thin solid;
   border-radius: 1rem;
 }
+
 #packages-container {
   width: 100%;
   height: auto;
@@ -130,6 +134,7 @@ body {
   /* align-items: flex-start;  */
   display: flex;
 }
+
 .card {
   background-color: transparent;
   border-color: azure;
@@ -141,10 +146,12 @@ body {
 hr {
   height: 1rem;
 }
+
 img {
   height: 15rem;
   width: auto;
 }
+
 .trip-container {
   width: 90%;
   height: fit-content;
@@ -154,11 +161,13 @@ img {
   background-color: black;
   text-align: center;
 }
+
 .trip-img {
   width: 90%;
   height: auto;
   margin: 2%;
 }
+
 .shuttle-info-container {
   width: 90%;
   height: fit-content;
@@ -168,14 +177,17 @@ img {
   background-color: black;
   text-align: center;
 }
+
 .shuttle-img {
   width: 50%;
   height: auto;
   margin: 2%;
 }
+
 h2 {
   margin: 2%;
 }
+
 .training-container p {
   margin: 2%;
 }
