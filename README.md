@@ -1,5 +1,9 @@
 # Webmaster (2022-2023)
 
+> **Warning**: This was moved to [Ash-Greninja101/Ash-Greninja101.github.io](https://github.com/Ash-Greninja101/Ash-Greninja101.github.io).
+>
+> Thus, this is deprecated
+
 <!-- markdownlint-disable -->
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
